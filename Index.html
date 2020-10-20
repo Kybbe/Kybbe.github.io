@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Jacob Klaréns Websitek</title>
+    <title>Jacob Klaréns Portfolio</title>
     <link rel="icon" type="image/png" href="favicon.png"/>
     <meta name="description" content="Jacob Klaréns website! Here you'll find my projects and my CV.">
     <meta name="keywords" content="HTML, CSS, JavaScript, JQuery, Bootstrap, Fontawesome">
@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" href="Bilder/schillerska-logoSmall.jpg">
     <link rel="stylesheet" href="CSS/Main.css">
+    
 
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
@@ -36,47 +37,29 @@
 </head>
 
 <body>
-    <div class="row justify-content-center firstRow">
-        <div class="col-3">
-            <img src="Pictures/Jacob.jpeg" alt="Picture of me!">
-        </div>
-        <div class="col-4 text-center headline">
-            <h1>Jacob Klarén</h1>
-            <h3>Who am I? What can I do?</h3>
-            <p>(I've got no idea actually)</p>
+    <div class="row" id="firstRow">
+        <div class="col-10 headline">
+            <h1>Hi, my name is <span>Jacob Klarén</span>.</h1>
+            <h2>I'm a full-stack Developer</h2>
+            <h3>I love web design, learning new things</h3>
+            <h4>And people of course!</h4>
+            <button type="button" onclick="" href="#" class="btn mt-4" id="contactMe">Contact me!</button>
         </div>
     </div>
 
-    <div class="row justify-content-center">
-        <div class="col-12">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+    <div id="workExp">
+        <div class="row" id="schillerskaRow" onclick="alert('clicked!')">
+            <div class="col-12 text-center">
+                <h2>Schillerska</h2>
+            </div>
+        </div>
+
+        <div class="row gamestop" onclick="alert('clicked!')">
+            <div class="col-12 text-center">
+                <h2>Game<span style="color:red">Stop</span></h2>
+            </div>  
         </div>
     </div>
+
+    <script src="JS/Main.JS"></script>
 </body>
