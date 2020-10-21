@@ -34,16 +34,73 @@ body {
 }
 
 .headline h4 {
-    color: pink;
+    color: #ff94a6;
 }
 
-.headline button {
+.button {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #76ffdd;
+    border-radius: 0.6em;
     color: #76ffdd;
-    border: 1px solid #76ffdd;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    padding: 1em 2.2em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    border-color: #76ffdd;
+    color: #76ffdd;
+    background-image: -webkit-linear-gradient(45deg, #76ffdd 50%, transparent 50%);
+    background-image: linear-gradient(45deg, #76ffdd 50%, transparent 50%);
+    background-position: 100%;
+    background-size: 400%;
+    -webkit-transition: background 500ms ease-in-out;
+    transition: background 500ms ease-in-out;
 }
 
-.headline button:hover {
-    background-color: #76ffdd;
+.button:hover, .button:focus {
+    color: black;
+    outline: 0;
+    background-position: 0;
+}
+
+/* Arrow */
+
+#arrowContainer {
+    position: absolute;
+    width: 100vw;
+    bottom: 20px;
+}
+
+#arrowContainer i{
+    font-size: 50px;
+    animation: slide 2s ease-in-out infinite;
+}
+
+@keyframes slide {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+  
+    50% {
+      transform: translate(0, 10px);
+    }
 }
 
 /* Schillerska */
@@ -54,8 +111,8 @@ body {
     box-shadow: 0px -10px 10px -1px rgba(0,0,0,0.75);
 }
 
-#schillerskaRow {
-    border-bottom: 1px solid white;
+#workExp .row {
+    border-bottom: 1px solid hsla(0,0%,100%,.2);
 }
 
 #workExp div {
@@ -65,4 +122,36 @@ body {
 
 #workExp div div {
     padding: 40px 4%;
+}
+
+#workExp h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0px;
+    padding-bottom: 4px;
+	color: #3ed6b0;
+	background-image: -webkit-linear-gradient(92deg, #3ed6b0, #2ada82);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-webkit-animation: hue 10s infinite linear;
+}
+
+@-webkit-keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(-360deg);
+  }
+}
+
+#gamestopRow h2  {
+    display: inline-block;
+}
+
+#gamestopRow span {
+    font-size: 2.5rem;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-top: 0;
 }

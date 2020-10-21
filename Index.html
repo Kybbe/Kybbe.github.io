@@ -38,27 +38,46 @@
 
 <body>
     <div class="row" id="firstRow">
-        <div class="col-10 headline">
+        <div class="col-12 headline">
             <h1>Hi, my name is <span>Jacob Klarén</span>.</h1>
             <h2>I'm a full-stack Developer</h2>
             <h3>I love web design, learning new things</h3>
-            <h4>And people of course!</h4>
-            <button type="button" onclick="" href="#" class="btn mt-4" id="contactMe">Contact me!</button>
+            <h4>And people of course! :) </h4>
+            <button type="button" onclick="" href="#" class="button mt-5" id="contactMe">Contact me!</button>  
+        </div>
+        <div class="col-12">
+            <div id="arrowContainer" class="text-center">
+                <i class="fas fa-arrow-down"></i>
+            </div>
         </div>
     </div>
 
     <div id="workExp">
+
         <div class="row" id="schillerskaRow" onclick="alert('clicked!')">
-            <div class="col-12 text-center">
-                <h2>Schillerska</h2>
+            <div class="col-12 text-center" id="tester">
+                <h2 id="textSchillerska">Schillerska</h2>
             </div>
         </div>
 
-        <div class="row gamestop" onclick="alert('clicked!')">
+        <div class="row" id="gamestopRow" onclick="alert('clicked!')">
             <div class="col-12 text-center">
-                <h2>Game<span style="color:red">Stop</span></h2>
+                <h2>Game</h2><span style="color:red">Stop</span>
             </div>  
         </div>
+
+        <div class="row" id="eddlerRow" onclick="alert('clicked!')">
+            <div class="col-12 text-center">
+                <h2>Eddler</h2>
+            </div>  
+        </div>
+
+        <div class="row" id="sahlgrenskaRow" onclick="alert('clicked!')">
+            <div class="col-12 text-center">
+                <h2>Sahlgrenska</h2>
+            </div>  
+        </div>
+
     </div>
 
     <script src="JS/Main.JS"></script>
