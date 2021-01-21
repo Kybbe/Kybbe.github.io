@@ -124,15 +124,19 @@ body {
     padding: 40px 4%;
 }
 
-#workExp h2 {
-    font-size: 2.5rem;
-    margin-bottom: 0px;
-    padding-bottom: 4px;
+#workExp .rgbText{
+
 	color: #3ed6b0;
 	background-image: -webkit-linear-gradient(92deg, #3ed6b0, #2ada82);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	-webkit-animation: hue 10s infinite linear;
+}
+
+#workExp h2{
+    font-size: 2.5rem;
+    margin-bottom: 0px;
+    padding-bottom: 4px;
 }
 
 @-webkit-keyframes hue {
@@ -154,4 +158,11 @@ body {
     font-weight: 500;
     line-height: 1.2;
     margin-top: 0;
+}
+
+#netonnetRow h2 span{
+  border-radius: 50%;
+  background: red;
+  padding: 2px;
+  margin: 5px;
 }
