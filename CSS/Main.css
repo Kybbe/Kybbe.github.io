@@ -25,15 +25,15 @@ body {
     padding-top: 30vh;
 }
 
-.headline {
+#headline {
     margin-left: 50px;
 }
 
-.headline span {
+#headline span {
     color: #00ffbf;
 }
 
-.headline h4 {
+#headline h4 {
     color: #ff94a6;
 }
 
