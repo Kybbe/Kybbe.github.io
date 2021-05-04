@@ -169,3 +169,31 @@ body {
     margin-left: -6px;
     margin-right: -10px;
 }
+
+iframe {
+    border-radius: 10px;
+    height: 650px;
+    width: 100%;
+}
+
+.hide-mobile {
+    display: none !important;
+}
+.show-mobile {
+    display: inline !important;
+}
+
+@media (min-width: 992px) {
+    .hide-mobile {
+        display: inline !important;
+    }
+    .show-mobile {
+        display: none !important;
+    }
+
+    iframe {
+        border-radius: 10px;
+        height: 1000px;
+        width: 100%;
+    }
+}
