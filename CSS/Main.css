@@ -21,6 +21,7 @@ body {
 /* Headline / firstRow */
 
 #firstRow {
+    max-height: -webkit-fill-available;
     height: 100vh !important;
     padding-top: 30vh;
 }
