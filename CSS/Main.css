@@ -172,24 +172,38 @@ iframe {
     width: 100%;
 }
 
-#frontendContainer {
-    max-width: 250px;
-    position: relative;
-    background: linear-gradient(to right, red, purple);
-    padding: 2px !important;
-    border-radius: 10px;
-  }
+#collapseSoftwareDesign .col-12 h4 {
+    text-align: center;
+    padding-right: 30px;
+}
 
-#frontend {
-    background: rgba(46, 20, 42, 0.787);
+#collapseSoftwareDesign .col-12 ul {
+    max-width: 250px;
     border-radius: 10px;
     margin-bottom: 0px;
     padding-left: 30px;
 }
 
-#collapseSoftwareDesign .col-12 h4 {
-    text-align: center;
-    padding-right: 30px;
+#frontendContainer {
+    max-width: 250px;
+    background: linear-gradient(to right, red, purple);
+    padding: 2px !important;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #1f011bed;
+}
+
+#frontend {
+    background: #2e142ac9;
+}
+
+#backend {
+    background: #2e142ac9;
+    box-shadow: 5px 5px 5px #1f011bed;
+}
+
+#programs {
+    background: #2e142ac9;
+    box-shadow: 5px 5px 5px #1f011bed;
 }
 
 .hide-mobile {
