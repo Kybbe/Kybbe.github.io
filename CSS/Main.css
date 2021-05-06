@@ -22,13 +22,13 @@ body {
 
 #firstRow {
     height: 85vh !important;
-    padding-top: 2vh;
+    padding-top: 5vh;
 }
 
 #headline{
     padding-left: 0px;
     padding-right: 0px;
-    margin-left: 25px;
+    margin-left: 35px;
 }
 
 #headline span {
