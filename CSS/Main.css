@@ -39,32 +39,19 @@ body {
 
 .button {
     box-sizing: border-box;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
     background-color: transparent;
     border: 2px solid #76ffdd;
     border-radius: 0.6em;
     color: #76ffdd;
     cursor: pointer;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-self: center;
-    -ms-flex-item-align: center;
-    align-self: center;
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 1;
     padding: 1em 2.2em;
     text-decoration: none;
     text-align: center;
     text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
     border-color: #76ffdd;
-    color: #76ffdd;
     background-image: -webkit-linear-gradient(45deg, #76ffdd 50%, transparent 50%);
     background-image: linear-gradient(45deg, #76ffdd 50%, transparent 50%);
     background-position: 100%;
