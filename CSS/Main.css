@@ -199,7 +199,7 @@ iframe {
     padding-right: 30px;
 }
 
-#collapseSoftwareDesign .col-12 ul {
+#collapseSoftwareDesign .col-12 ul, #backendContainer, #programContainer {
     max-width: 250px;
     border-radius: 10px;
     margin-bottom: 0px;
@@ -218,14 +218,30 @@ iframe {
     background: #2e142ac9;
 }
 
+#backendContainer {
+    background-image: url(../Pictures/Black&GreenBlur.jpg);
+    background-size: cover;
+    box-shadow: 5px 5px 5px #000000c9;
+    padding: 3px !important;
+    min-width: 244px;
+    min-height: 252px;
+}
+
 #backend {
-    background: #2e142ac9;
+    background: #000000ad;
+    color: limegreen;
+    min-width: 214px;
+    min-height: 252px;
+}
+
+#programContainer {
+    background: #181818c9;
     box-shadow: 5px 5px 5px #1f011bed;
 }
 
 #programs {
     background: #2e142ac9;
-    box-shadow: 5px 5px 5px #1f011bed;
+    border-radius: 0px 0px 10px 10px !important;
 }
 
 .hide-mobile {
