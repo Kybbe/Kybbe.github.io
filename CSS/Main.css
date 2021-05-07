@@ -103,6 +103,15 @@ body {
     box-shadow: 0px -10px 10px 3px rgba(0,0,0,0.6);
 }
 
+.collapse .col-12, .collapse .card {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+}
+
+.collapse .row, .col-12 > .card {
+    padding: 0px !important;
+}
+
 #workExp .row, .collapse  {
     border-bottom: 1px solid hsla(0,0%,100%,.2);
 }
@@ -113,6 +122,11 @@ body {
 
 .card {
     background-color: #00000000 !important;
+    border: #00000000 0px solid !important;
+}
+
+.row {
+    margin: 0px !important;
 }
 
 #workExp > .row {
