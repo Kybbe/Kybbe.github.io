@@ -63,4 +63,6 @@ function init() {
  
 }
 
-row.addEventListener('mouseenter', init)
+row.addEventListener('click', init)
+
+
