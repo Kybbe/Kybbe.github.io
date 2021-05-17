@@ -38,6 +38,10 @@ body {
     color: #ff94a6;
 }
 
+#headline > *:not(button) {
+    transition: font-size 1s;
+}
+
 .button {
     box-sizing: border-box;
     background-color: transparent;
@@ -119,6 +123,10 @@ body {
 
 #workExp > div {
     background-color: #00000075;
+}
+
+#workExp > div:active {
+    background-color: #000000a2;
 }
 
 .card {
@@ -309,7 +317,29 @@ iframe {
         padding-left: 40px !important;
         padding-right: 40px !important;
     }
+}
 
+@media (min-width: 725px) {
+    #headline > *:not(button) {
+        transition: font-size 0.5s;
+        max-width: 600px;
+    }
+    
+    #headline > h1:hover {
+        font-size: 2.7em;
+    }
+    
+    #headline > h2:hover {
+        font-size: 2.2em;
+    }
+    
+    #headline > h3:hover {
+        font-size: 1.9em;
+    }
+    
+    #headline > h4:hover {
+        font-size: 1.7em;
+    }
 }
 
 @media (min-width: 420px) {
@@ -328,4 +358,5 @@ iframe {
     #firstRow {
         padding-top: 20vh;
     }
+
 }
