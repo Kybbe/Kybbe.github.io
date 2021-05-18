@@ -43,15 +43,20 @@
 </head>
 
 <body>
-    <div class="row" id="firstRow">
-        <div class="col-10 col-md-12" id="headline">
-            <h1>Hi, my name is <span>Jacob Klarén</span>.</h1>
-            <h2>I'm a full-stack Developer</h2>
-            <h3>I love web design, learning new things</h3>
-            <h4>And people of course! :) </h4>
-            <button type="button" onclick="" href="#" class="button" id="contactMe">Contact me!</button>  
+    <div id="firstRow" style="position: relative;">
+        <div class="row">
+            <div class="col-11 col-md-6" id="headline">
+                <h1>Hi, my name is <span>Jacob Klarén</span>.</h1>
+                <h2>I'm a full-stack Developer</h2>
+                <h3>I love web design, learning new things</h3>
+                <h4>And people of course! :) </h4>
+                <button type="button" onclick="" href="#" class="button" id="contactMe">Contact me!</button> 
+            </div>
+            <div class="col-12 col-md-6" id="picCol">
+                <img src="./Pictures/JacobNoBackground.png"> 
+            </div>
         </div>
-        <div class="col-12">
+        <div class="row" id="divArrowContainer">
             <div id="arrowContainer" class="text-center">
                 <i class="fas fa-arrow-down"></i>
             </div>
@@ -85,7 +90,6 @@
             </div>
         </div>
 
-
         <div class="row" id="schillerska" data-toggle="collapse" data-target="#collapseSchillerska">
             <div class="col-12 text-center">
                 <h2 class="rgbText" id="textSchillerska">Schillerska</h2>
@@ -117,10 +121,9 @@
             </div>
         </div>
 
-
         <div class="row" id="gamestop" data-toggle="collapse" data-target="#collapseGamestop">
             <div class="col-12 text-center">
-                <h2 style="color: white;">Game</h2><span style="color:red">Stop</span>
+                <h2 id="game">Game</h2><span style="color:red">Stop</span>
             </div>
         </div>
         <div class="collapse" id="collapseGamestop">

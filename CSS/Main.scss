@@ -1,0 +1,466 @@
+$accent-color: #c66;
+$headline-marker: #ff94a6;
+$text-color: #444;
+$plainBG-color: #f8f6f4;
+
+
+$accent-color2: #E6AF83;
+$accent-color3: #72AD97;
+$accent-color4: #472D38;
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    font-family: "Times New Roman", Times, serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    color: $text-color !important;
+}
+
+/* Headline / firstRow */
+
+#firstRow {
+    background-color: $plainBG-color;
+    height: 85vh !important;
+}
+
+#headline{
+    padding-left: 35px;
+    padding-right: 0px;
+    padding-top: 5vh;
+}
+
+#headline span {
+    color: $accent-color;
+}
+
+#headline h4 {
+    color: $headline-marker;
+}
+
+#headline > *:not(button) {
+    transition: font-size 1s;
+}
+
+.button {
+    background-color: transparent;
+    border: 2px solid $accent-color;
+    border-radius: 0.6em;
+    color: $accent-color;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1;
+    padding: 1em 2.2em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    border-color: $accent-color;
+    background-image: -webkit-linear-gradient(45deg, $accent-color 50%, transparent 50%);
+    background-image: linear-gradient(45deg, $accent-color 50%, transparent 50%);
+    background-position: 100%;
+    background-size: 400%;
+    -webkit-transition: background 500ms ease-in-out;
+    transition: background 500ms ease-in-out;
+}
+
+.button:hover, .button:focus {
+    color: $text-color;
+    outline: 0;
+    background-position: 0;
+}
+
+#contactMe {
+    margin-top: 20px;
+}
+
+#headline > h1 {
+    font-size: 2em;
+}
+
+#headline > h2 {
+    font-size: 1.6em;
+}
+
+#headline > h3 {
+    font-size: 1.2em;
+}
+
+#headline > h4 {
+    font-size: 1.1em;
+}
+
+#picCol img {
+    width: 50%; 
+    height: auto; 
+    -webkit-filter: none; 
+    filter: none;
+    padding-top: 10px;
+    padding-left: 0px;
+}
+
+#picCol img:active {
+    -webkit-filter: none !important; 
+    filter: none !important;
+    padding-left: 2px;
+    padding-top: 2px;
+}
+
+/* Arrow */
+
+#arrowContainer {
+    color: black;
+}
+
+#arrowContainer i{
+    font-size: 50px;
+    animation: slide 2s ease-in-out infinite;
+}
+
+#divArrowContainer{
+    position: absolute;
+    width: 100vw;
+    bottom: 20px;
+    left: calc(50% - 21px);
+}
+
+@keyframes slide {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+  
+    50% {
+      transform: translate(0, 10px);
+    }
+}
+
+/* Schillerska */
+
+#workExp {
+    -webkit-box-shadow: 0px -10px 10px 3px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px -10px 10px 3px rgba(0,0,0,0.2);
+    box-shadow: 0px -10px 10px 3px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 2;
+    background-color: white;
+}
+
+.collapse .col-12, .collapse .card, .collapsing .col-12, .collapsing .card {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+}
+
+.collapse .row, .col-12 > .card, .collapsing .row {
+    padding: 0px !important;
+}
+
+#workExp .row, .collapse, .collapsing {
+    position: relative;
+}
+
+#workExp .row:before, .collapse:before, .collapsing:before {
+    content : "";
+    position: absolute;
+    left    : 4%;
+    bottom  : 0;
+    height  : 2px;
+    width   : 92%;
+    border-bottom:2px solid $accent-color;
+}
+
+#workExp > div {
+    background-color: none;
+}
+
+#workExp > div:not(.collapse):active {
+    background-color: #00000046;
+}
+
+.card {
+    background-color: #00000000 !important;
+    border: #00000000 0px solid !important;
+}
+
+.row {
+    margin: 0px !important;
+}
+
+#workExp > .row {
+    cursor: pointer;
+}
+
+#workExp div div {
+    padding: 40px 4%;
+}
+
+#workExp .rgbText{
+	color: $text-color;
+}
+
+#workExp h2{
+    font-size: 2.5rem;
+    margin-bottom: 0px;
+    padding-bottom: 4px;
+}
+
+@-webkit-keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(-360deg);
+  }
+}
+
+#gamestop {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#gamestop h2  {
+    display: inline-block;
+}
+
+#gamestop #game {
+    color: black;
+}
+
+#gamestop span {
+    font-size: 2.5rem;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-top: 0;
+}
+
+#netonnet h2 span{
+  padding: 2px;
+  margin: 5px;
+  color: white;
+}
+
+#netonnet svg {
+    margin-left: -6px;
+    margin-right: -8px;
+}
+
+iframe {
+    border-radius: 10px;
+    height: 650px;
+    width: 100%;
+}
+
+.iframeHolder {
+    padding: 10px !important;
+}
+
+#collapseSoftwareDesign .col-12 h4 {
+    text-align: center;
+    padding-right: 30px;
+}
+
+#collapseSoftwareDesign .col-12 ul, #backendContainer, #programContainer {
+    max-width: 250px;
+    border-radius: 10px;
+    margin-bottom: 0px;
+    padding-left: 30px;
+}
+
+#frontendContainer {
+    max-width: 250px;
+    background: linear-gradient(to right, red, purple);
+    padding: 3px !important;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #1f011bed;
+}
+
+#frontend {
+    background: #2e142ac9;
+    color: white;
+}
+
+#backendContainer {
+    background-image: url(../Pictures/Black&GreenBlur.jpg);
+    background-size: cover;
+    box-shadow: 5px 5px 5px #000000c9;
+    padding: 3px !important;
+    min-width: 244px;
+    min-height: 204px;
+}
+
+#backend {
+    background: #000000ad;
+    color: limegreen;
+    min-width: 214px;
+    min-height: 204px;
+}
+
+#programContainer {
+    background: #181818c9;
+    box-shadow: 5px 5px 5px #1f011bed;
+    color: white;
+}
+
+#programs {
+    background: #2e142ac9;
+    border-radius: 0px 0px 10px 10px !important;
+}
+
+.programButton {
+    width: 11px;
+    height: 11px;
+    border-radius: 11px;
+    padding: 0px !important;
+    display:inline-flex;
+    cursor: pointer;
+}
+
+#PB1 {
+    background-color: red;
+    margin-left: 10px;
+}
+
+#PB2 {
+    background-color: yellow;
+}
+
+#PB3 {
+    background-color: green;
+    margin-right: 7px;
+}
+
+#PB1:active {
+    background-color: rgb(116, 0, 0);
+}
+
+#PB2:active {
+    background-color: rgb(139, 139, 0);
+}
+
+#PB3:active {
+    background-color: rgb(0, 71, 0);
+}
+
+.hide-mobile {
+    display: none !important;
+}
+.show-mobile {
+    display: inline !important;
+}
+
+@media (min-width: 992px) {
+    .hide-mobile {
+        display: inline !important;
+    }
+    .show-mobile {
+        display: none !important;
+    }
+
+    iframe {
+        border-radius: 10px;
+        height: 1000px;
+        width: 100%;
+    }
+
+    #firstRow {
+        height: 100vh !important;
+    }
+
+    .iframeHolder {
+        padding-left: 40px !important;
+        padding-right: 40px !important;
+    }
+}
+
+@media (min-width: 725px) {
+    #headline > *:not(button) {
+        transition: font-size 0.5s;
+        max-width: 600px;
+    }
+    
+    #headline > h1:hover {
+        font-size: 2.7em;
+    }
+    
+    #headline > h2:hover {
+        font-size: 2.2em;
+    }
+    
+    #headline > h3:hover {
+        font-size: 1.9em;
+    }
+    
+    #headline > h4:hover {
+        font-size: 1.7em;
+    }
+}
+
+@media (min-width: 600px) {
+    #headline{
+        padding-left: 65px;
+        padding-right: 15px;
+    }
+
+    #contactMe {
+        margin-top: 30px;
+    }
+}
+
+@media (min-width: 400px) {
+    #headline > h1 {
+        font-size: 2.5em;
+    }
+    
+    #headline > h2 {
+        font-size: 2em;
+    }
+    
+    #headline > h3 {
+        font-size: 1.9em;
+    }
+    
+    #headline > h4 {
+        font-size: 1.8em;
+    }
+
+    #picCol img {
+        width: 60%; 
+    }
+}
+
+@media (min-width: 767px) {
+    #picCol img {
+        width: 100%; 
+        height: auto; 
+        -webkit-filter: drop-shadow(5px 5px 5px #472D38); 
+        filter: drop-shadow(5px 5px 5px #472D38);
+        padding-top: 150px;
+        padding-left: 0px;
+        position: relative;
+        z-index: 1;
+        padding-top: 5vh;
+    }
+    
+    #picCol img:active {
+        -webkit-filter: none !important; 
+        filter: none !important;
+        padding-left: 2px;
+        padding-top: 2px;
+    }
+
+    #headline {
+        padding-top: 20vh;
+    }
+}
+
+@media (min-width: 2000px) {
+    #picCol img {
+        padding-top: 0px;
+        width: 80%;
+    }
+}
