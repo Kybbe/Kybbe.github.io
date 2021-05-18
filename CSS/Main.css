@@ -174,7 +174,7 @@ body {
   background-color: none;
 }
 
-#workExp > div:not(.collapse):active {
+#workExp > div:not(.collapse, .collapsing):active {
   background-color: #00000046;
 }
 
