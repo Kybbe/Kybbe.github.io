@@ -91,8 +91,6 @@ body {
   filter: drop-shadow(5px 5px 5px #472D38);
   padding-top: 10px;
   padding-left: 20px;
-  -webkit-transition: width 0.5s;
-  transition: width 0.5s;
 }
 
 #picCol img:hover {
@@ -405,10 +403,10 @@ iframe {
     font-size: 2.2em;
   }
   #headline > h3:hover {
-    font-size: 1.9em;
+    font-size: 2.1em;
   }
   #headline > h4:hover {
-    font-size: 1.7em;
+    font-size: 1.9em;
   }
 }
 
