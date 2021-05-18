@@ -12,6 +12,85 @@ body {
   color: #444 !important;
 }
 
+#accesibilityBtn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  text-align: center;
+  -webkit-box-shadow: black 2px 2px 2px;
+          box-shadow: black 2px 2px 2px;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 6;
+  -webkit-transition: right 0.5s, top 0.5s;
+  transition: right 0.5s, top 0.5s;
+}
+
+#accesibilityBar {
+  width: 0px;
+  height: 100vh;
+  background-color: white;
+  right: 0px;
+  position: absolute;
+  z-index: 5;
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
+  -webkit-box-shadow: -8px 0 10px -6px black;
+          box-shadow: -8px 0 10px -6px black;
+}
+
+input[type=checkbox] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+input[type=checkbox]:focus {
+  outline: 0;
+}
+
+.toggle {
+  height: 24px;
+  width: 40px;
+  border-radius: 12px;
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  border: 2px solid #474755;
+  background: -webkit-gradient(linear, left top, left bottom, from(#2D2F39), to(#1F2027));
+  background: linear-gradient(180deg, #2D2F39 0%, #1F2027 100%);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.toggle:after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: white;
+  -webkit-box-shadow: 0 1px 2px rgba(44, 44, 44, 0.2);
+          box-shadow: 0 1px 2px rgba(44, 44, 44, 0.2);
+  -webkit-transition: all 0.2s cubic-bezier(0.5, 0.1, 0.75, 1.35);
+  transition: all 0.2s cubic-bezier(0.5, 0.1, 0.75, 1.35);
+}
+
+.toggle:checked {
+  border-color: #c66;
+}
+
+.toggle:checked:after {
+  -webkit-transform: translatex(16px);
+          transform: translatex(16px);
+}
+
 /* Headline / firstRow */
 #firstRow {
   background-color: #f8f6f4;
@@ -456,6 +535,10 @@ iframe {
 @media (min-width: 2000px) {
   #picCol img {
     padding-top: 0px;
+    width: 80%;
+  }
+  #picCol img:hover {
+    padding-top: 2px;
     width: 80%;
   }
 }

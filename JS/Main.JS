@@ -102,3 +102,65 @@ function enlargeWindow() {
         document.getElementById("programTitle").style.marginLeft = "";
       }, 3000);
 }
+
+var barOpen = false;
+
+function toggleAccesibilityBar() {
+  var bar = document.getElementById("accesibilityBar");
+  var btn = document.getElementById("accesibilityBtn");
+  if (barOpen == false) {
+    bar.style.width = "300px";
+    bar.style.padding = "20px";
+    btn.style.boxShadow = "none";
+    btn.style.right = "0px";
+    btn.style.top = "0px";
+    barOpen = true;
+  } else if (barOpen == true) {
+    bar.style.width = "0px";
+    bar.style.padding = "0px";
+    btn.style.boxShadow = "black 2px 2px 2px";
+    btn.style.right = "20px";
+    btn.style.top = "20px";
+    barOpen = false;
+  } else {
+
+  }
+
+}
+
+var accessibilityOn = false;
+
+function accessibilityButtonCheck() {
+  if (accessibilityOn == false) {
+    document.body.setAttribute('style', 'color:black !important');
+    document.getElementById("pinkText").setAttribute('style', 'color:black !important');
+    document.getElementById("pinkText2").setAttribute('style', 'color:black !important');
+    document.getElementById("contactMe").setAttribute('style', 'color:black !important');
+    document.getElementsByClassName("rgbText")[0].setAttribute('style', 'color:black !important');
+    document.getElementsByClassName("rgbText")[1].setAttribute('style', 'color:black !important');
+    document.getElementsByClassName("rgbText")[2].setAttribute('style', 'color:black !important');
+    document.getElementsByClassName("rgbText")[3].setAttribute('style', 'color:black !important');
+    $(".collapse").collapse("show");
+
+    accessibilityOn = true;
+  } else if (accessibilityOn == true) {
+    document.body.setAttribute('style', 'none');
+    document.getElementById("pinkText").setAttribute('style', 'none');
+    document.getElementById("pinkText2").setAttribute('style', 'none');
+    document.getElementById("contactMe").setAttribute('style', 'none');
+    document.getElementsByClassName("rgbText")[0].setAttribute('style', 'none');
+    document.getElementsByClassName("rgbText")[1].setAttribute('style', 'none');
+    document.getElementsByClassName("rgbText")[2].setAttribute('style', 'none');
+    document.getElementsByClassName("rgbText")[3].setAttribute('style', 'none');
+    $(".collapse").collapse("hide");
+
+    accessibilityOn = false;
+  } else {
+
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}

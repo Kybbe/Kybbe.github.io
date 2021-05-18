@@ -44,13 +44,33 @@
 </head>
 
 <body>
+
+    <div id="navbarHolder">
+        <div id="accesibilityBtn" onclick="toggleAccesibilityBar()">
+            <i class="fas fa-bars" 
+            style="font-size: 25px;
+            color:#c66;
+            margin-top: 13px;"></i>
+        </div>
+
+        <div id="accesibilityBar">
+            <h2><a href="#" id="navbarTopButton" onclick="topFunction()">Go to Top</a></h2>
+            <p style="display: inline-block;">Turn on Accessibility: </p>
+            <input type="checkbox" class="toggle" id="accessibilityCheckbox" onclick="accessibilityButtonCheck()">
+            <br>
+
+        </div>
+
+    </div>
+
+
     <div id="firstRow" style="position: relative;">
         <div class="row">
             <div class="col-11 col-md-6" id="headline">
-                <h1>Hi, my name is <span>Jacob Klarén</span>.</h1>
+                <h1>Hi, my name is <span id="pinkText">Jacob Klarén</span>.</h1>
                 <h2>I'm a full-stack Developer</h2>
                 <h3>I love web design, learning new things</h3>
-                <h4>And people of course! :) </h4>
+                <h4 id="pinkText2">And people of course! :) </h4>
                 <button type="button" onclick="" href="#" class="button" id="contactMe">Contact me!</button> 
             </div>
             <div class="col-12 col-md-6" id="picCol">
