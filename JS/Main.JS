@@ -195,3 +195,9 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+function checkIfTab(event, id) {
+  if (event.keyCode === 13) {
+    $("#" + id).click();
+}
+}
