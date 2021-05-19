@@ -105,10 +105,10 @@ function enlargeWindow() {
 
 var barOpen = false;
 
-function toggleAccesibilityBar() {
+function toggleAccessibilityBar() {
   var vw = document.documentElement.clientWidth;
-  var bar = document.getElementById("accesibilityBar");
-  var btn = document.getElementById("accesibilityBtn");
+  var bar = document.getElementById("accessibilityBar");
+  var btn = document.getElementById("accessibilityBtn");
   if (barOpen == false) {
     if(vw <= 400) {
       bar.style.width = "100%";
