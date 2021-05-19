@@ -117,8 +117,8 @@ function toggleAccesibilityBar() {
     }
     bar.style.padding = "20px";
     btn.style.boxShadow = "none";
-    btn.style.right = "0px";
-    btn.style.top = "0px";
+    btn.style.right = "10px";
+    btn.style.top = "10px";
     barOpen = true;
   } else if (barOpen == true) {
     bar.style.width = "0px";
