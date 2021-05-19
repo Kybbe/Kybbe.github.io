@@ -27,6 +27,12 @@ body {
   transition: right 0.5s, top 0.5s;
 }
 
+#accesibilityBtn i {
+  font-size: 25px;
+  color: #c66;
+  margin-top: 13px;
+}
+
 #accesibilityBar {
   width: 0px;
   height: 100vh;
@@ -106,6 +112,11 @@ input[type=checkbox]:focus {
           box-shadow: #444 0px 0px 0px;
   margin-left: 3px;
   margin-top: 3px;
+}
+
+#messageDrawerState {
+  display: inline-block;
+  margin-left: 10px;
 }
 
 /* Headline / firstRow */
