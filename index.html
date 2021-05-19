@@ -52,13 +52,20 @@
 
         <div id="accessibilityBar" style="width: 0px; overflow-x: hidden;">
             <h2><a href="#" id="navbarTopButton" onclick="topFunction()" onkeydown="checkIfTab(event, this.id)">Go to Top</a></h2>
-            <p style="display: inline-block;">Turn on accessibility: </p>
-            <input type="checkbox" class="toggle" id="accessibilityCheckbox" onclick="accessibilityButtonCheck()"  onkeydown="checkIfTab(event, this.id)">
-            <br>
-            <br>
-            <p>Open / Close all drawers:</p>
-            <button onclick="openCloseAllDrawers()" id="drawerOpenClose">Open/Close</button>
-            <p id="messageDrawerState"></p>
+            
+
+            <div id="navbarSettings" style="width: 0; text-align: center; bottom: 0px; position: absolute; left: 0; box-shadow: 0px -3px 3px 3px rgba(0, 0, 0, 0.5); padding-bottom: 20px;">
+                <h4 style="margin-top: 15px; margin-bottom: 20px;"><i class="fas fa-cogs"></i> Settings</h4>
+
+                <p style="display: inline-block;">Turn on accessibility: </p>
+                <input type="checkbox" class="toggle" id="accessibilityCheckbox" onclick="accessibilityButtonCheck()"  onkeydown="checkIfTab(event, this.id)">
+                <br>
+                <br>
+                <p>Open / Close all drawers:</p>
+                <button onclick="openCloseAllDrawers()" id="drawerOpenClose">Open/Close</button>
+                <p id="messageDrawerState"></p>
+
+            </div>
         </div>  
 
     </div>

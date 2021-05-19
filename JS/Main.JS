@@ -115,17 +115,19 @@ function toggleAccessibilityBar() {
     } else {
       bar.style.width = "300px";
     }
-    bar.style.padding = "20px";
     btn.style.boxShadow = "none";
     btn.style.right = "10px";
     btn.style.top = "10px";
+    bar.style.padding = "20px";
+    document.getElementById("navbarSettings").style.width = "100%";
     barOpen = true;
   } else if (barOpen == true) {
     bar.style.width = "0px";
-    bar.style.padding = "0px";
     btn.style.boxShadow = "black 2px 2px 2px";
     btn.style.right = "20px";
     btn.style.top = "20px";
+    bar.style.padding = "0px";
+    document.getElementById("navbarSettings").style.width = "0";
     barOpen = false;
   } else {
 
@@ -146,6 +148,7 @@ function accessibilityButtonCheck() {
     document.getElementsByClassName("rgbText")[1].setAttribute('style', 'color:black !important');
     document.getElementsByClassName("rgbText")[2].setAttribute('style', 'color:black !important');
     document.getElementsByClassName("rgbText")[3].setAttribute('style', 'color:black !important');
+    document
     openCloseAllDrawers();
     accessibilityOn = true;
   } else if (accessibilityOn == true) {
