@@ -88,6 +88,21 @@ input[type=checkbox] {
     transform: translatex(16px);
   }
 
+#drawerOpenClose {
+    border: $accent-color 1px solid;
+    background-color: rgba(0, 0, 0, 0.089);
+    border-radius: 5px;
+    box-shadow: $text-color 3px 3px 3px;
+    padding: 6px 12px;
+}
+
+#drawerOpenClose:active {
+    background-color: rgba(0, 0, 0, 0.212);
+    box-shadow: $text-color 0px 0px 0px;
+    margin-left: 3px;
+    margin-top: 3px;
+}
+
 /* Headline / firstRow */
 
 #firstRow {
@@ -475,6 +490,8 @@ iframe {
     #headline > h4:hover {
         font-size: 1.9em;
     }
+
+    
 }
 
 @media (min-width: 768px) {

@@ -106,10 +106,15 @@ function enlargeWindow() {
 var barOpen = false;
 
 function toggleAccesibilityBar() {
+  var vw = document.documentElement.clientWidth;
   var bar = document.getElementById("accesibilityBar");
   var btn = document.getElementById("accesibilityBtn");
   if (barOpen == false) {
-    bar.style.width = "300px";
+    if(vw <= 400) {
+      bar.style.width = "100%";
+    } else {
+      bar.style.width = "300px";
+    }
     bar.style.padding = "20px";
     btn.style.boxShadow = "none";
     btn.style.right = "0px";
@@ -129,6 +134,7 @@ function toggleAccesibilityBar() {
 }
 
 var accessibilityOn = false;
+var allDrawerOpen = false;
 
 function accessibilityButtonCheck() {
   if (accessibilityOn == false) {
@@ -140,8 +146,7 @@ function accessibilityButtonCheck() {
     document.getElementsByClassName("rgbText")[1].setAttribute('style', 'color:black !important');
     document.getElementsByClassName("rgbText")[2].setAttribute('style', 'color:black !important');
     document.getElementsByClassName("rgbText")[3].setAttribute('style', 'color:black !important');
-    $(".collapse").collapse("show");
-
+    openCloseAllDrawers();
     accessibilityOn = true;
   } else if (accessibilityOn == true) {
     document.body.setAttribute('style', 'none');
@@ -152,11 +157,37 @@ function accessibilityButtonCheck() {
     document.getElementsByClassName("rgbText")[1].setAttribute('style', 'none');
     document.getElementsByClassName("rgbText")[2].setAttribute('style', 'none');
     document.getElementsByClassName("rgbText")[3].setAttribute('style', 'none');
-    $(".collapse").collapse("hide");
-
+    openCloseAllDrawers();
     accessibilityOn = false;
   } else {
 
+  }
+}
+
+function openCloseAllDrawers() {
+var message = document.getElementById("messageDrawerState")
+
+  if(allDrawerOpen == false) {
+    $(".collapse").collapse("show");
+
+    message.innerHTML = "Opened!"
+    message.style.color = "green";
+    setTimeout(function () {
+      message.innerHTML = "";
+      message.style.color = "black";
+    }, 1500);
+
+    allDrawerOpen = true;
+  } else if (allDrawerOpen == true) {
+    $(".collapse").collapse("hide");
+    message.innerHTML = "Closed!"
+    message.style.color = "green";
+    setTimeout(function () {
+      message.innerHTML = "";
+      message.style.color = "black";
+    }, 1500);
+
+    allDrawerOpen = false;
   }
 }
 
