@@ -151,12 +151,12 @@ input[type=checkbox]:focus {
   color: #ff94a6;
 }
 
-#headline > *:not(button) {
+#headline > *:not(#contactMe) {
   -webkit-transition: font-size 1s;
   transition: font-size 1s;
 }
 
-.button {
+#contactMe {
   background-color: transparent;
   border: 2px solid #c66;
   border-radius: 0.6em;
@@ -166,6 +166,7 @@ input[type=checkbox]:focus {
   font-weight: 700;
   line-height: 1;
   padding: 1em 2.2em;
+  margin-top: 0px;
   text-decoration: none;
   text-align: center;
   text-transform: uppercase;
@@ -177,14 +178,10 @@ input[type=checkbox]:focus {
   transition: background 500ms ease-in-out;
 }
 
-.button:hover, .button:focus {
+#contactMe:hover, #contactMe:focus {
   color: #444;
   outline: 0;
   background-position: 0;
-}
-
-#contactMe {
-  margin-top: 0px;
 }
 
 #headline > h1 {
@@ -510,7 +507,7 @@ iframe {
 }
 
 @media (min-width: 725px) {
-  #headline > *:not(button) {
+  #headline > *:not(#contactMe) {
     -webkit-transition: font-size 0.5s;
     transition: font-size 0.5s;
     max-width: 600px;

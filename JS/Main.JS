@@ -16,14 +16,18 @@ function getRandomWord(word) {
   return finalWord
 }
 
+
 var row = document.getElementById("backendContainer")
 var word = document.getElementById("backend")
-var interv = 'undefined'
-var canChange = false
-var globalCount = 0
-var count = 0
-var INITIAL_WORD = word.innerHTML;
-var isGoing = false
+if(word != null) {
+  var interv = 'undefined'
+  var canChange = false
+  var globalCount = 0
+  var count = 0
+  var INITIAL_WORD = word.innerHTML;
+  var isGoing = false
+  row.addEventListener('click', init)
+}
 
 function init() {
  if(isGoing) return;
@@ -59,9 +63,6 @@ function init() {
  },5)
  
 }
-
-row.addEventListener('click', init)
-
 
 function closeWindow() {
     document.getElementById("PB1").parentElement.style.display = "none";
