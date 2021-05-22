@@ -162,6 +162,7 @@ input[type=checkbox]:focus {
   border-radius: 0.6em;
   color: #c66;
   cursor: pointer;
+  display: inline-block;
   font-size: 1rem;
   font-weight: 700;
   line-height: 1;
@@ -179,7 +180,6 @@ input[type=checkbox]:focus {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  display: inline-block;
 }
 
 #contactMe:hover, #contactMe:focus {
@@ -202,6 +202,14 @@ input[type=checkbox]:focus {
 
 #headline > h4 {
   font-size: 1.1em;
+}
+
+#headline > h1, #headline > h2, #headline > h3, #headline > h4 {
+  margin-bottom: 0px;
+}
+
+#headline > a {
+  margin-top: 5px;
 }
 
 #picCol img {
@@ -508,12 +516,6 @@ iframe {
   }
 }
 
-@media (min-height: 660px) {
-  #headline {
-    padding-top: 20vh;
-  }
-}
-
 @media (min-width: 725px) {
   #headline > *:not(#contactMe) {
     -webkit-transition: font-size 0.5s;
@@ -591,6 +593,22 @@ iframe {
   }
 }
 
+@media (min-height: 820px) {
+  #headline {
+    padding-top: 20vh;
+  }
+}
+
+@media (min-height: 380px) {
+  #headline > h1, #headline > h2, #headline > h3, #headline > h4 {
+    margin-bottom: 8px;
+  }
+  #headline > a {
+    margin-top: 20px;
+  }
+}
+
+/* Contact Site */
 #contactBody {
   background-color: #f8f6f4;
   color: #444;

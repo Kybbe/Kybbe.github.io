@@ -159,6 +159,7 @@ input[type=checkbox] {
     border-radius: 0.6em;
     color: $accent-color;
     cursor: pointer;
+    display: inline-block;
     font-size: 1rem;
     font-weight: 700;
     line-height: 1;
@@ -177,7 +178,6 @@ input[type=checkbox] {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    display: inline-block;
 }
 
 #contactMe:hover, #contactMe:focus {
@@ -200,6 +200,14 @@ input[type=checkbox] {
 
 #headline > h4 {
     font-size: 1.1em;
+}
+
+#headline > h1, #headline > h2, #headline > h3, #headline > h4 {
+    margin-bottom: 0px;
+}
+
+#headline > a {
+    margin-top: 5px;
 }
 
 #picCol img {
@@ -493,12 +501,6 @@ iframe {
     }
 }
 
-@media (min-height: 660px) {
-    #headline {
-        padding-top: 20vh;
-    }
-}
-
 @media (min-width: 725px) {
     #headline > *:not(#contactMe) {
         transition: font-size 0.5s;
@@ -520,7 +522,7 @@ iframe {
     #headline > h4:hover {
         font-size: 1.9em;
     }
-
+    
 }
 
 @media (min-width: 768px) {
@@ -544,11 +546,11 @@ iframe {
     #firstRow {
         height: 100vh !important;
     }
-
+    
     #navbarSettings {
         padding-bottom: 20px !important;
     }
-
+    
     #contactMe {
         margin-top: 20px;
     }
@@ -561,13 +563,13 @@ iframe {
     .show-mobile {
         display: none !important;
     }
-
+    
     iframe {
         border-radius: 10px;
         height: 1000px;
         width: 100%;
     }
-
+    
     .iframeHolder {
         padding-left: 40px !important;
         padding-right: 40px !important;
@@ -579,12 +581,30 @@ iframe {
         padding-top: 0px;
         width: 80%;
     }
-
+    
     #picCol img:hover {
         padding-top: 2px;
         width: 80%;
     }
 }
+
+@media (min-height: 820px) {
+    #headline {
+        padding-top: 20vh;
+    }
+}
+
+@media (min-height: 380px) {
+    #headline > h1, #headline > h2, #headline > h3, #headline > h4 {
+        margin-bottom: 8px;
+    }
+
+    #headline > a {
+        margin-top: 20px;
+    }
+}
+
+/* Contact Site */
 
 #contactBody {
     background-color: $plainBG-color;
@@ -593,15 +613,15 @@ iframe {
 
 .fade-out {
     animation: fadeOut ease 4s;
-  }
-  @keyframes fadeOut {
+}
+@keyframes fadeOut {
     0% {
-      opacity:1;
+        opacity:1;
     }
     100% {
-      opacity:0;
+        opacity:0;
     }
-  }
+}
 
 #email {
     color: $accent-color3 !important;
