@@ -176,6 +176,10 @@ input[type=checkbox]:focus {
   background-size: 400%;
   -webkit-transition: background 500ms ease-in-out;
   transition: background 500ms ease-in-out;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
 }
 
 #contactMe:hover, #contactMe:focus {
