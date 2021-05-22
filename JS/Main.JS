@@ -1,3 +1,9 @@
+var accessibility = false;
+var allDrawerOpen = false;
+var row = document.getElementById("backendContainer");
+var word = document.getElementById("backend");
+var barOpen = false;
+
 function rand(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -18,8 +24,6 @@ function getRandomWord(word) {
   return finalWord
 }
 
-var row = document.getElementById("backendContainer")
-var word = document.getElementById("backend")
 if(word != null) {
   var interv = 'undefined'
   var canChange = false
@@ -105,8 +109,6 @@ function enlargeWindow() {
       }, 3000);
 }
 
-var barOpen = false;
-
 function toggleAccessibilityBar() {
   var vw = document.documentElement.clientWidth;
   var bar = document.getElementById("accessibilityBar");
@@ -137,33 +139,47 @@ function toggleAccessibilityBar() {
 
 }
 
-var accessibilityOn = false;
-var allDrawerOpen = false;
-
 function accessibilityButtonCheck() {
-  if (accessibilityOn == false) {
+  if (accessibility == false) {
+    var check = ifExists("email");
+
     document.body.setAttribute('style', 'color:black !important');
     document.getElementById("pinkText").setAttribute('style', 'color:black !important');
-    document.getElementById("pinkText2").setAttribute('style', 'color:black !important');
-    document.getElementById("contactMe").setAttribute('style', 'color:black !important');
-    document.getElementsByClassName("rgbText")[0].setAttribute('style', 'color:black !important');
-    document.getElementsByClassName("rgbText")[1].setAttribute('style', 'color:black !important');
-    document.getElementsByClassName("rgbText")[2].setAttribute('style', 'color:black !important');
-    document.getElementsByClassName("rgbText")[3].setAttribute('style', 'color:black !important');
-    document
-    openCloseAllDrawers();
-    accessibilityOn = true;
-  } else if (accessibilityOn == true) {
+
+    if (check = true) {
+      document.getElementById("email").setAttribute('style', 'color:blue !important');
+      document.getElementById("number").setAttribute('style', 'color:blue !important');
+    } else {
+      document.getElementById("pinkText2").setAttribute('style', 'color:black !important');
+      document.getElementById("contactMe").setAttribute('style', 'color:black !important');
+      document.getElementsByClassName("rgbText")[0].setAttribute('style', 'color:black !important');
+      document.getElementsByClassName("rgbText")[1].setAttribute('style', 'color:black !important');
+      document.getElementsByClassName("rgbText")[2].setAttribute('style', 'color:black !important');
+      document.getElementsByClassName("rgbText")[3].setAttribute('style', 'color:black !important');
+      
+      openCloseAllDrawers();
+    }
+    accessibility = true;
+  } else if (accessibility == true) {
+    var check = ifExists("email");
+
     document.body.setAttribute('style', 'none');
     document.getElementById("pinkText").setAttribute('style', 'none');
-    document.getElementById("pinkText2").setAttribute('style', 'none');
-    document.getElementById("contactMe").setAttribute('style', 'none');
-    document.getElementsByClassName("rgbText")[0].setAttribute('style', 'none');
-    document.getElementsByClassName("rgbText")[1].setAttribute('style', 'none');
-    document.getElementsByClassName("rgbText")[2].setAttribute('style', 'none');
-    document.getElementsByClassName("rgbText")[3].setAttribute('style', 'none');
-    openCloseAllDrawers();
-    accessibilityOn = false;
+    
+    if (check = true) {
+      document.getElementById("email").setAttribute('style', 'none');
+      document.getElementById("number").setAttribute('style', 'none');
+    } else {
+      document.getElementById("pinkText2").setAttribute('style', 'none');
+      document.getElementById("contactMe").setAttribute('style', 'none');
+      document.getElementsByClassName("rgbText")[0].setAttribute('style', 'none');
+      document.getElementsByClassName("rgbText")[1].setAttribute('style', 'none');
+      document.getElementsByClassName("rgbText")[2].setAttribute('style', 'none');
+      document.getElementsByClassName("rgbText")[3].setAttribute('style', 'none');
+      
+      openCloseAllDrawers();
+    }
+    accessibility = false;
   } else {
 
   }
@@ -171,29 +187,38 @@ function accessibilityButtonCheck() {
 
 function openCloseAllDrawers() {
 var message = document.getElementById("messageDrawerState")
-
-  if(allDrawerOpen == false) {
-    $(".collapse").collapse("show");
-
-    message.innerHTML = "Opened!"
-    message.style.color = "green";
+  if(document.getElementsByClassName("collapse")[0] != undefined){
+    if(allDrawerOpen == false) {
+      $(".collapse").collapse("show");
+    
+      message.innerHTML = "Opened!"
+      message.style.color = "green";
+      setTimeout(function () {
+        message.innerHTML = "";
+        message.style.color = "black";
+      }, 1500);
+    
+      allDrawerOpen = true;
+    } else if (allDrawerOpen == true) {
+      $(".collapse").collapse("hide");
+      message.innerHTML = "Closed!"
+      message.style.color = "green";
+      setTimeout(function () {
+        message.innerHTML = "";
+        message.style.color = "black";
+      }, 1500);
+    
+      allDrawerOpen = false;
+    }
+  } else {
+    message.innerHTML = "No drawers!"
+      message.style.color = "red";
     setTimeout(function () {
       message.innerHTML = "";
       message.style.color = "black";
     }, 1500);
-
-    allDrawerOpen = true;
-  } else if (allDrawerOpen == true) {
-    $(".collapse").collapse("hide");
-    message.innerHTML = "Closed!"
-    message.style.color = "green";
-    setTimeout(function () {
-      message.innerHTML = "";
-      message.style.color = "black";
-    }, 1500);
-
-    allDrawerOpen = false;
   }
+
 }
 
 function topFunction() {
@@ -247,3 +272,13 @@ function copy(text) {
   alert("Copied " + text + "!")
 }
  
+function ifExists(id) {
+  var element = document.getElementById(id);
+
+  if(typeof(element) != 'undefined' && element != null){
+    return true;
+  } else{
+    return false;
+  }
+}
+
