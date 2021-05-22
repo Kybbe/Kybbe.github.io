@@ -1,10 +1,12 @@
 function rand(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
 function getRandomLetter() {
  var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
  return alphabet[rand(0,alphabet.length - 1)]
 }
+
 function getRandomWord(word) {
   var text = word.innerHTML
   
@@ -15,7 +17,6 @@ function getRandomWord(word) {
  
   return finalWord
 }
-
 
 var row = document.getElementById("backendContainer")
 var word = document.getElementById("backend")
@@ -203,5 +204,46 @@ function topFunction() {
 function checkIfTab(event, id) {
   if (event.keyCode === 13) {
     $("#" + id).click();
+  }
 }
+
+$(function () {
+  var includes = $('[data-include]')
+  $.each(includes, function () {
+    var file = './' + $(this).data('include') + '.html'
+    $(this).load(file)
+  })
+})
+
+function delay(URL) {
+  topFunction();
+  setTimeout( function() { window.location = URL }, 500 );
 }
+
+function onloadTextChange() {
+  const vw = document.documentElement.clientWidth;
+  setTimeout( function() {
+    document.getElementById("introText2").innerHTML = "My email is ";
+    document.getElementById("introText2").innerHTML += "<span id='email'>Jacob.klaren@me.com</span>,";
+    document.getElementById("email").onclick = function() { copy('jacob.klaren@me.com') };
+
+    document.getElementById("introText3").innerHTML = "And my Phonenumber is <a id='number'>123-456-7890</a> [sorry too private ): ]";
+    document.getElementById("number").href ='tel:123-456-7890';
+
+    document.getElementById("introText4").remove();
+
+    document.getElementById("contactMe").remove();
+
+  }, 3700 );
+};
+
+function copy(text) {
+  const el = document.createElement('textarea');
+  el.value = text;
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+  alert("Copied " + text + "!")
+}
+ 

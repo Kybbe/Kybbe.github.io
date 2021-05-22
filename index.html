@@ -35,7 +35,7 @@
             <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
                 integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
             </script>
-       
+
     <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/811a2ddc97.js" crossorigin="anonymous" rel="nofollow"></script>
     <!-- Font Nobile Google -->
@@ -45,31 +45,7 @@
 
 <body>
 
-    <div id="navbarHolder">
-        <div role="button" tabindex="0" id="accessibilityBtn" onclick="toggleAccessibilityBar()" onkeydown="checkIfTab(event, this.id)">
-            <i class="fas fa-bars"></i>
-        </div>
-
-        <div id="accessibilityBar" style="width: 0px; overflow-x: hidden;">
-            <h2><a href="#" id="navbarTopButton" onclick="topFunction()" onkeydown="checkIfTab(event, this.id)">Go to Top</a></h2>
-            
-
-            <div id="navbarSettings">
-                <h4 style="margin-top: 15px; margin-bottom: 20px;"><i class="fas fa-cogs"></i> Settings</h4>
-
-                <p style="display: inline-block;">Turn on accessibility: </p>
-                <input type="checkbox" class="toggle" id="accessibilityCheckbox" onclick="accessibilityButtonCheck()"  onkeydown="checkIfTab(event, this.id)">
-                <br>
-                <br>
-                <p>Open / Close all drawers:</p>
-                <button onclick="openCloseAllDrawers()" id="drawerOpenClose">Open/Close</button>
-                <p id="messageDrawerState"></p>
-
-            </div>
-        </div>  
-
-    </div>
-
+    <div data-include="navbar"></div>
 
     <div id="firstRow" style="position: relative;">
         <div class="row">
@@ -78,7 +54,7 @@
                 <h2>I'm a full-stack Developer</h2>
                 <h3>I love web design, learning new things</h3>
                 <h4 id="pinkText2">And people of course! :) </h4>
-                <a type="button" onclick="" onkeydown="checkIfTab(event, this.id)" href="contactMe.html" class="button" id="contactMe">Contact me!</a> 
+                <a type="button" onclick="" onkeydown="checkIfTab(event, this.id)" href="javascript:delay('contactMe.html')" class="button" id="contactMe">Contact me!</a> 
             </div>
             <div class="col-12 col-md-6" id="picCol">
                 <img src="./Pictures/JacobNoBackground.png" alt="A picture of Jacob Klarén, Me!"> 

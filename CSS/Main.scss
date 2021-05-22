@@ -5,8 +5,11 @@ $plainBG-color: #f8f6f4;
 
 
 $accent-color2: #E6AF83;
-$accent-color3: #72AD97;
-$accent-color4: #472D38;
+$accent-color3: #CF9A7B;
+$accent-color4: #72AD97;
+$accent-color5: #5B9279;
+$accent-color6: #52D1DC;
+$accent-color7: #B3DEC1;
 
 html, body {
     width: 100%;
@@ -209,6 +212,10 @@ input[type=checkbox] {
     filter: none !important;
     padding-top: 12px;
     padding-left: 22px;
+}
+
+#picCol {
+    padding-right: 0px;
 }
 
 /* Arrow */
@@ -573,4 +580,35 @@ iframe {
         padding-top: 2px;
         width: 80%;
     }
+}
+
+#contactBody {
+    background-color: $plainBG-color;
+    color: $text-color;
+}
+
+.fade-out {
+    animation: fadeOut ease 4s;
+  }
+  @keyframes fadeOut {
+    0% {
+      opacity:1;
+    }
+    100% {
+      opacity:0;
+    }
+  }
+
+#email {
+    color: $accent-color3 !important;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#number {
+    color: $accent-color2 !important;
+}
+
+#introText4 {
+    color: $headline-marker !important;
 }

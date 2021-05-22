@@ -216,6 +216,10 @@ input[type=checkbox]:focus {
   padding-left: 22px;
 }
 
+#picCol {
+  padding-right: 0px;
+}
+
 /* Arrow */
 #arrowContainer i {
   font-size: 50px;
@@ -581,5 +585,47 @@ iframe {
     padding-top: 2px;
     width: 80%;
   }
+}
+
+#contactBody {
+  background-color: #f8f6f4;
+  color: #444;
+}
+
+.fade-out {
+  -webkit-animation: fadeOut ease 4s;
+          animation: fadeOut ease 4s;
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#email {
+  color: #CF9A7B !important;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#number {
+  color: #E6AF83 !important;
+}
+
+#introText4 {
+  color: #ff94a6 !important;
 }
 /*# sourceMappingURL=Main.css.map */
