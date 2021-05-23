@@ -146,7 +146,7 @@ function accessibilityButtonCheck() {
     document.body.setAttribute('style', 'color:black !important');
     document.getElementById("pinkText").setAttribute('style', 'color:black !important');
 
-    if (check = true) {
+    if (check == true) {
       document.getElementById("email").setAttribute('style', 'color:blue !important');
       document.getElementById("number").setAttribute('style', 'color:blue !important');
     } else {
@@ -166,7 +166,7 @@ function accessibilityButtonCheck() {
     document.body.setAttribute('style', 'none');
     document.getElementById("pinkText").setAttribute('style', 'none');
     
-    if (check = true) {
+    if (check == true) {
       document.getElementById("email").setAttribute('style', 'none');
       document.getElementById("number").setAttribute('style', 'none');
     } else {
@@ -258,7 +258,6 @@ function onloadTextChange() {
     document.getElementById("introText4").remove();
 
     document.getElementById("contactMe").remove();
-
   }, 3700 );
 };
 
