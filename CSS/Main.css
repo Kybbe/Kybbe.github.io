@@ -306,6 +306,12 @@ input[type=checkbox]:focus {
   background-color: none;
 }
 
+#workExp > div:not(.collapse, .collapsing) {
+  background-image: radial-gradient(#e9685a10 20%, transparent 0), radial-gradient(#e9685a10 20%, transparent 0);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
 #workExp > div:not(.collapse, .collapsing):active {
   background-color: #00000046;
 }
