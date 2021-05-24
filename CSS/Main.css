@@ -303,7 +303,7 @@ input[type=checkbox]:focus {
 }
 
 #workExp > div {
-  background-color: none;
+  background-color: #ffffff00;
 }
 
 #workExp > div:not(.collapse, .collapsing) {
@@ -529,16 +529,16 @@ iframe {
     max-width: 600px;
   }
   #headline > h1:hover {
-    font-size: 2.7em;
+    font-size: 2.8em;
   }
   #headline > h2:hover {
-    font-size: 2.2em;
+    font-size: 2.3em;
   }
   #headline > h3:hover {
-    font-size: 2.1em;
+    font-size: 2.2em;
   }
   #headline > h4:hover {
-    font-size: 1.9em;
+    font-size: 2em;
   }
 }
 
@@ -655,5 +655,129 @@ iframe {
 
 #introText4 {
   color: #ff94a6 !important;
+}
+
+.container {
+  overflow: hidden;
+  z-index: 10;
+  margin-top: 50px;
+  position: relative;
+  height: 90px;
+  width: 300px;
+  background-color: #f17022;
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/*  BACKGROUND  */
+.Circle1, .Circle2, .Circle3 {
+  position: absolute;
+  border-radius: 50%;
+  -webkit-animation: enlarge;
+          animation: enlarge;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.Circle1 {
+  z-index: 13;
+  height: 80px;
+  width: 80px;
+  right: -20px;
+  top: -30px;
+  background-color: #fdb813;
+}
+
+.Circle2 {
+  z-index: 12;
+  height: 150px;
+  width: 150px;
+  right: -50px;
+  top: -70px;
+  background-color: rgba(246, 140, 31, 0.7);
+}
+
+.Circle3 {
+  z-index: 11;
+  height: 200px;
+  width: 200px;
+  right: -50px;
+  top: -100px;
+  background-color: rgba(241, 125, 45, 0.7);
+}
+
+/*  CONTENT  */
+.sun {
+  z-index: 14;
+  font-size: 15px !important;
+}
+
+.Condition {
+  z-index: 15;
+  position: absolute;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-size: 20px;
+  left: 20px;
+  top: 10px;
+}
+
+.Temp {
+  z-index: 15;
+  position: absolute;
+  font-family: "Roboto", sans-serif;
+  font-size: 35px;
+  font-weight: 400;
+  left: 20px;
+  bottom: 5px;
+}
+
+#F {
+  z-index: 15;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-size: 30px;
+}
+
+#Time {
+  z-index: 15;
+  position: absolute;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 200;
+  right: 20px;
+  top: 10px;
+}
+
+.locationIcon {
+  z-index: 15;
+  font-size: 10px !important;
+}
+
+.Location {
+  z-index: 15;
+  position: absolute;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 200;
+  right: 20px;
+  bottom: 5px;
+}
+
+@-webkit-keyframes enlarge {
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+@keyframes enlarge {
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
 }
 /*# sourceMappingURL=Main.css.map */

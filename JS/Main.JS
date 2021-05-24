@@ -4,6 +4,58 @@ var row = document.getElementById("backendContainer");
 var word = document.getElementById("backend");
 var barOpen = false;
 
+var today = new Date();
+
+if(today.getMinutes() <= "9"){
+  var time = today.getHours() + ":0" + today.getMinutes();
+} else {
+  var time = today.getHours() + ":" + today.getMinutes();
+}
+
+
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    alert("Geolocation is not supported by this browser.");
+  }
+}
+
+function showPosition(position) {
+  console.log("Latitude: " + position.coords.latitude +
+  " Longitude: " + position.coords.longitude);
+}
+
+getLocation();
+
+
+
+var weather;
+
+$.ajax({
+  url: "http://api.openweathermap.org/data/2.5/weather?q=Gothenburg&units=metric&appid={0a4ba3e35b0c860a7c2361fc8b79a523}",
+  type: "GET",
+  success: function (result) {
+    console.log(result);
+  },
+  error: function (error) {
+    console.log(error.responseText);
+  }
+})
+
+loadJSON('http://api.openweathermap.org/data/2.5/weather?q=Gothenburg&units=metric&appid={0a4ba3e35b0c860a7c2361fc8b79a523}', gotData);
+// api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={0a4ba3e35b0c860a7c2361fc8b79a523}
+
+function gotData(data) {
+  weather = data;
+  document.getElementById("Temp").innerHTML = weather.main.temp
+}
+
+
+
+
+
 function rand(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -157,6 +209,11 @@ function accessibilityButtonCheck() {
       document.getElementsByClassName("rgbText")[2].setAttribute('style', 'color:black !important');
       document.getElementsByClassName("rgbText")[3].setAttribute('style', 'color:black !important');
       
+      var collapses = document.querySelectorAll('div[data-toggle="collapse"]');
+      for(i = 0; i < collapses.length; i++) {
+        collapses[i].setAttribute('style', 'background-image:none !important');
+      }
+      
       openCloseAllDrawers();
     }
     accessibility = true;
@@ -176,6 +233,11 @@ function accessibilityButtonCheck() {
       document.getElementsByClassName("rgbText")[1].setAttribute('style', 'none');
       document.getElementsByClassName("rgbText")[2].setAttribute('style', 'none');
       document.getElementsByClassName("rgbText")[3].setAttribute('style', 'none');
+      
+      var collapses = document.querySelectorAll('div[data-toggle="collapse"]');
+      for(i = 0; i < collapses.length; i++) {
+        collapses[i].setAttribute('style', 'none');
+      }
       
       openCloseAllDrawers();
     }
@@ -281,3 +343,8 @@ function ifExists(id) {
   }
 }
 
+function weatherWidgetLiveUpdate() {
+  document.getElementById("Time").innerHTML = time;
+
+  setTimeout(weatherWidgetLiveUpdate, 10000);
+}
