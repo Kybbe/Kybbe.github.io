@@ -352,9 +352,8 @@ function getWeather(currentCity) {
           for( i= 0; i < weatherText.length - 1; i ++) {
             weatherText[i].style.color = "grey";
           }
-          alert("SOMETHING WENT WRONG WITH GETTING WEATHER, BUT STILL SUCCESS")
+          alert("GETTING WEATHER WORKS")
       }
-      //Wait for document to load / weatherWidgetLiveUpdate to run
     },
     error: function (error) {
       console.log(error.responseText);
