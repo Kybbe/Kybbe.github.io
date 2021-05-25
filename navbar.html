@@ -4,16 +4,18 @@
     </div>
 
     <div id="accessibilityBar" style="width: 0px; overflow-x: hidden;">
-        <h2><a href="#" id="navbarTopButton" onclick="topFunction()" onkeydown="checkIfTab(event, this.id)">Go to Top</a></h2>
-        <h2><a href="https://kybbe.github.io/JacobKlaren.me/">Main site</a></h2>
-        <h2><a href="https://kybbe.github.io/JacobKlaren.me/contactMe.html">Contact me</a></h2>
+        <h2 style="height: 70px !important; padding: 15px; border-bottom: 2px solid black;">Navigation Bar</h2>
+        <h2 style="padding-left: 20px;"><a href="#" id="navbarTopButton" onclick="topFunction()" onkeydown="checkIfTab(event, this.id)"><i class="far fa-arrow-alt-circle-up"></i> Go to Top</a></h2>
+        <div id="navbarLinks">
+            <h2><a href="https://kybbe.github.io/JacobKlaren.me/"><i class="fas fa-home"></i> Main site</a></h2>
+            <h2><a href="https://kybbe.github.io/JacobKlaren.me/contactMe.html"><i class="fas fa-phone"></i> Contact me</a></h2>
+        </div>
 
         <div id="navbarSettings">
             <h4 style="margin-top: 15px; margin-bottom: 20px;"><i class="fas fa-cogs"></i> Settings</h4>
 
             <p style="display: inline-block;">Turn on accessibility: </p>
             <input type="checkbox" class="toggle" id="accessibilityCheckbox" onclick="accessibilityButtonCheck()"  onkeydown="checkIfTab(event, this.id)">
-            <br>
             <br>
             <p>Open / Close all drawers:</p>
             <button onclick="openCloseAllDrawers()" id="drawerOpenClose">Open/Close</button>

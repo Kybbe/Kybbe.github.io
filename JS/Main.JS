@@ -122,7 +122,6 @@ function toggleAccessibilityBar() {
     btn.style.boxShadow = "none";
     btn.style.right = "10px";
     btn.style.top = "10px";
-    bar.style.padding = "20px";
     document.getElementById("navbarSettings").style.width = "100%";
     barOpen = true;
   } else if (barOpen == true) {
@@ -130,7 +129,6 @@ function toggleAccessibilityBar() {
     btn.style.boxShadow = "black 2px 2px 2px";
     btn.style.right = "20px";
     btn.style.top = "20px";
-    bar.style.padding = "0px";
     document.getElementById("navbarSettings").style.width = "0";
     barOpen = false;
   } else {
@@ -348,10 +346,21 @@ function getWeather(currentCity) {
           document.getElementById("Circle2").style.display = "none";
           document.getElementById("Circle3").style.display = "none";
           document.getElementsByClassName("container")[0].style.backgroundColor = "black";
+          
           weatherText = document.getElementsByClassName("content")[0].children;
           for( i= 0; i < weatherText.length - 1; i ++) {
             weatherText[i].style.color = "grey";
           }
+      } else if (result.weather[0].main == "Clouds") {
+          document.getElementById("Circle1").style.display = "none";
+          document.getElementById("Circle2").style.display = "none";
+          document.getElementById("Circle3").style.display = "none";
+          document.getElementsByClassName("container")[0].style.backgroundColor = "lightgrey";
+          document.getElementById("Cloud1").style.display = "block";
+          document.getElementById("Cloud2").style.display = "block";
+          document.getElementById("Cloud3").style.display = "block";
+          document.getElementById("Cloud4").style.display = "block";
+          document.getElementById("Cloud5").style.display = "block";
       }
     },
     error: function (error) {
@@ -364,12 +373,6 @@ function weatherWidgetLiveUpdate() {
   updateClock();
   getLocation();
 }
-
-
-
-
-
-
 
 
 var makeItRain = function() {
