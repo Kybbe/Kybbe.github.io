@@ -334,8 +334,9 @@ function getCity(position) {
 };
 
 function getWeather(currentCity) {
+  var customMadeUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + currentCity + "&units=metric&appid=0a4ba3e35b0c860a7c2361fc8b79a523"
   $.ajax({
-    url: "http://api.openweathermap.org/data/2.5/weather?q=" + currentCity + "&units=metric&appid=0a4ba3e35b0c860a7c2361fc8b79a523",
+    url: customMadeUrl,
     type: "GET",
     success: function (result) {
       var currentTemp = Math.round(result.main.temp);
