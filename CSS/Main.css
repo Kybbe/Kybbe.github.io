@@ -19,10 +19,11 @@ body * {
   text-align: center;
   -webkit-box-shadow: black 2px 2px 2px;
           box-shadow: black 2px 2px 2px;
+  background-color: #cfcfcf4b;
   position: fixed;
   right: 20px;
   top: 20px;
-  z-index: 6;
+  z-index: 600;
   -webkit-transition: right 0.5s, top 0.5s;
   transition: right 0.5s, top 0.5s;
   cursor: pointer;
@@ -40,7 +41,7 @@ body * {
   background-color: white;
   right: 0px;
   position: absolute;
-  z-index: 5;
+  z-index: 500;
   -webkit-transition: width 0.5s;
   transition: width 0.5s;
   -webkit-box-shadow: -8px 0 10px -6px black;
@@ -244,6 +245,7 @@ input[type=checkbox]:focus {
   width: 100vw;
   bottom: 20px;
   left: calc(50% - 21px);
+  z-index: 100;
 }
 
 @-webkit-keyframes slide {
@@ -275,7 +277,7 @@ input[type=checkbox]:focus {
   -webkit-box-shadow: 0px -10px 10px 3px rgba(0, 0, 0, 0.2);
   box-shadow: 0px -10px 10px 3px rgba(0, 0, 0, 0.2);
   position: relative;
-  z-index: 2;
+  z-index: 60;
   background-color: white;
 }
 
@@ -599,13 +601,13 @@ iframe {
   }
 }
 
-@media (min-height: 720px) {
+@media (min-height: 850px) {
   #headline {
     padding-top: 20vh;
   }
 }
 
-@media (min-width: 1000px) and (min-height: 500px) {
+@media (min-width: 780px) and (min-height: 500px) {
   #headline {
     padding-top: 20vh;
   }
@@ -668,12 +670,15 @@ iframe {
   z-index: 10;
   margin-top: 50px;
   position: relative;
-  height: 90px;
-  width: 300px;
+  height: unset;
+  width: 90% !important;
   background-color: #f17022;
   border-radius: 10px;
   -webkit-box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
+  max-width: 475px !important;
+  margin-left: 0px !important;
+  padding: 15px;
 }
 
 /*  BACKGROUND  */
@@ -718,49 +723,42 @@ iframe {
 /*  CONTENT  */
 #Condition {
   z-index: 15;
-  position: absolute;
+  position: relative;
   font-family: "Roboto", sans-serif;
   font-weight: 100;
   font-size: 20px;
-  left: 20px;
-  top: 10px;
+  left: 0px;
+  top: 0px;
 }
 
 #Temp {
   z-index: 15;
-  position: absolute;
+  position: relative;
   font-family: "Roboto", sans-serif;
   font-size: 35px;
   font-weight: 400;
-  left: 20px;
-  bottom: 5px;
-}
-
-#F {
-  z-index: 15;
-  font-family: "Roboto", sans-serif;
-  font-weight: 100;
-  font-size: 30px;
+  left: 0px;
+  bottom: 0px;
 }
 
 #Time {
   z-index: 15;
-  position: absolute;
+  position: relative;
   font-family: "Noto Sans", sans-serif;
   font-size: 30px;
   font-weight: 200;
-  right: 20px;
-  top: 10px;
+  right: 0px;
+  top: 0px;
 }
 
 #Location {
   z-index: 15;
-  position: absolute;
+  position: relative;
   font-family: "Noto Sans", sans-serif;
   font-size: 18px;
   font-weight: 200;
-  right: 20px;
-  bottom: 5px;
+  right: 0px;
+  bottom: 0px;
 }
 
 .fa-location-arrow {
@@ -869,6 +867,32 @@ body.back-row-toggle .rain.back-row {
   }
   100% {
     opacity: 0;
+  }
+}
+
+@media (min-width: 395px) {
+  .container {
+    height: 90px;
+  }
+  #Condition {
+    position: absolute;
+    left: 20px;
+    top: 10px;
+  }
+  #Temp {
+    position: absolute;
+    left: 20px;
+    bottom: 5px;
+  }
+  #Time {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+  }
+  #Location {
+    position: absolute;
+    right: 20px;
+    bottom: 5px;
   }
 }
 /*# sourceMappingURL=Main.css.map */
