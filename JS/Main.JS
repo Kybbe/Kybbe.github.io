@@ -348,9 +348,7 @@ function getWeather(currentCity) {
           document.getElementById("Circle3").style.display = "none";
           document.getElementsByClassName("container")[0].style.backgroundColor = "black";
           weatherText = document.getElementsByClassName("content")[0].children;
-          console.log(weatherText)
           for( i= 0; i < weatherText.length - 1; i ++) {
-            console.log(weatherText[i])
             weatherText[i].style.color = "grey";
           }
           alert("SOMETHING WENT WRONG WITH GETTING WEATHER, BUT STILL SUCCESS")
