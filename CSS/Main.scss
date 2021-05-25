@@ -21,8 +21,8 @@ html, body {
     scroll-behavior: smooth;
 }
 
-body {
-    color: $text-color !important;
+body *{
+    color: $text-color;
 }
 
 #accessibilityBtn {
@@ -672,7 +672,7 @@ iframe {
   
   /*  BACKGROUND  */
   
-  .Circle1, .Circle2, .Circle3 {
+  #Circle1, #Circle2, #Circle3 {
     position: absolute;
     border-radius: 50%;
     
@@ -681,7 +681,7 @@ iframe {
     animation-iteration-count: infinite;
   }
 
-  .Circle1 {
+  #Circle1 {
     z-index: 13;
     height: 80px;
     width: 80px;
@@ -690,7 +690,7 @@ iframe {
     background-color: rgba(253, 184, 19, 1);
   }
   
-  .Circle2 {
+  #Circle2 {
     z-index: 12;
     height: 150px;
     width: 150px;
@@ -699,7 +699,7 @@ iframe {
     background-color: rgba(246, 140, 31, 0.7);
   }
   
-  .Circle3 {
+  #Circle3 {
     z-index: 11;
     height: 200px;
     width: 200px;
@@ -709,12 +709,7 @@ iframe {
   }
   
   /*  CONTENT  */
-  
-  .sun {
-    z-index: 14;
-    font-size: 15px !important;
-  }
-  
+
   #Condition {
     z-index: 15;
     position: absolute;
@@ -761,10 +756,81 @@ iframe {
     right: 20px;
     bottom: 5px;
   }
+
+  .fa-location-arrow {
+      color:#6060ff !important;
+  }
   
   @keyframes enlarge {
     50% {
       transform: scale(1.2);
     }
   }
+  
+
+
+
+
+
+
+
+
+
+
+  
+  .rain.back-row {
+    display: none;
+    z-index: 1;
+    bottom: 60px;
+    opacity: 0.5;
+  }
+  
+  body.back-row-toggle .rain.back-row {
+    display: block;
+  }
+  
+  .drop {
+    position: absolute;
+    bottom: 100%;
+    width: 15px;
+    height: 120px;
+    pointer-events: none;
+    animation: drop 0.5s linear infinite;
+  }
+  
+  @keyframes drop {
+    0% {
+      transform: translateY(0vh);
+    }
+    75% {
+      transform: translateY(90vh);
+    }
+    100% {
+      transform: translateY(90vh);
+    }
+  }
+  
+  .stem {
+    width: 1px;
+    height: 60%;
+    margin-left: 7px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25));
+    animation: stem 0.5s linear infinite;
+  }
+  
+  @keyframes stem {
+    0% {
+      opacity: 1;
+    }
+    65% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
   

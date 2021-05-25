@@ -291,7 +291,7 @@ function ifExists(id) {
   }
 }
 
-
+//Whole weather widget updator
 
 function updateClock() {
   var today = new Date();
@@ -324,7 +324,7 @@ function getCity(position) {
     url: customMadeUrl,
     type: "GET",
     success: function (result) {
-      document.getElementById("Location").innerHTML = "<i class='fas fa-location-arrow'></i>" + result.address.city;
+      document.getElementById("Location").innerHTML = "<i class='fas fa-location-arrow'></i> " + result.address.city + ", " + result.address.country;
       getWeather(result.address.city)
     },
     error: function (error) {
@@ -340,7 +340,21 @@ function getWeather(currentCity) {
     type: "GET",
     success: function (result) {
       currentTemp = Math.round(result.main.temp);
-      document.getElementById("Temp").innerHTML = currentTemp += "°";
+      document.getElementById("Temp").innerHTML = currentTemp += "° C";
+      document.getElementById("Condition").innerHTML = result.weather[0].main + " / " + result.weather[0].description;
+      if(result.weather[0].main == "Rain"){
+          makeItRain();
+          document.getElementById("Circle1").style.display = "none";
+          document.getElementById("Circle2").style.display = "none";
+          document.getElementById("Circle3").style.display = "none";
+          document.getElementsByClassName("container")[0].style.backgroundColor = "black";
+          weatherText = document.getElementsByClassName("content")[0].children;
+          console.log(weatherText)
+          for( i= 0; i < weatherText.length - 1; i ++) {
+            console.log(weatherText[i])
+            weatherText[i].style.color = "grey";
+          }
+      }
       //Wait for document to load / weatherWidgetLiveUpdate to run
     },
     error: function (error) {
@@ -352,4 +366,34 @@ function getWeather(currentCity) {
 function weatherWidgetLiveUpdate() {
   updateClock();
   getLocation();
+}
+
+
+
+
+
+
+
+
+var makeItRain = function() {
+
+  var increment = 0;
+  var drops = "";
+  var backDrops = "";
+
+  while (increment < 100) {
+    //couple random numbers to use for various randomizations
+    //random number between 98 and 1
+    var randoHundo = (Math.floor(Math.random() * (98 - 1 + 1) + 1));
+    //random number between 5 and 2
+    var randoFiver = (Math.floor(Math.random() * (5 - 2 + 1) + 2));
+    //increment
+    increment += randoFiver;
+    //add in a new raindrop with various randomizations to certain CSS properties
+    drops += '<div class="drop" style="left: ' + increment + '%; bottom: ' + (randoFiver + randoFiver - 1 + 100) + '%; animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"><div class="stem" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div><div class="splat" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div></div>';
+    backDrops += '<div class="drop" style="right: ' + increment + '%; bottom: ' + (randoFiver + randoFiver - 1 + 100) + '%; animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"><div class="stem" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div><div class="splat" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div></div>';
+  }
+
+  $('.container').append(drops);
+  $('.background').append(backDrops);
 }
