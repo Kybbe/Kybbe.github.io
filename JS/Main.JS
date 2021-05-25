@@ -4,58 +4,6 @@ var row = document.getElementById("backendContainer");
 var word = document.getElementById("backend");
 var barOpen = false;
 
-var today = new Date();
-
-if(today.getMinutes() <= "9"){
-  var time = today.getHours() + ":0" + today.getMinutes();
-} else {
-  var time = today.getHours() + ":" + today.getMinutes();
-}
-
-
-
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
-    alert("Geolocation is not supported by this browser.");
-  }
-}
-
-function showPosition(position) {
-  console.log("Latitude: " + position.coords.latitude +
-  " Longitude: " + position.coords.longitude);
-}
-
-getLocation();
-
-
-
-var weather;
-
-$.ajax({
-  url: "http://api.openweathermap.org/data/2.5/weather?q=Gothenburg&units=metric&appid={0a4ba3e35b0c860a7c2361fc8b79a523}",
-  type: "GET",
-  success: function (result) {
-    console.log(result);
-  },
-  error: function (error) {
-    console.log(error.responseText);
-  }
-})
-
-loadJSON('http://api.openweathermap.org/data/2.5/weather?q=Gothenburg&units=metric&appid={0a4ba3e35b0c860a7c2361fc8b79a523}', gotData);
-// api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={0a4ba3e35b0c860a7c2361fc8b79a523}
-
-function gotData(data) {
-  weather = data;
-  document.getElementById("Temp").innerHTML = weather.main.temp
-}
-
-
-
-
-
 function rand(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -343,8 +291,65 @@ function ifExists(id) {
   }
 }
 
-function weatherWidgetLiveUpdate() {
-  document.getElementById("Time").innerHTML = time;
 
-  setTimeout(weatherWidgetLiveUpdate, 10000);
+
+function updateClock() {
+  var today = new Date();
+  
+  if(today.getMinutes() <= "9"){
+    var time = today.getHours() + ":0" + today.getMinutes();
+  } else {
+    var time = today.getHours() + ":" + today.getMinutes();
+  }
+
+  document.getElementById("Time").innerHTML = time;
+  
+  setTimeout(updateClock, 10000);
+}
+
+//get location
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(getCity);
+  } else {
+    alert("Geolocation is not supported by this browser.");
+  }
+}
+
+function getCity(position) {
+  lat = position.coords.latitude;
+  lon = position.coords.longitude;
+  var customMadeUrl = "https://eu1.locationiq.com/v1/reverse.php?key=pk.5c400e1d5b2609660e8667515fa97e69&lat=" + lat + "&lon=" + lon + "&format=json&accept-language=en;q=0.7"
+  $.ajax({
+    url: customMadeUrl,
+    type: "GET",
+    success: function (result) {
+      document.getElementById("Location").innerHTML = "<i class='fas fa-location-arrow'></i>" + result.address.city;
+      getWeather(result.address.city)
+    },
+    error: function (error) {
+      console.log(error.responseText);
+    }
+  })
+};
+
+var currentTemp;
+function getWeather(currentCity) {
+  $.ajax({
+    url: "http://api.openweathermap.org/data/2.5/weather?q=" + currentCity + "&units=metric&appid=0a4ba3e35b0c860a7c2361fc8b79a523",
+    type: "GET",
+    success: function (result) {
+      currentTemp = Math.round(result.main.temp);
+      document.getElementById("Temp").innerHTML = currentTemp += "°";
+      //Wait for document to load / weatherWidgetLiveUpdate to run
+    },
+    error: function (error) {
+      console.log(error.responseText);
+    }
+  })
+}
+
+function weatherWidgetLiveUpdate() {
+  updateClock();
+  getLocation();
 }

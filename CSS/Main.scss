@@ -596,7 +596,13 @@ iframe {
     }
 }
 
-@media (min-height: 820px) {
+@media (min-height: 720px) {
+    #headline {
+        padding-top: 20vh;
+    }
+}
+
+@media (min-width: 1000px) and (min-height: 500px) {
     #headline {
         padding-top: 20vh;
     }
@@ -709,7 +715,7 @@ iframe {
     font-size: 15px !important;
   }
   
-  .Condition {
+  #Condition {
     z-index: 15;
     position: absolute;
     font-family: "Roboto", sans-serif;
@@ -719,7 +725,7 @@ iframe {
     top: 10px;
   }
   
-  .Temp {
+  #Temp {
     z-index: 15;
     position: absolute;
     font-family: "Roboto", sans-serif;
@@ -746,12 +752,7 @@ iframe {
     top: 10px;
   }
   
-  .locationIcon {
-    z-index: 15;
-    font-size: 10px !important;
-  }
-  
-  .Location {
+  #Location {
     z-index: 15;
     position: absolute;
     font-family: "Noto Sans", sans-serif;
