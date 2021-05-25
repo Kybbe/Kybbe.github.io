@@ -358,6 +358,7 @@ function getWeather(currentCity) {
     error: function (error) {
       console.log(error.responseText);
       alert("SOMETHING WENT WRONG WITH GETTING WEATHER")
+      alert(customMadeUrl)
     }
   })
 }
