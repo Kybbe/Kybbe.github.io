@@ -333,13 +333,12 @@ function getCity(position) {
   })
 };
 
-var currentTemp;
 function getWeather(currentCity) {
   $.ajax({
     url: "http://api.openweathermap.org/data/2.5/weather?q=" + currentCity + "&units=metric&appid=0a4ba3e35b0c860a7c2361fc8b79a523",
     type: "GET",
     success: function (result) {
-      currentTemp = Math.round(result.main.temp);
+      var currentTemp = Math.round(result.main.temp);
       document.getElementById("Temp").innerHTML = currentTemp += "° C";
       document.getElementById("Condition").innerHTML = result.weather[0].main + " / " + result.weather[0].description;
       if(result.weather[0].main == "Rain"){
@@ -366,6 +365,7 @@ function getWeather(currentCity) {
 function weatherWidgetLiveUpdate() {
   updateClock();
   getLocation();
+  alert("oof")
 }
 
 
