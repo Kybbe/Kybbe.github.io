@@ -340,7 +340,7 @@ function getWeather(currentCity) {
     type: "GET",
     success: function (result) {
       var currentTemp = Math.round(result.main.temp);
-      document.getElementById("Temp").innerHTML = currentTemp += "° C";
+      document.getElementById("Temp").innerHTML = currentTemp += "°";
       document.getElementById("Condition").innerHTML = result.weather[0].main + " / " + result.weather[0].description;
       if(result.weather[0].main == "Rain"){
           makeItRain();
