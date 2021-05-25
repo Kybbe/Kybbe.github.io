@@ -353,11 +353,13 @@ function getWeather(currentCity) {
             console.log(weatherText[i])
             weatherText[i].style.color = "grey";
           }
+          alert("SOMETHING WENT WRONG WITH GETTING WEATHER, BUT STILL SUCCESS")
       }
       //Wait for document to load / weatherWidgetLiveUpdate to run
     },
     error: function (error) {
       console.log(error.responseText);
+      alert("SOMETHING WENT WRONG WITH GETTING WEATHER")
     }
   })
 }
@@ -365,7 +367,6 @@ function getWeather(currentCity) {
 function weatherWidgetLiveUpdate() {
   updateClock();
   getLocation();
-  alert("oof")
 }
 
 
