@@ -286,10 +286,15 @@ function ifExists(id) {
     return true;
   } else{
     return false;
-  }
+  } 
 }
 
-//Whole weather widget updator
+function getDate() {
+  var today = new Date();
+
+
+}
+
 
 function updateClock() {
   var today = new Date();
@@ -339,15 +344,16 @@ function getWeather(currentCity) {
     success: function (result) {
       var currentTemp = Math.round(result.main.temp);
       document.getElementById("Temp").innerHTML = currentTemp += "°";
-      document.getElementById("Condition").innerHTML = result.weather[0].main + " / " + result.weather[0].description;
+      document.getElementById("Condition").innerHTML = "<i class='fas fa-sun'></i>" + result.weather[0].main + " / " + result.weather[0].description;
       if(result.weather[0].main == "Rain"){
           makeItRain();
           document.getElementById("Circle1").style.display = "none";
           document.getElementById("Circle2").style.display = "none";
           document.getElementById("Circle3").style.display = "none";
-          document.getElementsByClassName("container")[0].style.backgroundColor = "black";
+          document.getElementsByClassName("weatherContainer")[0].style.backgroundColor = "black";
+          document.getElementById("Condition").innerHTML = "<i class='fas fa-cloud-showers-heavy'></i> " + result.weather[0].main + " / " + result.weather[0].description;
           
-          weatherText = document.getElementsByClassName("content")[0].children;
+          weatherText = document.getElementsByClassName("weatherContent")[0].children;
           for( i= 0; i < weatherText.length - 1; i ++) {
             weatherText[i].style.color = "grey";
           }
@@ -355,12 +361,13 @@ function getWeather(currentCity) {
           document.getElementById("Circle1").style.display = "none";
           document.getElementById("Circle2").style.display = "none";
           document.getElementById("Circle3").style.display = "none";
-          document.getElementsByClassName("container")[0].style.backgroundColor = "lightgrey";
+          document.getElementsByClassName("weatherContainer")[0].style.backgroundColor = "lightgrey";
           document.getElementById("Cloud1").style.display = "block";
           document.getElementById("Cloud2").style.display = "block";
           document.getElementById("Cloud3").style.display = "block";
           document.getElementById("Cloud4").style.display = "block";
           document.getElementById("Cloud5").style.display = "block";
+          document.getElementById("Condition").innerHTML = "<i class='fas fa-cloud'></i> " + result.weather[0].main + " / " + result.weather[0].description;
       }
     },
     error: function (error) {
@@ -394,6 +401,6 @@ var makeItRain = function() {
     backDrops += '<div class="drop" style="right: ' + increment + '%; bottom: ' + (randoFiver + randoFiver - 1 + 100) + '%; animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"><div class="stem" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div><div class="splat" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div></div>';
   }
 
-  $('.container').append(drops);
-  $('.background').append(backDrops);
+  $('.weatherContainer').append(drops);
+  $('.weatherBackground').append(backDrops);
 }
