@@ -305,6 +305,13 @@ function getDate() {
   var d= new Date();
 
   document.getElementById("week").innerHTML = "Week " + d.getWeek();
+
+  var today = new Date();
+
+  const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"];
+
+  document.getElementById("date").innerHTML = "Todays date is " + today.getDate() + " " + monthNames[today.getMonth()] + " - " + today.getFullYear();
 }
 
 function updateClock() {
@@ -316,7 +323,7 @@ function updateClock() {
     var time = today.getHours() + ":" + today.getMinutes();
   }
 
-  document.getElementById("Time").innerHTML = time;
+  document.getElementById("time").innerHTML = time;
   
   setTimeout(updateClock, 10000);
 }
@@ -334,13 +341,17 @@ function getWeather(position) {
   lat = position.coords.latitude;
   lon = position.coords.longitude;
   var customMadeUrl = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=metric&appid=0a4ba3e35b0c860a7c2361fc8b79a523"
-  console.log(customMadeUrl)
   $.ajax({
     url: customMadeUrl,
     type: "GET",
     success: function (result) {
       var currentTemp = Math.round(result.main.temp);
+      var currentMaxTemp = Math.round(result.main.temp_max).toString();
+      var currentMinTemp = Math.round(result.main.temp_min).toString();
+      console.log(currentMinTemp)
+      console.log(typeof(currentMinTemp))
       document.getElementById("Temp").innerHTML = currentTemp += "°";
+      document.getElementById("highLow").innerhtml = "<i class='fas fa-angle-up'></i>" + currentMaxTemp + "° " + "<i class='fas fa-angle-down'></i>" + currentMinTemp + "°";
       document.getElementById("Condition").innerHTML = "<i class='fas fa-sun'></i>" + result.weather[0].main + " / " + result.weather[0].description;
       document.getElementById("Location").innerHTML = "<i class='fas fa-location-arrow'></i> " + result.name + ", " + result.sys.country;
       if(result.weather[0].main == "Rain"){
@@ -374,9 +385,9 @@ function getWeather(position) {
   })
 }
 
-function weatherWidgetLiveUpdate() {
+function dateWidgetLiveUpdate() {
   updateClock();
-  getLocation();
+  getDate();
 }
 
 
