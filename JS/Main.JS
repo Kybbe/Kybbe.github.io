@@ -348,9 +348,8 @@ function getWeather(position) {
       var currentTemp = Math.round(result.main.temp);
       var currentMaxTemp = Math.round(result.main.temp_max).toString();
       var currentMinTemp = Math.round(result.main.temp_min).toString();
-      console.log(currentMinTemp)
-      console.log(typeof(currentMinTemp))
       document.getElementById("Temp").innerHTML = currentTemp += "°";
+      
       document.getElementById("highLow").innerhtml = "<i class='fas fa-angle-up'></i>" + currentMaxTemp + "° " + "<i class='fas fa-angle-down'></i>" + currentMinTemp + "°";
       document.getElementById("Condition").innerHTML = "<i class='fas fa-sun'></i>" + result.weather[0].main + " / " + result.weather[0].description;
       document.getElementById("Location").innerHTML = "<i class='fas fa-location-arrow'></i> " + result.name + ", " + result.sys.country;
