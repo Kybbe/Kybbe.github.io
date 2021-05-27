@@ -41,6 +41,32 @@
     <!-- Font Nobile Google -->
         <link href="https://fonts.googleapis.com/css2?family=Nobile&display=swap" rel="stylesheet">
 
+
+        <!-- Since I don't want this styling on ContactME site (beacuse it should'nt move when users are trying to click on stuff.) -->
+        <style>
+            @media (min-width: 725px) {
+                #headline > *:not(#contactMe) {
+                    transition: font-size 0.5s;
+                }
+                
+                #headline > h1:hover {
+                    font-size: 2.7em;
+                }
+                
+                #headline > h2:hover {
+                    font-size: 2.2em;
+                }
+                
+                #headline > h3:hover {
+                    font-size: 2.1em;
+                }
+                
+                #headline > h4:hover {
+                    font-size: 1.9em;
+                }
+            }
+        </style>
+
 </head>
 
 <body>
@@ -56,6 +82,7 @@
                 <h4 id="pinkText2">And people of course! :) </h4>
                 <a type="button" onclick="" onkeydown="checkIfTab(event, this.id)" href="javascript:delay('contactMe.html')" class="button" id="contactMe">Contact me!</a> 
                 <div data-include="weatherWidget" style="max-width: 1000px !important;"></div>
+                <div data-include="dateWidget"></div>
             </div>
             <div class="col-12 col-md-5" id="picCol">
                 <img src="./Pictures/JacobNoBackground.png" alt="A picture of Jacob Klarén, Me!"> 

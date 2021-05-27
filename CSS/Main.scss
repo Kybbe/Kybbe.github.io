@@ -787,30 +787,6 @@ iframe {
     }
 }
 
-@media (min-width: 725px) {
-    #headline > *:not(#contactMe) {
-        transition: font-size 0.5s;
-        max-width: 600px;
-    }
-    
-    #headline > h1:hover {
-        font-size: 2.7em;
-    }
-    
-    #headline > h2:hover {
-        font-size: 2.2em;
-    }
-    
-    #headline > h3:hover {
-        font-size: 2.1em;
-    }
-    
-    #headline > h4:hover {
-        font-size: 1.9em;
-    }
-    
-}
-
 @media (min-width: 768px) {
     #picCol img {
         width: 100%; 
@@ -921,14 +897,23 @@ iframe {
 
 #email {
     color: $accent-color3 !important;
-    text-decoration: underline;
     cursor: pointer;
 }
 
-#number {
+#email:hover {
+    color: #ce7d4e !important;
+    text-decoration: underline;
+}
+
+#github {
     color: $accent-color2 !important;
+}
+
+#github:hover {
+    color: #c77c3f !important;
 }
 
 #introText4 {
     color: $headline-marker !important;
 }
+

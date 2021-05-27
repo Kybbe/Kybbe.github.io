@@ -260,8 +260,8 @@ function onloadTextChange() {
     document.getElementById("introText2").innerHTML += "<span id='email'>Jacob.klaren@me.com</span>,";
     document.getElementById("email").onclick = function() { copy('jacob.klaren@me.com') };
 
-    document.getElementById("introText3").innerHTML = "And my Phonenumber is <a id='number'>123-456-7890</a> [sorry too private ): ]";
-    document.getElementById("number").href ='tel:123-456-7890';
+    document.getElementById("introText3").innerHTML = "All my projects go on GitHub <a id='github'>Kybbe</a>.";
+    document.getElementById("github").href ='https://github.com/Kybbe';
 
     document.getElementById("introText4").remove();
 
@@ -290,11 +290,22 @@ function ifExists(id) {
 }
 
 function getDate() {
-  var today = new Date();
+  Date.prototype.getWeek = function () {
+    var target  = new Date(this.valueOf());
+    var dayNr   = (this.getDay() + 6) % 7;
+    target.setDate(target.getDate() - dayNr + 3);
+    var firstThursday = target.valueOf();
+    target.setMonth(0, 1);
+    if (target.getDay() != 4) {
+        target.setMonth(0, 1 + ((4 - target.getDay()) + 7) % 7);
+    }
+    return 1 + Math.ceil((firstThursday - target) / 604800000);
+  }
+  
+  var d= new Date();
 
-
+  document.getElementById("week").innerHTML = "Week " + d.getWeek();
 }
-
 
 function updateClock() {
   var today = new Date();
@@ -313,31 +324,17 @@ function updateClock() {
 //get location
 function getLocation() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(getCity);
+    navigator.geolocation.getCurrentPosition(getWeather);
   } else {
     alert("Geolocation is not supported by this browser.");
   }
 }
 
-function getCity(position) {
+function getWeather(position) {
   lat = position.coords.latitude;
   lon = position.coords.longitude;
-  var customMadeUrl = "https://eu1.locationiq.com/v1/reverse.php?key=pk.5c400e1d5b2609660e8667515fa97e69&lat=" + lat + "&lon=" + lon + "&format=json&accept-language=en;q=0.7"
-  $.ajax({
-    url: customMadeUrl,
-    type: "GET",
-    success: function (result) {
-      document.getElementById("Location").innerHTML = "<i class='fas fa-location-arrow'></i> " + result.address.city + ", " + result.address.country;
-      getWeather(result.address.city)
-    },
-    error: function (error) {
-      console.log(error.responseText);
-    }
-  })
-};
-
-function getWeather(currentCity) {
-  var customMadeUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + currentCity + "&units=metric&appid=0a4ba3e35b0c860a7c2361fc8b79a523"
+  var customMadeUrl = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=metric&appid=0a4ba3e35b0c860a7c2361fc8b79a523"
+  console.log(customMadeUrl)
   $.ajax({
     url: customMadeUrl,
     type: "GET",
@@ -345,6 +342,7 @@ function getWeather(currentCity) {
       var currentTemp = Math.round(result.main.temp);
       document.getElementById("Temp").innerHTML = currentTemp += "°";
       document.getElementById("Condition").innerHTML = "<i class='fas fa-sun'></i>" + result.weather[0].main + " / " + result.weather[0].description;
+      document.getElementById("Location").innerHTML = "<i class='fas fa-location-arrow'></i> " + result.name + ", " + result.sys.country;
       if(result.weather[0].main == "Rain"){
           makeItRain();
           document.getElementById("Circle1").style.display = "none";
