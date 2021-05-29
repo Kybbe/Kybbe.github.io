@@ -25,6 +25,22 @@ body *{
     color: $text-color;
 }
 
+::-webkit-scrollbar {
+    width: 14px;
+  }
+  
+::-webkit-scrollbar-track {
+background: #c5c5c5;
+}
+
+::-webkit-scrollbar-thumb {
+background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+background: #555;
+}
+
 #accessibilityBtn {
     width: 50px; 
     height: 50px; 
@@ -77,12 +93,12 @@ input[type=checkbox] {
     -webkit-tap-highlight-color: transparent;
     cursor: pointer;
     margin-left: 5px;
-  }
-  input[type=checkbox]:focus {
+}
+input[type=checkbox]:focus {
     outline: 0;
-  }
-  
-  .toggle {
+}
+
+.toggle {
     height: 24px;
     width: 40px;
     border-radius: 12px;
@@ -92,8 +108,8 @@ input[type=checkbox] {
     border: 2px solid #474755;
     background: linear-gradient(180deg, #2D2F39 0%, #1F2027 100%);
     transition: all 0.2s ease;
-  }
-  .toggle:after {
+}
+.toggle:after {
     content: "";
     position: absolute;
     top: 2px;
@@ -104,13 +120,13 @@ input[type=checkbox] {
     background: white;
     box-shadow: 0 1px 2px rgba(44, 44, 44, 0.2);
     transition: all 0.2s cubic-bezier(0.5, 0.1, 0.75, 1.35);
-  }
-  .toggle:checked {
+}
+.toggle:checked {
     border-color: $accent-color;
-  }
-  .toggle:checked:after {
+}
+.toggle:checked:after {
     transform: translatex(16px);
-  }
+}
 
 #drawerOpenClose {
     border: $accent-color 1px solid;
@@ -266,13 +282,11 @@ input[type=checkbox] {
     padding: 15px;
 }
 
-.weatherContainer {
-    background-color: #f17022;
+.weatherContainer{
+    background: #87CEEB;
+    background: linear-gradient(to bottom, #87CEEB 0%, #78BFDC 100%);
 }
 
-.dateContainer h1 {
-    font-size: 20px !important;
-}
     
 #Circle1, #Circle2, #Circle3 {
     position: absolute;
@@ -305,8 +319,8 @@ input[type=checkbox] {
     z-index: 11;
     height: 200px;
     width: 200px;
-    right: -50px;
-    top: -100px;
+    right: -70px;
+    top: -90px;
     background-color: rgba(241, 125, 45, 0.7);
 }
 
@@ -365,9 +379,13 @@ input[type=checkbox] {
     background-color: rgb(165, 165, 165);
 }
 
+.drop {
+    color: white !important;
+}
+
 /*  CONTENT  */
 
-#Condition {
+#Condition, #date {
     z-index: 15;
     position: relative;
     font-family: "Roboto", sans-serif;
@@ -378,7 +396,7 @@ input[type=checkbox] {
     margin-bottom: 0px;
   }
 
-#Temp {
+#Temp, #week {
     z-index: 15;
     position: relative;
     font-family: "Roboto", sans-serif;
@@ -389,7 +407,7 @@ input[type=checkbox] {
     margin-bottom: 0px;
 }
 
-#highLow {
+#highLow, #time {
     z-index: 15;
     position: relative;
     font-family: "Noto Sans", sans-serif;
@@ -425,7 +443,7 @@ input[type=checkbox] {
 
 @keyframes enlarge {
     50% {
-        transform: scale(1.4);
+        transform: scale(1.3);
     }
 }
 
@@ -529,20 +547,20 @@ body.back-row-toggle .rain.back-row {
     background-color: white;
 }
 
-.collapse .col-12, .collapse .card, .collapsing .col-12, .collapsing .card {
+.collapse > .collapse .col-12, .collapse .card, .collapse > .collapsing .col-12, .collapsing .card {
     padding-top: 20px !important;
     padding-bottom: 20px !important;
 }
 
-.collapse .row, .col-12 > .card, .collapsing .row {
+.collapse > .collapse .row, .col-12 > .card, .collapse > .collapsing .row {
     padding: 0px !important;
 }
 
-#workExp .row, .collapse, .collapsing {
+#workExp .row, #workExp .row .row, .collapse, .collapsing {
     position: relative;
 }
 
-#workExp .row:before, .collapse:before, .collapsing:before {
+#workExp .row:before, #workExp .row .row:before, .collapse:before, .collapsing:before {
     content : "";
     position: absolute;
     left    : 4%;
@@ -552,11 +570,11 @@ body.back-row-toggle .rain.back-row {
     border-bottom:2px solid $accent-color;
 }
 
-#workExp > div {
+#workExp > div, #workExp > div > div {
     background-color: #ffffff00;
 }
 
-#workExp > div:not(.collapse, .collapsing) {
+#workExp > div:not(.collapse, .collapsing), #workExp > div > div:not(.collapse, .collapsing) {
         background-image:
           radial-gradient(#e9685a10 20%, transparent 0), 
           radial-gradient(#e9685a10 20%, transparent 0);
@@ -564,7 +582,7 @@ body.back-row-toggle .rain.back-row {
         background-position: 0 0, 15px 15px;
 }
 
-#workExp > div:not(.collapse, .collapsing):active {
+#workExp > div:not(.collapse, .collapsing):active, #workExp > .collapse > .row:active {
     background-color: #00000046;
 }
 
@@ -577,22 +595,35 @@ body.back-row-toggle .rain.back-row {
     margin: 0px !important;
 }
 
-#workExp > .row {
+#workExp > .row, #workExp > .collapse > .row, #workExp > .collapsing > .row {
     cursor: pointer;
-}
-
-#workExp div div {
     padding: 40px 4%;
 }
 
-#workExp .rgbText{
+#workExp .rgbText, #workExp > div .rgbText{
 	color: $text-color;
 }
 
-#workExp h2{
+#workExp > .collapse .rgbText, #workExp > .collapsing .rgbText {
+    color: darken($text-color, 10%) !important;
+}
+
+#workExp > .collapse, #workExp > .collapsing {
+    margin: 0px 4%; 
+}
+
+#workExp h2, #workExp > div h2{
     font-size: 2.5rem;
     margin-bottom: 0px;
     padding-bottom: 4px;
+}
+
+#workExp > .collapse > .row, #workExp > .collapsing > .row {
+    background-color: #0000000e;
+}
+
+#workExp > .collapse > .row:before , #workExp > .collapsing > .row:before {
+    border-bottom: darken($accent-color, 10%) 2px solid;
 }
 
 @-webkit-keyframes hue {
@@ -636,13 +667,16 @@ body.back-row-toggle .rain.back-row {
 }
 
 iframe {
-    border-radius: 10px;
-    height: 650px;
-    width: 100%;
+    border-radius: .25rem;
+    height: calc(100% - 37px);
+    width: calc(100% - 2px);
+    border: none;
+    border-top: 1px solid black;
+    min-height: 535px;
 }
 
 .iframeHolder {
-    padding: 10px !important;
+    padding: 20px 0px 0px 0px !important;
 }
 
 #collapseSoftwareDesign .col-12 h4 {
@@ -721,42 +755,35 @@ iframe {
 }
 
 #PB1:active {
-    background-color: rgb(116, 0, 0);
+    background-color: darken(red, 30%);
 }
 
 #PB2:active {
-    background-color: rgb(139, 139, 0);
+    background-color: darken(yellow, 30%);
 }
 
 #PB3:active {
-    background-color: rgb(0, 71, 0);
-}
-
-.hide-mobile {
-    display: none !important;
-}
-.show-mobile {
-    display: inline !important;
+    background-color: darken(green, 30%);
 }
 
 @media (min-width: 395px) {
-    .weatherContainer {
+    .weatherContainer, .dateContainer {
         height: 90px;
     }
 
-    #Condition{
+    #Condition, #date{
         position: absolute;
         left: 20px;
         top: 10px;
     }
 
-    #Temp{
+    #Temp, #week {
         position: absolute;
         left: 20px;
         bottom: 5px;
     }
 
-    #highLow{
+    #highLow, #time{
         position: absolute;
         right: 20px;
         top: 10px;
@@ -838,26 +865,6 @@ iframe {
     }
 }
 
-@media (min-width: 992px) {
-    .hide-mobile {
-        display: inline !important;
-    }
-    .show-mobile {
-        display: none !important;
-    }
-    
-    iframe {
-        border-radius: 10px;
-        height: 1000px;
-        width: 100%;
-    }
-    
-    .iframeHolder {
-        padding-left: 40px !important;
-        padding-right: 40px !important;
-    }
-}
-
 @media (min-width: 2000px) {
     #picCol img {
         padding-top: 0px;
@@ -917,7 +924,7 @@ iframe {
 }
 
 #email:hover {
-    color: #ce7d4e !important;
+    color: darken($accent-color3, 20%) !important;
     text-decoration: underline;
 }
 
@@ -926,10 +933,80 @@ iframe {
 }
 
 #github:hover {
-    color: #c77c3f !important;
+    color: darken($accent-color2, 20%) !important;
 }
 
 #introText4 {
     color: $headline-marker !important;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#workExp2 {
+    background-color: $plainBG-color;
+    margin-bottom: 30px;
+    -webkit-box-shadow: 0px -10px 10px 3px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px -10px 10px 3px rgba(0,0,0,0.2);
+    box-shadow: 0px -10px 10px 3px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 60;
+}
+
+#workExp2 > h1 {
+    margin-bottom: 0px;
+    padding-top: 10px;
+}
+
+#workExp2 > div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#workExp2 .card {
+    background-color: white !important;
+    border: 1px solid darkgray !important; 
+    box-shadow: 5px 5px 5px grey;
+    margin-top: 30px;
+}
+
+.mediumCard {
+    width: 90%;
+}
+
+#workExp2 .card h3 {
+    margin-bottom: 4px;
+}
+
+#smallCardButton {
+    position: absolute;
+    bottom: 20px;
+    width: calc(100% - 40px);
+}
+
+.card-text {
+    margin-bottom: 46px;
+}
+
+@media (min-width: 790px) {
+    .mediumCard {
+        width: 45%;
+    }
+}
+
+@media (min-width: 1300px) {
+    .mediumCard {
+        width: 30%;
+    }
+}

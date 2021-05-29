@@ -311,7 +311,7 @@ function getDate() {
   const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"];
 
-  document.getElementById("date").innerHTML = "Todays date is " + today.getDate() + " " + monthNames[today.getMonth()] + " - " + today.getFullYear();
+  document.getElementById("date").innerHTML = today.getDate() + " " + monthNames[today.getMonth()] + " - " + today.getFullYear();
 }
 
 function updateClock() {
@@ -353,7 +353,7 @@ function getWeather(position) {
       var highLow = document.getElementById("highLow");
       highLow.innerHTML = "<i class='fas fa-angle-up'></i>" + currentMaxTemp + "° " + "<i class='fas fa-angle-down'></i>" + currentMinTemp + "°";
 
-      document.getElementById("highLow").innerHTML = "<i class='fas fa-angle-up'></i>" + currentMaxTemp + "° " + "<i class='fas fa-angle-down'></i>" + currentMinTemp + "°";
+      document.getElementById("highLow").innerHTML = "<i class='fas fa-angle-up'></i>" + currentMaxTemp + "° " + "<i class='fas fa-angle-down'></i> " + currentMinTemp + "°";
       document.getElementById("Condition").innerHTML = "<i class='fas fa-sun'></i>" + result.weather[0].main;
       document.getElementById("Location").innerHTML = "<i class='fas fa-location-arrow'></i> " + result.name + ", " + result.sys.country;
       if(result.weather[0].main == "Rain"){
@@ -362,6 +362,7 @@ function getWeather(position) {
           document.getElementById("Circle2").style.display = "none";
           document.getElementById("Circle3").style.display = "none";
           document.getElementsByClassName("weatherContainer")[0].style.backgroundColor = "black";
+          document.getElementsByClassName("weatherContainer")[0].style.background = "black";
           document.getElementById("Condition").innerHTML = "<i class='fas fa-cloud-showers-heavy'></i> " + result.weather[0].main;
           
           weatherText = document.getElementsByClassName("weatherContent")[0].children;
