@@ -699,30 +699,21 @@ body.back-row-toggle .rain.back-row {
   }
 }
 
-#gamestop {
+#gamestop, #gamestopSpan {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-#gamestop h2 {
+#gamestop {
   display: inline-block;
-}
-
-#gamestop #game {
   color: black;
 }
 
-#gamestop span {
-  font-size: 2.5rem;
+#gamestopSpan {
+  font-size: 1.75rem;
   margin-bottom: .5rem;
   font-weight: 500;
   line-height: 1.2;
   margin-top: 0;
-}
-
-#netonnet h2 span {
-  padding: 2px;
-  margin: 5px;
-  color: white;
 }
 
 #netonnet svg {
