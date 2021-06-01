@@ -384,10 +384,6 @@ input[type=checkbox]:focus {
   background-color: #a5a5a5;
 }
 
-.drop {
-  color: white !important;
-}
-
 /*  CONTENT  */
 #Condition, #date {
   z-index: 15;
@@ -481,11 +477,8 @@ input[type=checkbox]:focus {
   opacity: 0.5;
 }
 
-body.back-row-toggle .rain.back-row {
-  display: block;
-}
-
 .drop {
+  color: white !important;
   position: absolute;
   bottom: 100%;
   width: 15px;
@@ -718,7 +711,7 @@ body.back-row-toggle .rain.back-row {
 
 #netonnet svg {
   margin-left: -6px;
-  margin-right: -8px;
+  margin-right: -7px;
 }
 
 iframe {
