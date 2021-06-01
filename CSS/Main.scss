@@ -530,6 +530,51 @@ input[type=checkbox]:focus {
     }
 }
 
+#workExp {
+    background-color: $plainBG-color;
+    margin-bottom: 30px;
+    -webkit-box-shadow: 0px -10px 10px 3px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px -10px 10px 3px rgba(0,0,0,0.2);
+    box-shadow: 0px -10px 10px 3px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 60;
+}
+
+#workExp > h1 {
+    margin-bottom: 0px;
+    padding-top: 10px;
+}
+
+#workExp > div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#workExp .card {
+    background-color: white !important;
+    border: 1px solid darkgray !important; 
+    box-shadow: 5px 5px 5px grey;
+    margin-top: 30px;
+}
+
+.mediumCard {
+    width: 90%;
+}
+
+#workExp .card h3 {
+    margin-bottom: 4px;
+}
+
+#smallCardButton {
+    position: absolute;
+    bottom: 20px;
+    width: calc(100% - 40px);
+}
+
+.card-text {
+    margin-bottom: 46px;
+}
+
 .card {
     background-color: #00000000 !important;
     border: #00000000 0px solid !important;
@@ -671,7 +716,6 @@ iframe {
     transition: all 1s ease-out;
 }
 
-
 .programButton {
     width: 11px;
     height: 11px;
@@ -804,6 +848,16 @@ iframe {
     .weatherContainer {
         margin-top: 50px;
     }
+    
+    .mediumCard {
+        width: 45%;
+    }
+}
+
+@media (min-width: 1300px) {
+    .mediumCard {
+        width: 30%;
+    }
 }
 
 @media (min-width: 2000px) {
@@ -818,6 +872,16 @@ iframe {
     }
 }
 
+@media (min-height: 380px) {
+    #headline > h1, #headline > h2, #headline > h3, #headline > h4 {
+        margin-bottom: 8px;
+    }
+
+    #headline > a {
+        margin-top: 20px;
+    }
+}
+
 @media (min-height: 850px) {
     #headline {
         padding-top: 20vh;
@@ -827,16 +891,6 @@ iframe {
 @media (min-width: 780px) and (min-height: 500px) {
     #headline {
         padding-top: 20vh;
-    }
-}
-
-@media (min-height: 380px) {
-    #headline > h1, #headline > h2, #headline > h3, #headline > h4 {
-        margin-bottom: 8px;
-    }
-
-    #headline > a {
-        margin-top: 20px;
     }
 }
 
@@ -879,75 +933,4 @@ iframe {
 
 #introText4 {
     color: $headline-marker !important;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#workExp {
-    background-color: $plainBG-color;
-    margin-bottom: 30px;
-    -webkit-box-shadow: 0px -10px 10px 3px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0px -10px 10px 3px rgba(0,0,0,0.2);
-    box-shadow: 0px -10px 10px 3px rgba(0, 0, 0, 0.2);
-    position: relative;
-    z-index: 60;
-}
-
-#workExp > h1 {
-    margin-bottom: 0px;
-    padding-top: 10px;
-}
-
-#workExp > div {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-#workExp .card {
-    background-color: white !important;
-    border: 1px solid darkgray !important; 
-    box-shadow: 5px 5px 5px grey;
-    margin-top: 30px;
-}
-
-.mediumCard {
-    width: 90%;
-}
-
-#workExp .card h3 {
-    margin-bottom: 4px;
-}
-
-#smallCardButton {
-    position: absolute;
-    bottom: 20px;
-    width: calc(100% - 40px);
-}
-
-.card-text {
-    margin-bottom: 46px;
-}
-
-@media (min-width: 790px) {
-    .mediumCard {
-        width: 45%;
-    }
-}
-
-@media (min-width: 1300px) {
-    .mediumCard {
-        width: 30%;
-    }
 }
