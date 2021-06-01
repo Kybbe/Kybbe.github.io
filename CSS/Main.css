@@ -707,6 +707,7 @@ input[type=checkbox]:focus {
 }
 
 #gamestopSpan {
+  color: red;
   font-size: 1.75rem;
   margin-bottom: .5rem;
   font-weight: 500;
@@ -728,8 +729,21 @@ iframe {
   min-height: 535px;
 }
 
+#eddlerWebsite > iframe {
+  height: calc(100% - 116px) !important;
+}
+
 .iframeHolder {
   padding: 20px 0px 0px 0px !important;
+}
+
+#eddlerWebsite > h4 {
+  color: #008cff;
+  background-color: #000000bb;
+  border-radius: .25rem;
+  padding: 7px;
+  border: #008cff 2px solid;
+  margin-bottom: 0px;
 }
 
 #collapseSoftwareDesign .col-12 h4 {
