@@ -162,7 +162,7 @@ input[type=checkbox]:focus {
   left: 0;
   -webkit-box-shadow: 0px -3px 3px 3px rgba(0, 0, 0, 0.5);
           box-shadow: 0px -3px 3px 3px rgba(0, 0, 0, 0.5);
-  padding-bottom: calc(20px + 15vh);
+  padding-bottom: 15vh;
 }
 
 /* Headline / firstRow */
@@ -883,6 +883,7 @@ iframe {
   }
   #contactMe {
     margin-top: 30px;
+    font-size: 1.25rem;
   }
 }
 
@@ -907,7 +908,7 @@ iframe {
     height: 100vh !important;
   }
   #navbarSettings {
-    padding-bottom: 20px !important;
+    padding-bottom: 0px;
   }
   #contactMe {
     margin-top: 20px;

@@ -156,7 +156,7 @@ input[type=checkbox]:focus {
     position: absolute; 
     left: 0; 
     box-shadow: 0px -3px 3px 3px rgba(0, 0, 0, 0.5); 
-    padding-bottom: calc(20px + 15vh);
+    padding-bottom: 15vh;
 }
 
 /* Headline / firstRow */
@@ -812,6 +812,7 @@ iframe {
 
     #contactMe {
         margin-top: 30px;
+        font-size: 1.25rem;
     }
 }
 
@@ -838,7 +839,7 @@ iframe {
     }
     
     #navbarSettings {
-        padding-bottom: 20px !important;
+        padding-bottom: 0px;
     }
     
     #contactMe {

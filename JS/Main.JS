@@ -4,6 +4,8 @@ var row = document.getElementById("backendContainer");
 var word = document.getElementById("backend");
 var barOpen = false;
 
+//For hacker text in Backend smallCard
+
 function rand(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -69,8 +71,12 @@ function init() {
  
 }
 
+// For "Programs" SmallCard buttons
+
 function closeWindow() {
     document.getElementById("PB1").parentElement.style.display = "none";
+    document.getElementById("programHint").style.display = "none";
+    document.getElementById("PB1").parentElement.parentElement.style.marginBottom = "0";
 }
 
 function closeWindowTemp() {
@@ -78,6 +84,8 @@ function closeWindowTemp() {
 
     setTimeout(function () {
         document.getElementById("PB2").parentElement.style.display = "block";
+        document.getElementById("programHint").style.display = "block";
+        document.getElementById("PB1").parentElement.parentElement.style.marginBottom = "10px";
       }, 3000);
 }
 
@@ -117,6 +125,8 @@ function enlargeWindow() {
 
 }
 
+//To open navbar
+
 function toggleAccessibilityBar() {
   var vw = document.documentElement.clientWidth;
   var bar = document.getElementById("accessibilityBar");
@@ -145,108 +155,63 @@ function toggleAccessibilityBar() {
 
 }
 
+//For navbar's Accessibility button / checkbox
+
 function accessibilityButtonCheck() {
   if (accessibility == false) {
     var check = ifExists("email");
 
-    document.body.setAttribute('style', 'color:black !important');
-    document.getElementById("pinkText").setAttribute('style', 'color:black !important');
-
-    if (check == true) {
-      document.getElementById("email").setAttribute('style', 'color:blue !important');
-      document.getElementById("number").setAttribute('style', 'color:blue !important');
+    document.body.style.color = "#000000"
+    document.getElementById("pinkText").style.color = "#000000"
+    
+    if(check == true) {
+      document.getElementById("email").style.color = "blue"
+      document.getElementById("number").style.color = "blue"
     } else {
-      document.getElementById("pinkText2").setAttribute('style', 'color:black !important');
-      document.getElementById("contactMe").setAttribute('style', 'color:black !important');
-      document.getElementsByClassName("rgbText")[0].setAttribute('style', 'color:black !important');
-      document.getElementsByClassName("rgbText")[1].setAttribute('style', 'color:black !important');
-      document.getElementsByClassName("rgbText")[2].setAttribute('style', 'color:black !important');
-      document.getElementsByClassName("rgbText")[3].setAttribute('style', 'color:black !important');
-      
-      var collapses = document.querySelectorAll('div[data-toggle="collapse"]');
-      for(i = 0; i < collapses.length; i++) {
-        collapses[i].setAttribute('style', 'background-image:none !important');
-      }
-      
-      openCloseAllDrawers();
+      document.getElementById("contactMe").style.color = "#000000"
+      document.getElementById("pinkText2").style.color = "#000000"
     }
+
     accessibility = true;
+    return(accessibility)
+
   } else if (accessibility == true) {
-    var check = ifExists("email");
+      var check = ifExists("email");
 
-    document.body.setAttribute('style', 'none');
-    document.getElementById("pinkText").setAttribute('style', 'none');
-    
-    if (check == true) {
-      document.getElementById("email").setAttribute('style', 'none');
-      document.getElementById("number").setAttribute('style', 'none');
-    } else {
-      document.getElementById("pinkText2").setAttribute('style', 'none');
-      document.getElementById("contactMe").setAttribute('style', 'none');
-      document.getElementsByClassName("rgbText")[0].setAttribute('style', 'none');
-      document.getElementsByClassName("rgbText")[1].setAttribute('style', 'none');
-      document.getElementsByClassName("rgbText")[2].setAttribute('style', 'none');
-      document.getElementsByClassName("rgbText")[3].setAttribute('style', 'none');
+      document.body.style.color = null
+      document.getElementById("pinkText").style.color = null
       
-      var collapses = document.querySelectorAll('div[data-toggle="collapse"]');
-      for(i = 0; i < collapses.length; i++) {
-        collapses[i].setAttribute('style', 'none');
-      }
-      
-      openCloseAllDrawers();
+      if (check == true) {
+        document.getElementById("email").style.color = null
+        document.getElementById("number").style.color = null
+      } else {
+        document.getElementById("contactMe").style.color = null
+        document.getElementById("pinkText2").style.color = null
+
+      accessibility = false;
+      return(accessibility)
     }
-    accessibility = false;
   } else {
 
   }
 }
 
-function openCloseAllDrawers() {
-var message = document.getElementById("messageDrawerState")
-  if(document.getElementsByClassName("collapse")[0] != undefined){
-    if(allDrawerOpen == false) {
-      $(".collapse").collapse("show");
-    
-      message.innerHTML = "Opened!"
-      message.style.color = "green";
-      setTimeout(function () {
-        message.innerHTML = "";
-        message.style.color = "black";
-      }, 1500);
-    
-      allDrawerOpen = true;
-    } else if (allDrawerOpen == true) {
-      $(".collapse").collapse("hide");
-      message.innerHTML = "Closed!"
-      message.style.color = "green";
-      setTimeout(function () {
-        message.innerHTML = "";
-        message.style.color = "black";
-      }, 1500);
-    
-      allDrawerOpen = false;
-    }
-  } else {
-    message.innerHTML = "No drawers!"
-      message.style.color = "red";
-    setTimeout(function () {
-      message.innerHTML = "";
-      message.style.color = "black";
-    }, 1500);
-  }
-
-}
+//Go to top of site
 
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
 
+//onClick() but for Enter button
+
 function checkIfTab(event, id) {
   if (event.keyCode === 13) {
     $("#" + id).click();
   }
 }
+
+//Load in widget .html files
 
 $(function () {
   var includes = $('[data-include]')
@@ -256,10 +221,14 @@ $(function () {
   })
 })
 
+//Delay Contact me button redirect so screen can scroll up correctly
+
 function delay(URL) {
   topFunction();
   setTimeout( function() { window.location = URL }, 500 );
 }
+
+//For contact site 
 
 function onloadTextChange() {
   const vw = document.documentElement.clientWidth;
@@ -296,6 +265,8 @@ function ifExists(id) {
     return false;
   } 
 }
+
+//Get date and weather for widgets
 
 function getDate() {
   Date.prototype.getWeek = function () {
@@ -364,6 +335,7 @@ function getWeather(position) {
       document.getElementById("highLow").innerHTML = "<i class='fas fa-angle-up'></i>" + currentMaxTemp + "° " + "<i class='fas fa-angle-down'></i> " + currentMinTemp + "°";
       document.getElementById("Condition").innerHTML = "<i class='fas fa-sun'></i>" + result.weather[0].main;
       document.getElementById("Location").innerHTML = "<i class='fas fa-location-arrow'></i> " + result.name + ", " + result.sys.country;
+      
       if(result.weather[0].main == "Rain"){
           makeItRain();
           document.getElementById("Circle1").style.display = "none";
@@ -377,11 +349,12 @@ function getWeather(position) {
           for( i= 0; i < weatherText.length - 1; i ++) {
             weatherText[i].style.color = "grey";
           }
-      } else if (result.weather[0].main == "Clouds") {
+      
+        } else if (result.weather[0].main == "Clouds") {
           document.getElementById("Circle1").style.display = "none";
           document.getElementById("Circle2").style.display = "none";
           document.getElementById("Circle3").style.display = "none";
-          document.getElementsByClassName("weatherContainer")[0].style.backgroundColor = "lightgrey";
+          document.getElementsByClassName("weatherContainer")[0].style.background = "lightgrey";
           document.getElementById("Cloud1").style.display = "block";
           document.getElementById("Cloud2").style.display = "block";
           document.getElementById("Cloud3").style.display = "block";
@@ -400,7 +373,6 @@ function dateWidgetLiveUpdate() {
   updateClock();
   getDate();
 }
-
 
 var makeItRain = function() {
 
