@@ -233,16 +233,8 @@ function delay(URL) {
 function onloadTextChange() {
   const vw = document.documentElement.clientWidth;
   setTimeout( function() {
-    document.getElementById("introText2").innerHTML = "My email is ";
-    document.getElementById("introText2").innerHTML += "<span id='email'>Jacob.klaren@me.com</span>,";
-    document.getElementById("email").onclick = function() { copy('jacob.klaren@me.com') };
-
-    document.getElementById("introText3").innerHTML = "All my projects go on GitHub <a id='github'>Kybbe</a>.";
-    document.getElementById("github").href ='https://github.com/Kybbe';
-
-    document.getElementById("introText4").remove();
-
-    document.getElementById("contactMe").remove();
+    document.getElementById("oldText").style.display = "none";
+    document.getElementById("newText").style.display = "";
   }, 3700 );
 };
 

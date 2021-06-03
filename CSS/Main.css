@@ -1006,7 +1006,21 @@ iframe {
   color: #d5782e !important;
 }
 
-#introText4 {
-  color: #ff94a6 !important;
+#linkedIn {
+  color: #52D1DC !important;
+  cursor: pointer;
+}
+
+#linkedIn:hover {
+  color: #229ca6 !important;
+  text-decoration: underline;
+}
+
+#Facebook {
+  color: blue !important;
+}
+
+#Facebook:hover {
+  color: #000099 !important;
 }
 /*# sourceMappingURL=Main.css.map */

@@ -932,6 +932,20 @@ iframe {
     color: darken($accent-color2, 20%) !important;
 }
 
-#introText4 {
-    color: $headline-marker !important;
+#linkedIn {
+    color: $accent-color6 !important;
+    cursor: pointer;
+}
+
+#linkedIn:hover {
+    color: darken($accent-color6, 20%) !important;
+    text-decoration: underline;
+}
+
+#Facebook {
+    color: blue !important;
+}
+
+#Facebook:hover {
+    color: darken(blue, 20%) !important;
 }
