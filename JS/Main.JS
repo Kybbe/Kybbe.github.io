@@ -2,6 +2,8 @@ var accessibility = false;
 var row = document.getElementById("backendContainer");
 var word = document.getElementById("backend");
 var barOpen = false;
+const vw = document.documentElement.clientWidth;
+const vh = document.documentElement.clientHeight;
 
 //For hacker text in Backend smallCard
 
@@ -175,17 +177,17 @@ function accessibilityButtonCheck() {
   if (accessibility == false) {
     var check = ifExists("oldText");
 
-    document.body.style.color = "#000000"
-    document.getElementById("pinkText").style.color = "#000000"
+    document.body.style.color = "#000000";
+    document.getElementById("pinkText").style.color = "#000000";
     
     if(check == true) {
-        document.getElementById("email").style.color = "blue"
-        document.getElementById("github").style.color = "blue"
-        document.getElementById("linkedIn").style.color = "blue"
-        document.getElementById("Facebook").style.color = "blue"
+        document.getElementById("email").style.color = "blue";
+        document.getElementById("github").style.color = "blue";
+        document.getElementById("linkedIn").style.color = "blue";
+        document.getElementById("Facebook").style.color = "blue";
     } else {
-      document.getElementById("contactMe").style.color = "#000000"
-      document.getElementById("pinkText2").style.color = "#000000"
+      document.getElementById("contactMe").style.color = "#000000";
+      document.getElementById("pinkText2").style.color = "#000000";
     }
 
     accessibility = true;
@@ -193,18 +195,19 @@ function accessibilityButtonCheck() {
   } else if (accessibility == true) {
       var check = ifExists("oldText");
 
-      document.body.style.color = null
-      document.getElementById("pinkText").style.color = null
+      document.body.style.color = null;
+      document.getElementById("pinkText").style.color = null;
       
       if (check == true) {
-        document.getElementById("email").style.color = null
-        document.getElementById("github").style.color = null
-        document.getElementById("linkedIn").style.color = null
-        document.getElementById("Facebook").style.color = null
+        document.getElementById("email").style.color = null;
+        document.getElementById("github").style.color = null;
+        document.getElementById("linkedIn").style.color = null;
+        document.getElementById("Facebook").style.color = null;
       } else {
-        document.getElementById("contactMe").style.color = null
-        document.getElementById("pinkText2").style.color = null
+        document.getElementById("contactMe").style.color = null;
+        document.getElementById("pinkText2").style.color = null;
       }
+
       accessibility = false;
       localStorage.setItem('accessibility', 'False');
   } else {
@@ -254,6 +257,17 @@ function onloadTextChange() {
 
   //Wait for animation to end, then change text at last second.
   setTimeout( function() {
+    var confettiX;
+    var confettiY;
+    if(vw < 751) { //mobile
+      confettiX = 0.5
+      confettiY = 0.15
+    } else { // larger
+      confettiX = 0.2
+      confettiY = 0.4
+    }
+
+
     document.getElementById("oldText").style.display = "none";
     document.getElementById("newText").style.display = "";
 
@@ -261,7 +275,7 @@ function onloadTextChange() {
       particleCount: 300,
       spread: 500,
       origin: {
-        x: 0.2, y:0.4
+        x: confettiX, y: confettiY
       },
       ticks: 300
       // any other options from the global
