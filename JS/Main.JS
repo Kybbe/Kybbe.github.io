@@ -231,11 +231,16 @@ function delay(URL) {
 //For contact site 
 
 function onloadTextChange() {
-  const vw = document.documentElement.clientWidth;
+  var headlines = $("#oldText")[0].children;
+  for(i = 0; i < headlines.length; i++) {
+    $(headlines[i]).addClass("fade-out");
+  }
+
+  //Wait for animation to end, then change text at last second.
   setTimeout( function() {
     document.getElementById("oldText").style.display = "none";
     document.getElementById("newText").style.display = "";
-  }, 3700 );
+  }, 3950 );
 };
 
 function copy(text) {
