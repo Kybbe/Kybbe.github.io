@@ -172,11 +172,11 @@ input[type=checkbox]:focus {
     padding-top: 2vh;
 }
 
-#headline span {
+#pinkText {
     color: $accent-color;
 }
 
-#headline h4 {
+#pinkText2 {
     color: $headline-marker;
 }
 
@@ -915,37 +915,37 @@ iframe {
 }
 
 #email {
-    color: $accent-color3 !important;
+    color: $accent-color3;
     cursor: pointer;
 }
 
 #email:hover {
-    color: darken($accent-color3, 20%) !important;
+    color: darken($accent-color3, 20%);
     text-decoration: underline;
 }
 
 #github {
-    color: $accent-color2 !important;
+    color: $accent-color2;
 }
 
 #github:hover {
-    color: darken($accent-color2, 20%) !important;
+    color: darken($accent-color2, 20%);
 }
 
 #linkedIn {
-    color: $accent-color6 !important;
+    color: $accent-color6;
     cursor: pointer;
 }
 
 #linkedIn:hover {
-    color: darken($accent-color6, 20%) !important;
+    color: darken($accent-color6, 20%);
     text-decoration: underline;
 }
 
 #Facebook {
-    color: blue !important;
+    color: blue;
 }
 
 #Facebook:hover {
-    color: darken(blue, 20%) !important;
+    color: darken(blue, 20%);
 }

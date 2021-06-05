@@ -161,19 +161,29 @@ function toggleAccessibilityBar() {
 if(localStorage.getItem('accessibility') == "True"){
   accessibility = false;
   //So accessibility looks turned off, and makes accessiblity mode turn on.
-  accessibilityButtonCheck();
+  var check = ifExists("oldText");
+
+  //check so delay is only on tact site, and immediate on normal site.
+  if(check == true){
+    setTimeout(accessibilityButtonCheck, 4200);
+  } else {
+    accessibilityButtonCheck();
+  }
+
 }
 
 function accessibilityButtonCheck() {
   if (accessibility == false) {
-    var check = ifExists("email");
+    var check = ifExists("oldText");
 
     document.body.style.color = "#000000"
     document.getElementById("pinkText").style.color = "#000000"
     
     if(check == true) {
-      document.getElementById("email").style.color = "blue"
-      document.getElementById("number").style.color = "blue"
+        document.getElementById("email").style.color = "blue"
+        document.getElementById("github").style.color = "blue"
+        document.getElementById("linkedIn").style.color = "blue"
+        document.getElementById("Facebook").style.color = "blue"
     } else {
       document.getElementById("contactMe").style.color = "#000000"
       document.getElementById("pinkText2").style.color = "#000000"
@@ -182,14 +192,16 @@ function accessibilityButtonCheck() {
     accessibility = true;
     localStorage.setItem('accessibility', 'True');
   } else if (accessibility == true) {
-      var check = ifExists("email");
+      var check = ifExists("oldText");
 
       document.body.style.color = null
       document.getElementById("pinkText").style.color = null
       
       if (check == true) {
         document.getElementById("email").style.color = null
-        document.getElementById("number").style.color = null
+        document.getElementById("github").style.color = null
+        document.getElementById("linkedIn").style.color = null
+        document.getElementById("Facebook").style.color = null
       } else {
         document.getElementById("contactMe").style.color = null
         document.getElementById("pinkText2").style.color = null

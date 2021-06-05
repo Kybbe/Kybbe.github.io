@@ -177,11 +177,11 @@ input[type=checkbox]:focus {
   padding-top: 2vh;
 }
 
-#headline span {
+#pinkText {
   color: #c66;
 }
 
-#headline h4 {
+#pinkText2 {
   color: #ff94a6;
 }
 
@@ -989,38 +989,38 @@ iframe {
 }
 
 #email {
-  color: #CF9A7B !important;
+  color: #CF9A7B;
   cursor: pointer;
 }
 
 #email:hover {
-  color: #a7643d !important;
+  color: #a7643d;
   text-decoration: underline;
 }
 
 #github {
-  color: #E6AF83 !important;
+  color: #E6AF83;
 }
 
 #github:hover {
-  color: #d5782e !important;
+  color: #d5782e;
 }
 
 #linkedIn {
-  color: #52D1DC !important;
+  color: #52D1DC;
   cursor: pointer;
 }
 
 #linkedIn:hover {
-  color: #229ca6 !important;
+  color: #229ca6;
   text-decoration: underline;
 }
 
 #Facebook {
-  color: blue !important;
+  color: blue;
 }
 
 #Facebook:hover {
-  color: #000099 !important;
+  color: #000099;
 }
 /*# sourceMappingURL=Main.css.map */

@@ -4,7 +4,7 @@
     </div>
 
     <div id="accessibilityBar" style="width: 0px; overflow-x: hidden;">
-        <h2 style="height: 70px !important; padding: 15px; border-bottom: 2px solid black;">Navigation Bar</h2>
+        <h2 style="height: 70px !important; padding: 15px; border-bottom: 2px solid black;">Navigation</h2>
         <h2 style="padding-left: 20px;"><a href="#" id="navbarTopButton" onclick="topFunction()" onkeydown="checkIfTab(event, this.id)"><i class="far fa-arrow-alt-circle-up"></i> Go to Top</a></h2>
         <div id="navbarLinks">
             <h2><a href="https://jacobklaren.com/"><i class="fas fa-home"></i> Main site</a></h2>
@@ -20,7 +20,7 @@
             <script>
 
                 //Since modules load slower than the regular dom, this needs to be done after Checkbox has loaded in.
-                if(accessibility == true) {
+                if(localStorage.getItem('accessibility') == "True") {
                     document.getElementById("accessibilityCheckbox").checked = true;
                 }
             </script>
