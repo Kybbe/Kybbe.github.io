@@ -204,10 +204,9 @@ function accessibilityButtonCheck() {
       } else {
         document.getElementById("contactMe").style.color = null
         document.getElementById("pinkText2").style.color = null
-
+      }
       accessibility = false;
       localStorage.setItem('accessibility', 'False');
-    }
   } else {
 
   }
