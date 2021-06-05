@@ -1,5 +1,5 @@
+
 var accessibility = false;
-var allDrawerOpen = false;
 var row = document.getElementById("backendContainer");
 var word = document.getElementById("backend");
 var barOpen = false;
@@ -157,6 +157,13 @@ function toggleAccessibilityBar() {
 
 //For navbar's Accessibility button / checkbox
 
+//Check if accessibility has been turned on in the past and turns it on if needed.
+if(localStorage.getItem('accessibility') == "True"){
+  accessibility = false;
+  //So accessibility looks turned off, and makes accessiblity mode turn on.
+  accessibilityButtonCheck();
+}
+
 function accessibilityButtonCheck() {
   if (accessibility == false) {
     var check = ifExists("email");
@@ -173,8 +180,7 @@ function accessibilityButtonCheck() {
     }
 
     accessibility = true;
-    return(accessibility)
-
+    localStorage.setItem('accessibility', 'True');
   } else if (accessibility == true) {
       var check = ifExists("email");
 
@@ -189,7 +195,7 @@ function accessibilityButtonCheck() {
         document.getElementById("pinkText2").style.color = null
 
       accessibility = false;
-      return(accessibility)
+      localStorage.setItem('accessibility', 'False');
     }
   } else {
 

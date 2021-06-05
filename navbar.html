@@ -17,6 +17,14 @@
             <p style="display: inline-block;">Turn on accessibility: </p>
             <input type="checkbox" class="toggle" id="accessibilityCheckbox" onclick="accessibilityButtonCheck()"  onkeydown="checkIfTab(event, this.id)">
 
+            <script>
+
+                //Since modules load slower than the regular dom, this needs to be done after Checkbox has loaded in.
+                if(accessibility == true) {
+                    document.getElementById("accessibilityCheckbox").checked = true;
+                }
+            </script>
+
         </div>
     </div>  
 </div>
