@@ -1,4 +1,3 @@
-
 var accessibility = false;
 var row = document.getElementById("backendContainer");
 var word = document.getElementById("backend");
@@ -258,6 +257,18 @@ function onloadTextChange() {
   setTimeout( function() {
     document.getElementById("oldText").style.display = "none";
     document.getElementById("newText").style.display = "";
+
+    confetti({
+      particleCount: 300,
+      spread: 500,
+      origin: {
+        x: 0.2, y:0.4
+      },
+      ticks: 300
+      // any other options from the global
+      // confetti function
+    });
+
   }, 3950 );
 };
 
