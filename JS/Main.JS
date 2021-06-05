@@ -259,27 +259,25 @@ function onloadTextChange() {
   setTimeout( function() {
     var confettiX;
     var confettiY;
-    if(vw < 751) { //mobile
+    if(vw < 751) { //Mobile
       confettiX = 0.5
       confettiY = 0.15
-    } else { // larger
+    } else { //Larger screens
       confettiX = 0.2
       confettiY = 0.4
     }
-
 
     document.getElementById("oldText").style.display = "none";
     document.getElementById("newText").style.display = "";
 
     confetti({
-      particleCount: 300,
-      spread: 500,
+      particleCount: 400,
+      spread: 360,
+      startVelocity: 30,
       origin: {
         x: confettiX, y: confettiY
       },
-      ticks: 300
-      // any other options from the global
-      // confetti function
+      ticks: 400
     });
 
   }, 3950 );
