@@ -1030,8 +1030,9 @@ iframe {
   right: 20px;
   top: 100px;
   z-index: 205;
+  color: black;
   background-color: #fff;
-  padding: 1.125em 1.5em;
+  padding: 10px;
   font-size: 1.25em;
   border-radius: 1rem;
   -webkit-box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.3), 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.2);
@@ -1044,7 +1045,7 @@ iframe {
   width: 0;
   height: 0;
   bottom: 100%;
-  left: 250px;
+  left: 260px;
   border: .75rem solid transparent;
   border-top: none;
   border-bottom-color: #fff;
