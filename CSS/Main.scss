@@ -960,7 +960,6 @@ iframe {
 
 
 
-
 #speechBubble {
 	// layout
 	position: fixed;
@@ -968,6 +967,7 @@ iframe {
 	right: 20px;
     top: 100px;
     z-index: 205;
+    display: none;
 	
 	// looks
     color: black;
