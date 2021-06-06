@@ -179,7 +179,10 @@ function accessibilityButtonCheck() {
 
     document.body.style.color = "#000000";
     document.getElementById("pinkText").style.color = "#000000";
-    
+    document.getElementsByClassName("fa-angle-up")[0].style.color = "red";
+    document.getElementsByClassName("fa-angle-down")[0].style.color = "blue";
+    document.getElementsByClassName("fa-location-arrow")[0].style.color = "blue";
+
     if(check == true) {
         document.getElementById("email").style.color = "blue";
         document.getElementById("github").style.color = "blue";
@@ -197,6 +200,9 @@ function accessibilityButtonCheck() {
 
       document.body.style.color = null;
       document.getElementById("pinkText").style.color = null;
+      document.getElementsByClassName("fa-angle-up")[0].style.color = null;
+    document.getElementsByClassName("fa-angle-down")[0].style.color = null;
+    document.getElementsByClassName("fa-location-arrow")[0].style.color = null;
       
       if (check == true) {
         document.getElementById("email").style.color = null;
@@ -259,7 +265,7 @@ function onloadTextChange() {
   setTimeout( function() {
     var confettiX;
     var confettiY;
-    if(vw < 751) { //Mobile
+    if(vw < 751) { //Mobile  
       confettiX = 0.5
       confettiY = 0.15
     } else { //Larger screens

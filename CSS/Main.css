@@ -423,11 +423,11 @@ input[type=checkbox]:focus {
 }
 
 #highLow .fa-angle-up {
-  color: #ff8800 !important;
+  color: #ff8800;
 }
 
 #highLow .fa-angle-down {
-  color: #00c3ff !important;
+  color: #00c3ff;
 }
 
 #Location {
@@ -442,7 +442,7 @@ input[type=checkbox]:focus {
 }
 
 .fa-location-arrow {
-  color: #6060ff !important;
+  color: #6060ff;
 }
 
 @-webkit-keyframes enlarge {
@@ -1022,5 +1022,33 @@ iframe {
 
 #Facebook:hover {
   color: #000099;
+}
+
+#speechBubble {
+  position: fixed;
+  max-width: 300px;
+  right: 20px;
+  top: 100px;
+  z-index: 205;
+  background-color: #fff;
+  padding: 1.125em 1.5em;
+  font-size: 1.25em;
+  border-radius: 1rem;
+  -webkit-box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.3), 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.3), 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.2);
+}
+
+#speechBubble::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 100%;
+  left: 250px;
+  border: .75rem solid transparent;
+  border-top: none;
+  border-bottom-color: #fff;
+  -webkit-filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
+          filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
 }
 /*# sourceMappingURL=Main.css.map */
