@@ -227,12 +227,21 @@ function closeSpeechBubble() {
 }
 
 function autoCloseSpeechBubble() {
+  //dont show textbubble if accessibility is already on
   if(localStorage.getItem('accessibility') != "True"){
+    //wait 5 seconds before showing it
     setTimeout( function() {
       document.getElementById("speechBubble").style.display = "block";
       
+      //wait 3 seconds beofre making it slowly dissapear
       setTimeout( function() {
         document.getElementById("speechBubble").style.opacity = "0";
+
+        //wait for 10 second animation to finish, then display none so it dissapears
+        setTimeout( function() {
+          document.getElementById("speechBubble").style.display = "none";
+        }, 10000 );
+
       }, 3000 );
   
     }, 5000 );
