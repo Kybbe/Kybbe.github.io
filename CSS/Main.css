@@ -455,6 +455,11 @@ input[type=checkbox]:focus {
   color: #00c3ff;
 }
 
+sup {
+  top: -0.7em;
+  font-size: 50%;
+}
+
 #Location {
   z-index: 15;
   position: relative;

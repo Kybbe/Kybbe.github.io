@@ -4,6 +4,12 @@ var word = document.getElementById("backend");
 var barOpen = false;
 const vw = document.documentElement.clientWidth;
 const vh = document.documentElement.clientHeight;
+var currentTemp;
+var currentMaxTemp;
+var currentMinTemp;
+var metric = "C";
+var lipsum;
+var list;
 
 //For hacker text in Backend smallCard
 
@@ -90,15 +96,11 @@ function closeWindowTemp() {
       }, 3000);
 }
 
-var lipsum;
-
 fetch('loremIpsumText.txt')
     .then(response => response.text())
     .then(data => {
       lipsum = data;
-    });
-
-var list;
+});
 
 function enlargeWindow() {
   const vw = document.documentElement.clientWidth;
@@ -129,7 +131,6 @@ function enlargeWindow() {
 //To open navbar
 
 function toggleAccessibilityBar() {
-  var vw = document.documentElement.clientWidth;
   var bar = document.getElementById("accessibilityBar");
   var btn = document.getElementById("accessibilityBtn");
   if (barOpen == false) {
@@ -394,15 +395,15 @@ function getWeather(position) {
     url: customMadeUrl,
     type: "GET",
     success: function (result) {
-      var currentTemp = Math.round(result.main.temp);
-      var currentMaxTemp = Math.round(result.main.temp_max).toString();
-      var currentMinTemp = Math.round(result.main.temp_min).toString();
-      document.getElementById("Temp").innerHTML = currentTemp += "°";
+      currentTemp = Math.round(result.main.temp);
+      currentMaxTemp = Math.round(result.main.temp_max).toString();
+      currentMinTemp = Math.round(result.main.temp_min).toString();
+      document.getElementById("Temp").innerHTML = currentTemp + "°<sup>C</sup>";
 
       var highLow = document.getElementById("highLow");
-      highLow.innerHTML = "<i class='fas fa-angle-up'></i>" + currentMaxTemp + "° " + "<i class='fas fa-angle-down'></i>" + currentMinTemp + "°";
+      highLow.innerHTML = "<i class='fas fa-angle-up'></i>" + currentMaxTemp + "° " + "<i class='fas fa-angle-down'></i>" + currentMinTemp + "°<sup>C</sup>";
 
-      document.getElementById("highLow").innerHTML = "<i class='fas fa-angle-up'></i>" + currentMaxTemp + "° " + "<i class='fas fa-angle-down'></i> " + currentMinTemp + "°";
+      document.getElementById("highLow").innerHTML = "<i class='fas fa-angle-up'></i>" + currentMaxTemp + "°<sup>C</sup> " + "<i class='fas fa-angle-down'></i> " + currentMinTemp + "°<sup>C</sup>";
       document.getElementById("Condition").innerHTML = "<i class='fas fa-sun'></i>" + result.weather[0].main;
       document.getElementById("Location").innerHTML = "<i class='fas fa-location-arrow'></i> " + result.name + ", " + result.sys.country;
       
@@ -444,7 +445,24 @@ function dateWidgetLiveUpdate() {
   getDate();
 }
 
-var makeItRain = function() {
+function convertTemp() {
+  //if celcius is shown when clicking
+  if(metric == "C") {
+    var currentTempF = Math.round(currentTemp * 9/5 + 32)
+    var currentMaxTempF = Math.round(currentMaxTemp * 9/5 + 32)
+    var currentMinTempF = Math.round(currentMinTemp * 9/5 + 32)
+    
+    document.getElementById("Temp").innerHTML = currentTempF += "°<sup>F</sup>";
+    highLow.innerHTML = "<i class='fas fa-angle-up'></i>" + currentMaxTempF + "°<sup>F</sup> " + "<i class='fas fa-angle-down'></i>" + currentMinTempF + "°<sup>F</sup>";
+    metric = "F";
+  } else {
+    document.getElementById("Temp").innerHTML = currentTemp + "°<sup>C</sup>";
+    highLow.innerHTML = "<i class='fas fa-angle-up'></i>" + currentMaxTemp + "°<sup>C</sup> " + "<i class='fas fa-angle-down'></i>" + currentMinTemp + "°<sup>C</sup>";
+    metric = "C"
+  }
+}
+
+function makeItRain() {
 
   var increment = 0;
   var drops = "";
