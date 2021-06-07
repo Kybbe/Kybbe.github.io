@@ -164,13 +164,14 @@ if(localStorage.getItem('accessibility') == "True"){
   //So accessibility looks turned off, and makes accessiblity mode turn on.
   var check = ifExists("oldText");
 
-  //check so delay is only on tact site, and immediate on normal site.
+  //check so delay is only on contact site, and immediate on normal site.
   if(check == true){
     setTimeout(accessibilityButtonCheck, 4200);
   } else {
-    accessibilityButtonCheck();
+    window.onload = function () {
+      accessibilityButtonCheck();
+    };
   }
-
 }
 
 function accessibilityButtonCheck() {
@@ -218,6 +219,23 @@ function accessibilityButtonCheck() {
       localStorage.setItem('accessibility', 'False');
   } else {
 
+  }
+}
+
+function closeSpeechBubble() {
+  document.getElementById("speechBubble").style.display = "none";
+}
+
+function autoCloseSpeechBubble() {
+  if(localStorage.getItem('accessibility') != "True"){
+    setTimeout( function() {
+      document.getElementById("speechBubble").style.display = "block";
+      
+      setTimeout( function() {
+        document.getElementById("speechBubble").style.opacity = "0";
+      }, 3000 );
+  
+    }, 5000 );
   }
 }
 

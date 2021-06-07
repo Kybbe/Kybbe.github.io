@@ -1,5 +1,5 @@
 <div id="navbarHolder">
-    <p id="speechBubble">Accessibility mode makes colors clearer and text easier to read. Test it here</p>
+    <p id="speechBubble">Accessibility mode makes colors clearer and text easier to read. Test it here! <span onclick="closeSpeechBubble()" onkeydown="checkIfTab(event, this.id)">X</span></p>
     <div role="button" tabindex="0" id="accessibilityBtn" onclick="toggleAccessibilityBar()" onkeydown="checkIfTab(event, this.id)">
         <i class="fas fa-bars"></i>
     </div>
@@ -19,6 +19,7 @@
             <input type="checkbox" class="toggle" id="accessibilityCheckbox" onclick="accessibilityButtonCheck()"  onkeydown="checkIfTab(event, this.id)">
 
             <script>
+                autoCloseSpeechBubble();
                 //Since modules load slower than the regular dom, this needs to be done after Checkbox has loaded in.
                 if(localStorage.getItem('accessibility') == "True") {
                     document.getElementById("accessibilityCheckbox").checked = true;
