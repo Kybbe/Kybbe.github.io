@@ -193,6 +193,8 @@ input[type=checkbox]:focus {
 /* Headline / firstRow */
 #firstRow {
   background-color: #f8f6f4;
+  height: 100vh;
+  /* fallback */
   height: calc(100vh - env(safe-area-inset-bottom));
 }
 
