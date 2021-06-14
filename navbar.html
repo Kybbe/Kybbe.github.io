@@ -6,11 +6,12 @@
 
     <div id="accessibilityBar" style="width: 0px; overflow-x: hidden;">
         <h2 style="height: 70px !important; padding: 15px; border-bottom: 2px solid black;">Navigation</h2>
-        <h2 style="padding-left: 20px;"><a href="#" id="navbarTopButton" onclick="topFunction()" onkeydown="checkIfTab(event, this.id)"><i class="far fa-arrow-alt-circle-up"></i> Go to Top</a></h2>
         <div id="navbarLinks">
             <h2><a href="https://jacobklaren.com/"><i class="fas fa-home"></i> Main site</a></h2>
             <h2><a href="https://jacobklaren.com/contactMe.html"><i class="fas fa-phone"></i> Contact me</a></h2>
         </div>
+
+        <h2><a class="text-center" href="#" id="navbarTopButton" onclick="topFunction(), toggleAccessibilityBar()" onkeydown="checkIfTab(event, this.id)"><i class="far fa-arrow-alt-circle-up"></i> Go to Top</a></h2>
 
         <div id="navbarSettings">
             <h4 style="margin-top: 10px; margin-bottom: 15px;"><i class="fas fa-cogs"></i> Settings</h4>

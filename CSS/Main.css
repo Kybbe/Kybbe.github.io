@@ -37,8 +37,8 @@ body {
   height: 50px;
   text-align: center;
   border-radius: 50%;
-  -webkit-box-shadow: black 2px 2px 2px;
-          box-shadow: black 2px 2px 2px;
+  -webkit-box-shadow: 4px 4px 8px black;
+          box-shadow: 4px 4px 8px black;
   background-color: #cfcfcf4b;
   position: fixed;
   right: 20px;
@@ -79,6 +79,19 @@ body {
 
 #navbarLinks h2 {
   padding-left: 20px;
+}
+
+#navbarTopButton {
+  position: absolute;
+  bottom: 120px;
+  width: 90%;
+  margin-left: 5%;
+  padding: 6px;
+  border: 2px solid #c66;
+  -webkit-box-shadow: 4px 4px 8px black;
+          box-shadow: 4px 4px 8px black;
+  background-color: #cfcfcf4b;
+  border-radius: 10px;
 }
 
 input[type=checkbox] {
@@ -221,7 +234,9 @@ input[type=checkbox]:focus {
 #contactMe {
   background-color: transparent;
   border: 2px solid #c66;
-  border-radius: 0.6em;
+  border-radius: 10px;
+  -webkit-box-shadow: 4px 4px 8px black;
+          box-shadow: 4px 4px 8px black;
   color: #c66;
   cursor: pointer;
   display: inline-block;
@@ -248,6 +263,11 @@ input[type=checkbox]:focus {
   color: #444;
   outline: 0;
   background-position: 0;
+}
+
+#contactMe:active {
+  -webkit-box-shadow: 0px 0px 0px #fff;
+          box-shadow: 0px 0px 0px #fff;
 }
 
 #headline > h1, #oldText > h1 {
@@ -312,13 +332,17 @@ input[type=checkbox]:focus {
           box-shadow: 5px 5px 5px #00000046;
   max-width: 475px !important;
   margin-left: 0px !important;
-  padding: 15px;
+  padding: 8px;
 }
 
 .weatherContainer {
   background: #87CEEB;
   background: -webkit-gradient(linear, left top, left bottom, from(#87CEEB), to(#78BFDC));
   background: linear-gradient(to bottom, #87CEEB 0%, #78BFDC 100%);
+}
+
+.weatherContainer h1, .dateContainer h1 {
+  line-height: 1 !important;
 }
 
 #Circle1, #Circle2, #Circle3 {
@@ -676,6 +700,7 @@ sup {
   position: absolute;
   bottom: 20px;
   width: calc(100% - 40px);
+  border-radius: 10px;
 }
 
 .card-text {
@@ -685,6 +710,7 @@ sup {
 .card {
   background-color: #00000000 !important;
   border: #00000000 0px solid !important;
+  border-radius: 10px;
 }
 
 .row {
@@ -724,7 +750,7 @@ sup {
 }
 
 iframe {
-  border-radius: .25rem;
+  border-radius: 10px;
   height: calc(100% - 37px);
   width: calc(100% - 2px);
   border: none;
@@ -743,14 +769,14 @@ iframe {
 #eddlerWebsite > h4 {
   color: #008cff;
   background-color: #000000bb;
-  border-radius: .25rem;
+  border-radius: 10px;
   padding: 7px;
   border: #008cff 2px solid;
   margin-bottom: 0px;
 }
 
 .smallCard, .smallCard > div, .smallCard > div > ul {
-  border-radius: .25rem;
+  border-radius: 10px;
 }
 
 .smallCard {
@@ -830,7 +856,7 @@ iframe {
 .programButton {
   width: 11px;
   height: 11px;
-  border-radius: 11px;
+  border-radius: 50%;
   padding: 0px !important;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -867,6 +893,8 @@ iframe {
 @media (min-width: 395px) {
   .weatherContainer, .dateContainer {
     height: 90px;
+    padding: 15px;
+    line-height: 1.2;
   }
   #Condition, #date {
     position: absolute;
