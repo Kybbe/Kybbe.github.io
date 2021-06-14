@@ -364,13 +364,15 @@ function getDate() {
   document.getElementById("date").innerHTML = today.getDate() + " " + monthNames[today.getMonth()] + " - " + today.getFullYear();
 }
 
+var today;
+var time;
 function updateClock() {
-  var today = new Date();
+  today = new Date();
   
   if(today.getMinutes() <= "9"){
-    var time = today.getHours() + ":0" + today.getMinutes();
+    time = today.getHours() + ":0" + today.getMinutes();
   } else {
-    var time = today.getHours() + ":" + today.getMinutes();
+    time = today.getHours() + ":" + today.getMinutes();
   }
 
   document.getElementById("time").innerHTML = time;
