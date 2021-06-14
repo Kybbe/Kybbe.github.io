@@ -140,7 +140,8 @@ input[type=checkbox]:focus {
   left: 0;
   -webkit-box-shadow: 0px -3px 3px 3px rgba(0, 0, 0, 0.5);
           box-shadow: 0px -3px 3px 3px rgba(0, 0, 0, 0.5);
-  padding-bottom: 15vh;
+  bottom: 15vh;
+  bottom: env(safe-area-inset-bottom);
 }
 
 #speechBubble {
@@ -940,7 +941,7 @@ iframe {
     height: 100vh !important;
   }
   #navbarSettings {
-    padding-bottom: 0px;
+    bottom: 0px;
   }
   #contactMe {
     margin-top: 20px;
