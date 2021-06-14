@@ -44,8 +44,8 @@ body {
   right: 20px;
   top: 20px;
   z-index: 600;
-  -webkit-transition: right 0.5s, top 0.5s;
-  transition: right 0.5s, top 0.5s;
+  -webkit-transition: right 0.5s, top 0.5s, background-color 0.5s;
+  transition: right 0.5s, top 0.5s, background-color 0.5s;
   cursor: pointer;
 }
 

@@ -140,6 +140,7 @@ function toggleAccessibilityBar() {
       bar.style.width = "300px";
     }
     btn.style.boxShadow = "none";
+    btn.style.backgroundColor = "#fff";
     btn.style.right = "10px";
     btn.style.top = "10px";
     document.getElementById("navbarSettings").style.width = "100%";
@@ -147,6 +148,7 @@ function toggleAccessibilityBar() {
   } else if (barOpen == true) {
     bar.style.width = "0px";
     btn.style.boxShadow = "black 2px 2px 2px";
+    btn.style.backgroundColor = "#cfcfcf4b";
     btn.style.right = "20px";
     btn.style.top = "20px";
     document.getElementById("navbarSettings").style.width = "0";
