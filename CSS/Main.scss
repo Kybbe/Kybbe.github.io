@@ -142,7 +142,7 @@ input[type=checkbox]:focus {
 }
 
 #navbarSettings {
-    width: 0; 
+    width: 0;
     text-align: center; 
     bottom: 0px; 
     position: absolute; 
@@ -895,10 +895,6 @@ iframe {
 @media (min-width: 770px) {
     #firstRow {
         height: 100vh !important;
-    }
-    
-    #navbarSettings {
-        bottom: 0px;
     }
     
     #contactMe {

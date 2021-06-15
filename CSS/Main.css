@@ -971,9 +971,6 @@ iframe {
   #firstRow {
     height: 100vh !important;
   }
-  #navbarSettings {
-    bottom: 0px;
-  }
   #contactMe {
     margin-top: 20px;
   }
