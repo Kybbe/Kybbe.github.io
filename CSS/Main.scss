@@ -312,7 +312,6 @@ input[type=checkbox]:focus {
 
 /* WeatherWidget */
 
-
 .weatherContainer, .dateContainer{
     background-color: white;
     overflow: hidden;
@@ -810,6 +809,10 @@ iframe {
         height: 90px;
         padding: 15px;
         line-height: 1.2;
+    }
+
+    .weatherContainer h1, .dateContainer h1{
+        line-height: 1.2 !important;
     }
 
     #Condition, #date{

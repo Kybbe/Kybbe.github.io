@@ -896,6 +896,9 @@ iframe {
     padding: 15px;
     line-height: 1.2;
   }
+  .weatherContainer h1, .dateContainer h1 {
+    line-height: 1.2 !important;
+  }
   #Condition, #date {
     position: absolute;
     left: 20px;
