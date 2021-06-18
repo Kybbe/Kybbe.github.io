@@ -90,6 +90,7 @@ background: #555;
 #navbarTopButton {
     position: absolute;
     bottom: 120px;
+    bottom: calc(120px + env(safe-area-inset-bottom));
     width: 90%;
     margin-left: 5%;
     padding: 6px;
