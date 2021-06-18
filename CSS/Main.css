@@ -685,15 +685,32 @@ sup {
   border: 1px solid darkgray !important;
   -webkit-box-shadow: 5px 5px 5px grey;
           box-shadow: 5px 5px 5px grey;
-  margin-top: 30px;
+  margin-top: 15px;
 }
 
 .mediumCard {
-  width: 90%;
+  width: 97%;
 }
 
 #workExp .card h3 {
   margin-bottom: 4px;
+}
+
+legend {
+  margin-left: 15%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 5px;
+  margin-bottom: 0px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  -webkit-transition: font-size 1s;
+  transition: font-size 1s;
+}
+
+.card-body {
+  padding-top: 0px;
 }
 
 #smallCardButton {
@@ -763,7 +780,7 @@ iframe {
 }
 
 .iframeHolder {
-  padding: 20px 0px 0px 0px !important;
+  padding: 0px 0px 10px 0px !important;
 }
 
 #eddlerWebsite > h4 {
@@ -773,6 +790,9 @@ iframe {
   padding: 7px;
   border: #008cff 2px solid;
   margin-bottom: 0px;
+  margin: 0px 10px;
+  -webkit-box-shadow: 5px 5px 5px #000000ad;
+          box-shadow: 5px 5px 5px #000000ad;
 }
 
 .smallCard, .smallCard > div, .smallCard > div > ul {
@@ -938,6 +958,9 @@ iframe {
   #picCol img {
     width: 60%;
   }
+  legend {
+    font-size: 2rem;
+  }
 }
 
 @media (min-width: 600px) {
@@ -978,13 +1001,13 @@ iframe {
     margin-top: 50px;
   }
   .mediumCard {
-    width: 45%;
+    width: 48%;
   }
 }
 
 @media (min-width: 1300px) {
   .mediumCard {
-    width: 30%;
+    width: 32%;
   }
 }
 
