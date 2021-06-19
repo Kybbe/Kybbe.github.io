@@ -227,11 +227,12 @@ function accessibilityButtonCheck() {
 
 function closeSpeechBubble() {
   document.getElementById("speechBubble").style.display = "none";
+  localStorage.setItem('closedSpeechBubble', 'True');
 }
 
 function autoCloseSpeechBubble() {
-  //dont show textbubble if accessibility is already on
-  if(localStorage.getItem('accessibility') != "True"){
+  //dont show textbubble if accessibility is already on AND if user hasnt already close speechbubble
+  if(localStorage.getItem('accessibility') != "True" && localStorage.getItem('closedSpeechBubble') != "True") {
     //wait 5 seconds before showing it
     setTimeout( function() {
       document.getElementById("speechBubble").style.display = "block";
@@ -463,6 +464,11 @@ function convertTemp() {
     document.getElementById("Temp").innerHTML = currentTemp + "°<sup>C</sup>";
     highLow.innerHTML = "<i class='fas fa-angle-up'></i>" + currentMaxTemp + "°<sup>C</sup> " + "<i class='fas fa-angle-down'></i>" + currentMinTemp + "°<sup>C</sup>";
     metric = "C"
+  }
+
+  if(accessibility == true) {
+    document.getElementsByClassName("fa-angle-up")[0].style.color = "red";
+    document.getElementsByClassName("fa-angle-down")[0].style.color = "blue";
   }
 }
 
