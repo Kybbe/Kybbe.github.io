@@ -403,12 +403,12 @@ function getWeather(position) {
       currentTemp = Math.round(result.main.temp);
       currentMaxTemp = Math.round(result.main.temp_max).toString();
       currentMinTemp = Math.round(result.main.temp_min).toString();
-      document.getElementById("Temp").innerHTML = currentTemp + "°<sup>C</sup>";
+      document.getElementById("Temp").innerHTML = currentTemp + "<sup>C</sup>";
 
       var highLow = document.getElementById("highLow");
-      highLow.innerHTML = "<i class='fas fa-angle-up'></i>" + currentMaxTemp + "° " + "<i class='fas fa-angle-down'></i>" + currentMinTemp + "°<sup>C</sup>";
+      highLow.innerHTML = "<i class='fas fa-angle-up'></i>" + currentMaxTemp + " " + "<i class='fas fa-angle-down'></i>" + currentMinTemp + "<sup>C</sup>";
 
-      document.getElementById("highLow").innerHTML = "<i class='fas fa-angle-up'></i>" + currentMaxTemp + "°<sup>C</sup> " + "<i class='fas fa-angle-down'></i> " + currentMinTemp + "°<sup>C</sup>";
+      document.getElementById("highLow").innerHTML = "<i class='fas fa-angle-up'></i>" + currentMaxTemp + "<sup>C</sup> " + "<i class='fas fa-angle-down'></i> " + currentMinTemp + "<sup>C</sup>";
       document.getElementById("Condition").innerHTML = "<i class='fas fa-sun'></i>" + result.weather[0].main;
       document.getElementById("Location").innerHTML = "<i class='fas fa-location-arrow'></i> " + result.name + ", " + result.sys.country;
       
@@ -457,12 +457,12 @@ function convertTemp() {
     var currentMaxTempF = Math.round(currentMaxTemp * 9/5 + 32)
     var currentMinTempF = Math.round(currentMinTemp * 9/5 + 32)
     
-    document.getElementById("Temp").innerHTML = currentTempF += "°<sup>F</sup>";
-    highLow.innerHTML = "<i class='fas fa-angle-up'></i>" + currentMaxTempF + "°<sup>F</sup> " + "<i class='fas fa-angle-down'></i>" + currentMinTempF + "°<sup>F</sup>";
+    document.getElementById("Temp").innerHTML = currentTempF += "<sup>F</sup>";
+    highLow.innerHTML = "<i class='fas fa-angle-up'></i>" + currentMaxTempF + "<sup>F</sup> " + "<i class='fas fa-angle-down'></i>" + currentMinTempF + "<sup>F</sup>";
     metric = "F";
   } else {
-    document.getElementById("Temp").innerHTML = currentTemp + "°<sup>C</sup>";
-    highLow.innerHTML = "<i class='fas fa-angle-up'></i>" + currentMaxTemp + "°<sup>C</sup> " + "<i class='fas fa-angle-down'></i>" + currentMinTemp + "°<sup>C</sup>";
+    document.getElementById("Temp").innerHTML = currentTemp + "<sup>C</sup>";
+    highLow.innerHTML = "<i class='fas fa-angle-up'></i>" + currentMaxTemp + "<sup>C</sup> " + "<i class='fas fa-angle-down'></i>" + currentMinTemp + "<sup>C</sup>";
     metric = "C"
   }
 

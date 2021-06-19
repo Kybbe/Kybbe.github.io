@@ -698,13 +698,13 @@ sup {
 }
 
 legend {
-  margin-left: 15%;
+  margin-left: 5%;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   padding: 5px;
   margin-bottom: 0px;
-  font-size: 1.5rem;
+  font-size: 1.7em;
   font-weight: 500;
   -webkit-transition: font-size 1s;
   transition: font-size 1s;
@@ -959,7 +959,8 @@ iframe {
     width: 60%;
   }
   legend {
-    font-size: 2rem;
+    font-size: 2em;
+    margin-left: 15%;
   }
 }
 
