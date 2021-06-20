@@ -574,8 +574,8 @@ module.exports = {
     .speech-bubble:after {
         content: '';
         position: absolute;
-        left: 0;
-        top: 20%;
+        left: 1px;
+        top: 23%;
         width: 0;
         height: 0;
         border: 20px solid transparent;
