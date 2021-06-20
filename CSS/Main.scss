@@ -18,7 +18,7 @@ html, body {
     height: 100%;
     margin: 0px;
     padding: 0px;
-    overflow-x: hidden;
+    
     scroll-behavior: smooth;
 }
 
@@ -203,6 +203,7 @@ input[type=checkbox] {
     background-color: $plainBG-color;
     height: 100vh; /* fallback */
     height: calc(100vh - env(safe-area-inset-bottom));
+    overflow: hidden;
 }
 
 #headline{
@@ -646,8 +647,6 @@ legend {
     border: #00000000 0px solid !important;
     border-radius: 10px;
 }
-
-
 
 @-webkit-keyframes hue {
   from {

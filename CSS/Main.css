@@ -8,7 +8,6 @@ html, body {
   height: 100%;
   margin: 0px;
   padding: 0px;
-  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -211,6 +210,7 @@ input[type=checkbox] :focus {
   height: 100vh;
   /* fallback */
   height: calc(100vh - env(safe-area-inset-bottom));
+  overflow: hidden;
 }
 
 #headline {

@@ -44,6 +44,10 @@
         <script src="https://unpkg.com/http-vue-loader"></script>
         <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
 
+    <!-- Animate on Scroll Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
     <link rel="stylesheet" href="CSS/Main.css">
 
         <!-- Since I don't want this styling on ContactME site (beacuse it should'nt move when users are trying to click on stuff.) -->
@@ -108,7 +112,7 @@
         
         <div style="justify-content: space-evenly; ">
 
-            <fieldset class="card mediumCard"> <!-- Schillerska -->
+            <fieldset data-aos="fade-up" class="card mediumCard"> <!-- Schillerska -->
                     <legend>Schillerska</legend>
                     <div class="card-body">
                         <h4 class="card-title">Librarian</h4>
@@ -129,14 +133,14 @@
                     </div>
             </fieldset>
             
-            <fieldset class="card mediumCard"> <!-- Schillerska Website -->
+            <fieldset data-aos="fade-up" class="card mediumCard"> <!-- Schillerska Website -->
                 <legend>Schillerska Website</legend>
                 <div class="card-body iframeHolder">
                   <iframe src="https://kybbe.github.io/"></iframe>
                 </div>
             </fieldset>
 
-            <fieldset class="card mediumCard"> <!-- Software Design NTI -->
+            <fieldset data-aos="fade-up" class="card mediumCard"> <!-- Software Design NTI -->
                 <legend>Software Design NTI</legend>
                 <div class="card-body">
                   <h4 class="card-title">Software Design Nordic Techincal Institute (NTI gymnasium) </h4>
@@ -150,7 +154,7 @@
                 </div>
             </fieldset>
 
-            <fieldset class="card mediumCard"> <!-- Software design smallCards -->
+            <fieldset data-aos="fade-up" class="card mediumCard"> <!-- Software design smallCards -->
                 <legend>Languages</legend>
                 <div class="card-body" style="display: flex; flex-wrap: wrap;">
                     <div class="smallCard">
@@ -209,7 +213,7 @@
                 </div>
             </fieldset>
 
-            <fieldset class="card mediumCard"> <!-- Eddler -->
+            <fieldset data-aos="fade-up" class="card mediumCard"> <!-- Eddler -->
                 <legend>Eddler</legend>
                 <div class="card-body">
                     <h4 class="card-title">Eddler 10 week internship</h4>
@@ -232,17 +236,17 @@
                 </div>
             </fieldset>
 
-            <fieldset class="card mediumCard"> <!-- Eddler Game -->
+            <fieldset data-aos="fade-up" class="card mediumCard"> <!-- Eddler Game -->
                 <legend>Eddler game</legend>
                 <div class="card-body">
                     <div class="" id="container">
-                        <dk-simpleaddition style="margin-bottom: 46px;" class="addition" levelshortcode = "1" maxscore = 10> </dk-simpleaddition>
+                        <dk-simpleaddition style="margin-bottom: 46px;" class="addition" levelshortcode = "4" maxscore = 10> </dk-simpleaddition>
                     </div>
                     <a id="smallCardButton" ontouchstart="" href="https://eddler.se/lektioner/spel-addition-med-heltal/#simpleaddition" target="_blank" class="btn btn-primary">Math game on Eddler.se</a>
                 </div>
             </fieldset>
 
-            <fieldset class="card mediumCard"> <!-- Netonnet -->
+            <fieldset data-aos="fade-up" class="card mediumCard"> <!-- Netonnet -->
                 <legend style="color:rgb(93, 161, 250)">Net 
                     <svg width="50" height="50">
                         <circle cx="25" cy="25" r="25" fill="red"/>
@@ -261,7 +265,7 @@
                 </div>
             </fieldset>
 
-            <fieldset class="card mediumCard"> <!--Gamestop -->
+            <fieldset data-aos="fade-up" class="card mediumCard"> <!--Gamestop -->
                 <legend id="gamestop">Game<span id="gamestopSpan">Stop</span></legend>
                 <div class="card-body">
                     <h4 class="card-title">Senior Sales associate</h4>
@@ -273,7 +277,7 @@
                 </div>
             </fieldset>
 
-            <fieldset class="card mediumCard"> <!-- Sahlgrenska -->
+            <fieldset data-aos="fade-up" class="card mediumCard"> <!-- Sahlgrenska -->
                 <legend>Sahlgrenska</legend>
                 <div class="card-body">
                     <h4 class="card-title">Administrative research for learning hospital Sahlgrenska</h4>
