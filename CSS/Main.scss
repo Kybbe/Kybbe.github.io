@@ -31,15 +31,14 @@ body {
   }
   
 ::-webkit-scrollbar-track {
-background: #c5c5c5;
+    background: #c5c5c5;
 }
 
 ::-webkit-scrollbar-thumb {
-background: #888;
-}
-
-::-webkit-scrollbar-thumb:hover {
-background: #555;
+    background: #888;
+    :hover {
+        background: #555;
+    }
 }
 
 #accessibilityBtn {
@@ -77,10 +76,9 @@ background: #555;
 #accessibilityBar a {
     text-decoration: none;
     color: $text-color;
-}
-
-#accessibilityBar a:hover {
-    color: #a7a7a7;
+    :hover {
+        color: #a7a7a7;
+    }
 }
 
 #navbarLinks h2 {
@@ -107,9 +105,9 @@ input[type=checkbox] {
     -webkit-tap-highlight-color: transparent;
     cursor: pointer;
     margin-left: 5px;
-}
-input[type=checkbox]:focus {
-    outline: 0;
+    :focus {
+        outline: 0;
+    }
 }
 
 .toggle {
@@ -251,16 +249,14 @@ input[type=checkbox]:focus {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-}
-
-#contactMe:hover, #contactMe:focus {
-    color: $text-color;
-    outline: 0;
-    background-position: 0;
-}
-
-#contactMe:active {
-    box-shadow: 0px 0px 0px #fff;
+    :hover, :focus {
+        color: $text-color;
+        outline: 0;
+        background-position: 0;
+    }
+    :active {
+        box-shadow: 0px 0px 0px #fff;
+    }
 }
 
 #headline > h1, #oldText > h1 {
@@ -298,13 +294,12 @@ input[type=checkbox]:focus {
     filter: drop-shadow(5px 5px 5px #472D38);
     padding-top: 10px;
     padding-left: 20px;
-}
-
-#picCol img:hover {
-    -webkit-filter: none !important; 
-    filter: none !important;
-    padding-top: 12px;
-    padding-left: 22px;
+    :hover {
+        -webkit-filter: none !important; 
+        filter: none !important;
+        padding-top: 12px;
+        padding-left: 22px;
+    }
 }
 
 #picCol {
@@ -637,6 +632,9 @@ legend {
     bottom: 20px;
     width: calc(100% - 40px);
     border-radius: 10px;
+    :active{
+        background-color: #0069d9;
+    }
 }
 
 .card-text {
@@ -649,9 +647,6 @@ legend {
     border-radius: 10px;
 }
 
-.row {
-    margin: 0px !important;
-}
 
 
 @-webkit-keyframes hue {
@@ -797,27 +792,24 @@ iframe {
 #PB1 {
     background-color: red;
     margin-left: 10px;
+    :active {
+        background-color: darken(red, 30%);
+    }
 }
 
 #PB2 {
     background-color: yellow;
+    :active {
+        background-color: darken(yellow, 30%);
+    }
 }
 
 #PB3 {
     background-color: green;
     margin-right: 7px;
-}
-
-#PB1:active {
-    background-color: darken(red, 30%);
-}
-
-#PB2:active {
-    background-color: darken(yellow, 30%);
-}
-
-#PB3:active {
-    background-color: darken(green, 30%);
+    :active {
+        background-color: darken(green, 30%);
+    }
 }
 
 @media (min-width: 395px) {
@@ -903,13 +895,12 @@ iframe {
         padding-left: 0px;
         position: relative;
         z-index: 1;
-    }
-    
-    #picCol img:hover {
-        -webkit-filter: none !important; 
-        filter: none !important;
-        padding-top: calc(10vh + 2px);
-        padding-left: 2px;
+        :hover {
+            -webkit-filter: none !important; 
+            filter: none !important;
+            padding-top: calc(10vh + 2px);
+            padding-left: 2px;
+        }
     }
 }
 
@@ -941,11 +932,9 @@ iframe {
     #picCol img {
         padding-top: 0px;
         width: 80%;
-    }
-    
-    #picCol img:hover {
-        padding-top: 2px;
-        width: 80%;
+        :hover {
+            padding-top: 2px;
+        }
     }
 }
 
@@ -997,35 +986,31 @@ iframe {
 #email {
     color: $accent-color3;
     cursor: pointer;
-}
-
-#email:hover {
-    color: darken($accent-color3, 20%);
-    text-decoration: underline;
+    :hover {
+        color: darken($accent-color3, 20%);
+        text-decoration: underline;
+    }
 }
 
 #github {
     color: $accent-color2;
-}
-
-#github:hover {
-    color: darken($accent-color2, 20%);
+    :hover {
+        color: darken($accent-color2, 20%);
+    }
 }
 
 #linkedIn {
     color: $accent-color6;
     cursor: pointer;
-}
-
-#linkedIn:hover {
-    color: darken($accent-color6, 20%);
-    text-decoration: underline;
+    :hover {
+        color: darken($accent-color6, 20%);
+        text-decoration: underline;
+    }
 }
 
 #Facebook {
     color: blue;
-}
-
-#Facebook:hover {
-    color: darken(blue, 20%);
+    :hover {
+        color: darken(blue, 20%);
+    }
 }

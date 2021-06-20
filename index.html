@@ -37,6 +37,12 @@
         <script src="https://kit.fontawesome.com/811a2ddc97.js" crossorigin="anonymous" rel="nofollow"></script>
     <!-- Font Nobile Google -->
         <link href="https://fonts.googleapis.com/css2?family=Nobile&display=swap" rel="stylesheet">
+    
+    
+    <!-- Vue / httpLoader-->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+        <script src="https://unpkg.com/http-vue-loader"></script>
+        <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
 
     <link rel="stylesheet" href="CSS/Main.css">
 
@@ -123,7 +129,7 @@
                     </div>
             </fieldset>
             
-            <fieldset class="card mediumCard"><!-- Schillerska Website -->
+            <fieldset class="card mediumCard"> <!-- Schillerska Website -->
                 <legend>Schillerska Website</legend>
                 <div class="card-body iframeHolder">
                   <iframe src="https://kybbe.github.io/"></iframe>
@@ -147,10 +153,6 @@
             <fieldset class="card mediumCard"> <!-- Software design smallCards -->
                 <legend>Languages</legend>
                 <div class="card-body" style="display: flex; flex-wrap: wrap;">
-                    <div class="smallCard">
-                        <h4>In class we learned MANY languages, practices and frameworks, for example:</h4>
-                    </div>
-
                     <div class="smallCard">
                         <div id="frontendContainer">
                             <ul id="frontend" style="margin-bottom: 0px;">
@@ -182,7 +184,6 @@
                                 <li>MySQL</li>
                             </ul>
                         </div>
-                        <h3 class="text-muted" style="margin: 0;">Click for "hacker text" effect!</h3>
                     </div>
 
                     <div class="smallCard">
@@ -202,7 +203,6 @@
                                 <br>
                             </ul> 
                         </div>
-                        <h4 class="text-muted" id="programHint" style="margin: 0;">Click the buttons at the top for fun effect!</h4>
                     </div>
 
                   
@@ -233,10 +233,12 @@
             </fieldset>
 
             <fieldset class="card mediumCard"> <!-- Eddler Website -->
-                <legend>Eddler mathgame</legend>
-                <div class="card-body iframeHolder" id="eddlerWebsite">
-                    <iframe src="https://eddler.se/lektioner/spel-addition-med-heltal/#simpleaddition"></iframe>
-                    <h4>Click or hover mouse over to load in the page!</h4>
+                <legend>Eddler game</legend>
+                <div class="card-body">
+                    <div class="" id="container">
+                        <dk-simpleaddition class="addition" levelshortcode = "1" maxscore = 10> </dk-simpleaddition>
+                    </div>
+                    <a id="smallCardButton" ontouchstart="" href="https://eddler.se/lektioner/spel-addition-med-heltal/#simpleaddition" target="_blank" class="btn btn-primary">Math game on Eddler.se</a>
                 </div>
             </fieldset>
 
@@ -287,5 +289,18 @@
 
     </div>
 
-    <script src="JS/Main.JS"></script>  
+    <script src="JS/Main.JS"></script>
+
+    <script type="text/javascript">
+        new Vue({
+            
+            el: "#container",
+        
+            components: {
+                'dk-simpleaddition': httpVueLoader('./eddlerGame/dk-simpleaddition.vue'),
+            }
+                
+            });
+        </script>
+
 </body>

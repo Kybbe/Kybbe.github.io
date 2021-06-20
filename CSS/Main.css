@@ -28,7 +28,7 @@ body {
   background: #888;
 }
 
-::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb :hover {
   background: #555;
 }
 
@@ -73,7 +73,7 @@ body {
   color: #444;
 }
 
-#accessibilityBar a:hover {
+#accessibilityBar a :hover {
   color: #a7a7a7;
 }
 
@@ -104,7 +104,7 @@ input[type=checkbox] {
   margin-left: 5px;
 }
 
-input[type=checkbox]:focus {
+input[type=checkbox] :focus {
   outline: 0;
 }
 
@@ -260,13 +260,13 @@ input[type=checkbox]:focus {
   appearance: none;
 }
 
-#contactMe:hover, #contactMe:focus {
+#contactMe :hover, #contactMe :focus {
   color: #444;
   outline: 0;
   background-position: 0;
 }
 
-#contactMe:active {
+#contactMe :active {
   -webkit-box-shadow: 0px 0px 0px #fff;
           box-shadow: 0px 0px 0px #fff;
 }
@@ -308,7 +308,7 @@ input[type=checkbox]:focus {
   padding-left: 20px;
 }
 
-#picCol img:hover {
+#picCol img :hover {
   -webkit-filter: none !important;
   filter: none !important;
   padding-top: 12px;
@@ -721,6 +721,10 @@ legend {
   border-radius: 10px;
 }
 
+#smallCardButton :active {
+  background-color: #0069d9;
+}
+
 .card-text {
   margin-bottom: 46px;
 }
@@ -729,10 +733,6 @@ legend {
   background-color: #00000000 !important;
   border: #00000000 0px solid !important;
   border-radius: 10px;
-}
-
-.row {
-  margin: 0px !important;
 }
 
 @-webkit-keyframes hue {
@@ -889,8 +889,16 @@ iframe {
   margin-left: 10px;
 }
 
+#PB1 :active {
+  background-color: #660000;
+}
+
 #PB2 {
   background-color: yellow;
+}
+
+#PB2 :active {
+  background-color: #666600;
 }
 
 #PB3 {
@@ -898,15 +906,7 @@ iframe {
   margin-right: 7px;
 }
 
-#PB1:active {
-  background-color: #660000;
-}
-
-#PB2:active {
-  background-color: #666600;
-}
-
-#PB3:active {
+#PB3 :active {
   background-color: black;
 }
 
@@ -983,7 +983,7 @@ iframe {
     position: relative;
     z-index: 1;
   }
-  #picCol img:hover {
+  #picCol img :hover {
     -webkit-filter: none !important;
     filter: none !important;
     padding-top: calc(10vh + 2px);
@@ -1017,9 +1017,8 @@ iframe {
     padding-top: 0px;
     width: 80%;
   }
-  #picCol img:hover {
+  #picCol img :hover {
     padding-top: 2px;
-    width: 80%;
   }
 }
 
@@ -1078,7 +1077,7 @@ iframe {
   cursor: pointer;
 }
 
-#email:hover {
+#email :hover {
   color: #a7643d;
   text-decoration: underline;
 }
@@ -1087,7 +1086,7 @@ iframe {
   color: #E6AF83;
 }
 
-#github:hover {
+#github :hover {
   color: #d5782e;
 }
 
@@ -1096,7 +1095,7 @@ iframe {
   cursor: pointer;
 }
 
-#linkedIn:hover {
+#linkedIn :hover {
   color: #229ca6;
   text-decoration: underline;
 }
@@ -1105,7 +1104,7 @@ iframe {
   color: blue;
 }
 
-#Facebook:hover {
+#Facebook :hover {
   color: #000099;
 }
 /*# sourceMappingURL=Main.css.map */
