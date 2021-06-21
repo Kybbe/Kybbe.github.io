@@ -1,6 +1,6 @@
 <template>
 <div id="simpleaddition" v-cloak>
-    <div style="max-width: 770px !important">
+    <div style="max-width: 770px !important; margin-left: auto; margin-right: auto;">
     <!-- Credits och kopiera Url -->
         <dk-topbar :link = currentUrl></dk-topbar>  
 
@@ -347,7 +347,6 @@ module.exports = {
 
         doCommand(e) {
             if (this.isGoodToGo()){
-                console.log(e.key)
                 if (e.key == "Backspace"){
                     this.backspace();
                 }

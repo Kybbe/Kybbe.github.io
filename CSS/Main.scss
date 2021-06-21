@@ -36,7 +36,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
     background: #888;
-    :hover {
+    &:hover {
         background: #555;
     }
 }
@@ -76,7 +76,7 @@ body {
 #accessibilityBar a {
     text-decoration: none;
     color: $text-color;
-    :hover {
+    &:hover {
         color: #a7a7a7;
     }
 }
@@ -105,7 +105,7 @@ input[type=checkbox] {
     -webkit-tap-highlight-color: transparent;
     cursor: pointer;
     margin-left: 5px;
-    :focus {
+    &:focus {
         outline: 0;
     }
 }
@@ -210,6 +210,7 @@ input[type=checkbox] {
     padding-left: 35px;
     padding-right: 0px;
     padding-top: 2vh;
+    transition: padding 1s;
 }
 
 #pinkText {
@@ -250,12 +251,12 @@ input[type=checkbox] {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    :hover, :focus {
+    &:hover, &:focus {
         color: $text-color;
         outline: 0;
         background-position: 0;
     }
-    :active {
+    &:active {
         box-shadow: 0px 0px 0px #fff;
     }
 }
@@ -295,7 +296,7 @@ input[type=checkbox] {
     filter: drop-shadow(5px 5px 5px #472D38);
     padding-top: 10px;
     padding-left: 20px;
-    :hover {
+    &:hover {
         -webkit-filter: none !important; 
         filter: none !important;
         padding-top: 12px;
@@ -633,7 +634,7 @@ legend {
     bottom: 20px;
     width: calc(100% - 40px);
     border-radius: 10px;
-    :active{
+    &:active{
         background-color: #0069d9;
     }
 }
@@ -758,7 +759,7 @@ iframe {
 }
 
 .big {
-    margin: 1vh;
+    margin: 1vh 1vw;
     top: 0 !important;
     left: 0 !important;
     width: 95vw !important;
@@ -791,14 +792,14 @@ iframe {
 #PB1 {
     background-color: red;
     margin-left: 10px;
-    :active {
+    &:active {
         background-color: darken(red, 30%);
     }
 }
 
 #PB2 {
     background-color: yellow;
-    :active {
+    &:active {
         background-color: darken(yellow, 30%);
     }
 }
@@ -806,7 +807,7 @@ iframe {
 #PB3 {
     background-color: green;
     margin-right: 7px;
-    :active {
+    &:active {
         background-color: darken(green, 30%);
     }
 }
@@ -894,7 +895,7 @@ iframe {
         padding-left: 0px;
         position: relative;
         z-index: 1;
-        :hover {
+        &:hover {
             -webkit-filter: none !important; 
             filter: none !important;
             padding-top: calc(10vh + 2px);
@@ -925,13 +926,14 @@ iframe {
     .mediumCard {
         width: 32%;
     }
+
 }
 
 @media (min-width: 2000px) {
     #picCol img {
         padding-top: 0px;
         width: 80%;
-        :hover {
+        &:hover {
             padding-top: 2px;
         }
     }
@@ -956,6 +958,12 @@ iframe {
 @media (min-width: 780px) and (min-height: 500px) {
     #headline {
         padding-top: 20vh;
+    }
+}
+
+@media (min-width: 1565px) {
+    #headline {
+        padding-left: 20vh;
     }
 }
 
@@ -985,7 +993,7 @@ iframe {
 #email {
     color: $accent-color3;
     cursor: pointer;
-    :hover {
+    &:hover {
         color: darken($accent-color3, 20%);
         text-decoration: underline;
     }
@@ -993,7 +1001,7 @@ iframe {
 
 #github {
     color: $accent-color2;
-    :hover {
+    &:hover {
         color: darken($accent-color2, 20%);
     }
 }
@@ -1001,7 +1009,7 @@ iframe {
 #linkedIn {
     color: $accent-color6;
     cursor: pointer;
-    :hover {
+    &:hover {
         color: darken($accent-color6, 20%);
         text-decoration: underline;
     }
@@ -1009,7 +1017,7 @@ iframe {
 
 #Facebook {
     color: blue;
-    :hover {
+    &:hover {
         color: darken(blue, 20%);
     }
 }

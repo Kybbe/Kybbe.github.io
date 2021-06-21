@@ -82,7 +82,6 @@ function init() {
 
 function closeWindow() {
     document.getElementById("PB1").parentElement.style.display = "none";
-    document.getElementById("programHint").style.display = "none";
     document.getElementById("PB1").parentElement.parentElement.style.marginBottom = "0";
 }
 
@@ -91,7 +90,6 @@ function closeWindowTemp() {
 
     setTimeout(function () {
         document.getElementById("PB2").parentElement.style.display = "block";
-        document.getElementById("programHint").style.display = "block";
         document.getElementById("PB1").parentElement.parentElement.style.marginBottom = "10px";
       }, 3000);
 }
@@ -107,7 +105,9 @@ function enlargeWindow() {
   const vh = document.documentElement.clientHeight;
   var window = document.getElementById("programs");
   var windowContainer = window.parentElement;
+  var languagesContainer = document.getElementById("languages")
   
+  languagesContainer.style.transform = "unset"
   $(windowContainer).addClass("test");
   if(!$(windowContainer).hasClass("big")) {
     $(windowContainer).addClass("big");
@@ -123,6 +123,7 @@ function enlargeWindow() {
     $(window).addClass("test");
     $(windowContainer).removeClass("big");
     $(window).removeClass("big2");
+    languagesContainer.style = null;
     window.innerHTML = list;
   }
 
