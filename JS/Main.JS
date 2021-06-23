@@ -101,15 +101,17 @@ fetch('loremIpsumText.txt')
 });
 
 function enlargeWindow() {
+  var languagesContainer = document.getElementById("languages")
+  $(languagesContainer).removeClass("aos-init aos-animate");
+  $(languagesContainer).removeAttr("data-aos")
   const vw = document.documentElement.clientWidth;
   const vh = document.documentElement.clientHeight;
   var window = document.getElementById("programs");
   var windowContainer = window.parentElement;
-  var languagesContainer = document.getElementById("languages")
-  
-  languagesContainer.style.transform = "unset"
+
   $(windowContainer).addClass("test");
   if(!$(windowContainer).hasClass("big")) {
+    
     $(windowContainer).addClass("big");
     $(window).addClass("big2");
     list = window.innerHTML;
@@ -120,7 +122,8 @@ function enlargeWindow() {
     }, 2000);
 
   } else {
-    $(window).addClass("test");
+    $(languagesContainer).addClass("aos-init aos-animate");
+    $(languagesContainer).attr("data-aos", "fade-up")
     $(windowContainer).removeClass("big");
     $(window).removeClass("big2");
     languagesContainer.style = null;
@@ -206,8 +209,8 @@ function accessibilityButtonCheck() {
       document.body.style.color = null;
       document.getElementById("pinkText").style.color = null;
       document.getElementsByClassName("fa-angle-up")[0].style.color = null;
-    document.getElementsByClassName("fa-angle-down")[0].style.color = null;
-    document.getElementsByClassName("fa-location-arrow")[0].style.color = null;
+      document.getElementsByClassName("fa-angle-down")[0].style.color = null;
+      document.getElementsByClassName("fa-location-arrow")[0].style.color = null;
       
       if (check == true) {
         document.getElementById("email").style.color = null;

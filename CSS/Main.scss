@@ -759,14 +759,19 @@ iframe {
 }
 
 .big {
-    margin: 1vh 1vw;
+    margin: 1vh 0px;
     top: 0 !important;
-    left: 0 !important;
-    width: 95vw !important;
+    left: 1vw !important;
+    right: 1vw !important;
+    width: 98vw !important;
     height: 98vh !important;
     position: fixed;
     overflow: hidden;
     z-index: 887;
+}
+
+.languageBig {
+    transform: none !important;
 }
 
 .big2 {
