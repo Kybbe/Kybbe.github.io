@@ -18,12 +18,12 @@ html, body {
     height: 100%;
     margin: 0px;
     padding: 0px;
-    
     scroll-behavior: smooth;
 }
 
 body {
     color: $text-color;
+    background-color: $plainBG-color;
 }
 
 ::-webkit-scrollbar {
@@ -200,7 +200,6 @@ input[type=checkbox] {
 /* Headline / firstRow */
 
 #firstRow {
-    background-color: $plainBG-color;
     height: 100vh; /* fallback */
     height: calc(100vh - env(safe-area-inset-bottom));
     overflow: hidden;
@@ -581,10 +580,7 @@ sup {
 }
 
 #workExp {
-    background-color: $plainBG-color;
-    margin-bottom: 30px;
-    -webkit-box-shadow: 0px -10px 10px 3px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0px -10px 10px 3px rgba(0,0,0,0.2);
+    padding-bottom: 30px;
     box-shadow: 0px -10px 10px 3px rgba(0, 0, 0, 0.2);
     position: relative;
     z-index: 60;
@@ -694,7 +690,7 @@ iframe {
 }
 
 .iframeHolder {
-    padding: 0px 0px 10px 0px !important;
+    padding: 0px !important;
 }
 
 #eddlerWebsite > h4 {
@@ -817,6 +813,34 @@ iframe {
     }
 }
 
+
+#footer {
+    background-color: $plainBG-color;
+    color: $text-color;
+    box-shadow: 0px -10px 10px 3px rgba(0, 0, 0, 0.2);
+    width: 100vw;
+    position: absolute;
+    z-index: 199;
+    padding: 20px;
+}
+
+#footerLists {
+    > ul {
+        width: 48%;
+        list-style-type: none;
+        border-left: 2px solid $text-color;
+        padding-left: 8px;
+        margin-bottom: 0px;
+        > h5 {
+            margin-bottom: 3px;
+        }
+    }
+}
+
+#languagesPT2 {
+    margin-bottom: 40px !important;
+}
+
 @media (min-width: 395px) {
     .weatherContainer, .dateContainer {
         height: 90px;
@@ -891,6 +915,27 @@ iframe {
         margin-top: 30px;
         font-size: 1.25rem;
     }
+}
+
+@media (min-width: 685px) {
+    #contactList {
+        margin-left: 100px;
+    }
+
+    #footerLists {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        > ul {
+            width: unset;
+        }
+    }
+
+    #languagesPT2 {
+        border-left: 0px !important;
+        margin-bottom: 0px !important;
+    }
+    
 }
 
 @media (min-width: 768px) {
@@ -977,11 +1022,6 @@ iframe {
 
 
 /* Contact Site */
-
-#contactBody {
-    background-color: $plainBG-color;
-    color: $text-color;
-}
 
 .fade-out {
     animation: fadeOut ease 4s;

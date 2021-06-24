@@ -2,8 +2,8 @@ var accessibility = false;
 var row = document.getElementById("backendContainer");
 var word = document.getElementById("backend");
 var barOpen = false;
-const vw = document.documentElement.clientWidth;
-const vh = document.documentElement.clientHeight;
+var vw;
+var vh;
 var currentTemp;
 var currentMaxTemp;
 var currentMinTemp;
@@ -104,8 +104,6 @@ function enlargeWindow() {
   var languagesContainer = document.getElementById("languages")
   $(languagesContainer).removeClass("aos-init aos-animate");
   $(languagesContainer).removeAttr("data-aos")
-  const vw = document.documentElement.clientWidth;
-  const vh = document.documentElement.clientHeight;
   var window = document.getElementById("programs");
   var windowContainer = window.parentElement;
 
@@ -135,6 +133,7 @@ function enlargeWindow() {
 //To open navbar
 
 function toggleAccessibilityBar() {
+  vw = document.documentElement.clientWidth;
   var bar = document.getElementById("accessibilityBar");
   var btn = document.getElementById("accessibilityBtn");
   if (barOpen == false) {
@@ -298,6 +297,7 @@ function onloadTextChange() {
 
   //Wait for animation to end, then change text at last second.
   setTimeout( function() {
+    vw = document.documentElement.clientWidth;
     var confettiX;
     var confettiY;
     if(vw < 751) { //Mobile  

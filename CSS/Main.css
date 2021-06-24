@@ -13,6 +13,7 @@ html, body {
 
 body {
   color: #444;
+  background-color: #f8f6f4;
 }
 
 ::-webkit-scrollbar {
@@ -206,7 +207,6 @@ input[type=checkbox]:focus {
 
 /* Headline / firstRow */
 #firstRow {
-  background-color: #f8f6f4;
   height: 100vh;
   /* fallback */
   height: calc(100vh - env(safe-area-inset-bottom));
@@ -662,10 +662,9 @@ sup {
 }
 
 #workExp {
-  background-color: #f8f6f4;
-  margin-bottom: 30px;
+  padding-bottom: 30px;
   -webkit-box-shadow: 0px -10px 10px 3px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px -10px 10px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px -10px 10px 3px rgba(0, 0, 0, 0.2);
   position: relative;
   z-index: 60;
 }
@@ -782,7 +781,7 @@ iframe {
 }
 
 .iframeHolder {
-  padding: 0px 0px 10px 0px !important;
+  padding: 0px !important;
 }
 
 #eddlerWebsite > h4 {
@@ -918,6 +917,33 @@ iframe {
   background-color: black;
 }
 
+#footer {
+  background-color: #f8f6f4;
+  color: #444;
+  -webkit-box-shadow: 0px -10px 10px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px -10px 10px 3px rgba(0, 0, 0, 0.2);
+  width: 100vw;
+  position: absolute;
+  z-index: 199;
+  padding: 20px;
+}
+
+#footerLists > ul {
+  width: 48%;
+  list-style-type: none;
+  border-left: 2px solid #444;
+  padding-left: 8px;
+  margin-bottom: 0px;
+}
+
+#footerLists > ul > h5 {
+  margin-bottom: 3px;
+}
+
+#languagesPT2 {
+  margin-bottom: 40px !important;
+}
+
 @media (min-width: 395px) {
   .weatherContainer, .dateContainer {
     height: 90px;
@@ -980,6 +1006,29 @@ iframe {
   #contactMe {
     margin-top: 30px;
     font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 685px) {
+  #contactList {
+    margin-left: 100px;
+  }
+  #footerLists {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #footerLists > ul {
+    width: unset;
+  }
+  #languagesPT2 {
+    border-left: 0px !important;
+    margin-bottom: 0px !important;
   }
 }
 
@@ -1058,11 +1107,6 @@ iframe {
 }
 
 /* Contact Site */
-#contactBody {
-  background-color: #f8f6f4;
-  color: #444;
-}
-
 .fade-out {
   -webkit-animation: fadeOut ease 4s;
           animation: fadeOut ease 4s;
