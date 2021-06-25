@@ -10,6 +10,9 @@ var currentMinTemp;
 var metric = "C";
 var lipsum;
 var list;
+var today;
+var time;
+var timeMode = "24H"
 
 //For hacker text in Backend smallCard
 
@@ -371,20 +374,40 @@ function getDate() {
   document.getElementById("date").innerHTML = today.getDate() + " " + monthNames[today.getMonth()] + " - " + today.getFullYear();
 }
 
-var today;
-var time;
 function updateClock() {
   today = new Date();
-  
-  if(today.getMinutes() <= "9"){
-    time = today.getHours() + ":0" + today.getMinutes();
-  } else {
-    time = today.getHours() + ":" + today.getMinutes();
-  }
 
-  document.getElementById("time").innerHTML = time;
+  if(timeMode == "24H") {
+    if(today.getMinutes() <= "9"){
+      time = today.getHours() + ":0" + today.getMinutes();
+    } else {
+      time = today.getHours() + ":" + today.getMinutes();
+    }
+
+    document.getElementById("time").innerHTML = time; 
+  } else {
+    var hours = today.getHours();
+    var minutes = today.getMinutes();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+  
+    document.getElementById("time").innerHTML = strTime;
+  }  
   
   setTimeout(updateClock, 10000);
+}
+
+function convertTime() {
+  if(timeMode == "24H"){
+    timeMode = "12H";
+    updateClock();
+  } else {
+    timeMode = "24H";
+    updateClock();
+  }
 }
 
 //get location
