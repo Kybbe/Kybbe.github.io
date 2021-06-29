@@ -16,8 +16,11 @@
         <div id="navbarSettings">
             <h4 style="margin-top: 10px; margin-bottom: 15px;"><i class="fas fa-cogs"></i> Settings</h4>
 
-            <p style="display: inline-block;">Turn on accessibility: </p>
-            <input type="checkbox" class="toggle" id="accessibilityCheckbox" onclick="accessibilityButtonCheck()"  onkeydown="checkIfTab(event, this.id)">
+            <p style="display: inline-block;" id="metricToCelsiusBtn">24H & C to AM/PM & F: </p>
+            <input type="checkbox" class="toggle" id="metricCheckbox" onclick="changeToMetric()" onkeydown="checkIfTab(event, this.id)">
+
+            <p style="display: inline-block;">Turn on accessibility:</p>
+            <input type="checkbox" class="toggle" id="accessibilityCheckbox" onclick="accessibilityButtonCheck()" onkeydown="checkIfTab(event, this.id)">
 
             <script>
                 autoCloseSpeechBubble();

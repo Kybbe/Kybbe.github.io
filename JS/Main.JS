@@ -410,6 +410,12 @@ function convertTime() {
   }
 }
 
+function changeToMetric() {
+  console.log(timeMode)
+  convertTime();
+  convertTemp();
+}
+
 //get location
 function getLocation() {
   if (navigator.geolocation) {
@@ -478,7 +484,7 @@ function dateWidgetLiveUpdate() {
 }
 
 function convertTemp() {
-  //if celcius is shown when clicking
+  //if celsius is shown when clicking
   if(metric == "C") {
     var currentTempF = Math.round(currentTemp * 9/5 + 32)
     var currentMaxTempF = Math.round(currentMaxTemp * 9/5 + 32)
@@ -527,3 +533,6 @@ document.addEventListener('DOMContentLoaded', function() {
     duration: 1200
   });
 });
+
+
+
