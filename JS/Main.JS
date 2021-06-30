@@ -411,7 +411,6 @@ function convertTime() {
 }
 
 function changeToMetric() {
-  console.log(timeMode)
   convertTime();
   convertTemp();
 }
