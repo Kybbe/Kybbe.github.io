@@ -13,9 +13,13 @@ var list;
 var today;
 var time;
 var timeMode = "24H"
+var formSent = false;
+var theme = "light"
+const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+const userPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+
 
 //For hacker text in Backend smallCard
-
 function rand(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -82,12 +86,13 @@ function init() {
 }
 
 // For "Programs" SmallCard buttons
-
+// "Close" programContainer.
 function closeWindow() {
     document.getElementById("PB1").parentElement.style.display = "none";
     document.getElementById("PB1").parentElement.parentElement.style.marginBottom = "0";
 }
 
+// "Close" programContainer temporarily.
 function closeWindowTemp() {
     closeWindow();
 
@@ -97,12 +102,14 @@ function closeWindowTemp() {
       }, 3000);
 }
 
+// Fetch loremIpsum file and set its content as var lipsum.
 fetch('loremIpsumText.txt')
     .then(response => response.text())
     .then(data => {
       lipsum = data;
 });
 
+// Make programsContainer 100% of window.
 function enlargeWindow() {
   var languagesContainer = document.getElementById("languages")
   $(languagesContainer).removeClass("aos-init aos-animate");
@@ -116,7 +123,7 @@ function enlargeWindow() {
     $(windowContainer).addClass("big");
     $(window).addClass("big2");
     list = window.innerHTML;
-    window.innerHTML = lipsum;
+    window.innerHTML = lipsum; // Uses previous fetch to replace list as lorem ipsum
 
     setTimeout(function () {
       enlargeWindow()
@@ -133,8 +140,7 @@ function enlargeWindow() {
 
 }
 
-//To open navbar
-
+// To open navbar // accessibilityBar.
 function toggleAccessibilityBar() {
   vw = document.documentElement.clientWidth;
   var bar = document.getElementById("accessibilityBar");
@@ -165,9 +171,8 @@ function toggleAccessibilityBar() {
 
 }
 
-//For navbar's Accessibility button / checkbox
-
-//Check if accessibility has been turned on in the past and turns it on if needed.
+// For navbar's Accessibility button / checkbox.
+// Check if accessibility has been turned on in the past and turns it on if needed.
 if(localStorage.getItem('accessibility') == "True"){
   accessibility = false;
   //So accessibility looks turned off, and makes accessiblity mode turn on.
@@ -183,6 +188,7 @@ if(localStorage.getItem('accessibility') == "True"){
   }
 }
 
+// Enables accessibilityMode.
 function accessibilityButtonCheck() {
   if (accessibility == false) {
     var check = ifExists("oldText");
@@ -231,11 +237,13 @@ function accessibilityButtonCheck() {
   }
 }
 
+// When user clicks x on speechbubble to close it.
 function closeSpeechBubble() {
   document.getElementById("speechBubble").style.display = "none";
   localStorage.setItem('closedSpeechBubble', 'True');
 }
 
+// Open and auto close speech bubble after some time.
 function autoCloseSpeechBubble() {
   //dont show textbubble if accessibility is already on AND if user hasnt already close speechbubble
   if(localStorage.getItem('accessibility') != "True" && localStorage.getItem('closedSpeechBubble') != "True") {
@@ -258,23 +266,20 @@ function autoCloseSpeechBubble() {
   }
 }
 
-//Go to top of site
-
+//Go to top of site.
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
 
-//onClick() but for Enter button
-
+// OnClick() but for Enter button.
 function checkIfTab(event, id) {
   if (event.keyCode === 13) {
     $("#" + id).click();
   }
 }
 
-//Load in widget .html files
-
+// Load in widget .html files.
 $(function () {
   var includes = $('[data-include]')
   $.each(includes, function () {
@@ -283,22 +288,23 @@ $(function () {
   })
 })
 
-//Delay Contact me button redirect so screen can scroll up correctly
-
+// Delay Contact me button redirect so screen can scroll up correctly.
 function delay(URL) {
   topFunction();
   setTimeout( function() { window.location = URL }, 500 );
 }
 
-//For contact site 
-
+// For contact site to fade out text.
 function onloadTextChange() {
   var headlines = $("#oldText")[0].children;
   for(i = 0; i < headlines.length; i++) {
     $(headlines[i]).addClass("fade-out");
   }
 
-  //Wait for animation to end, then change text at last second.
+  setTimeout( function() {
+    topFunction();
+   }, 3450 );
+  // Wait for animation to end, then change text at last second.
   setTimeout( function() {
     vw = document.documentElement.clientWidth;
     var confettiX;
@@ -327,6 +333,7 @@ function onloadTextChange() {
   }, 3950 );
 };
 
+// Copy email on click to clipboard.
 function copy(text) {
   const el = document.createElement('textarea');
   el.value = text;
@@ -337,6 +344,7 @@ function copy(text) {
   alert("Copied " + text + "!")
 }
  
+// Check if specified element is on current page.
 function ifExists(id) {
   var element = document.getElementById(id);
 
@@ -347,8 +355,7 @@ function ifExists(id) {
   } 
 }
 
-//Get date and weather for widgets
-
+// Get date and weather for widgets.
 function getDate() {
   Date.prototype.getWeek = function () {
     var target  = new Date(this.valueOf());
@@ -374,6 +381,7 @@ function getDate() {
   document.getElementById("date").innerHTML = today.getDate() + " " + monthNames[today.getMonth()] + " - " + today.getFullYear();
 }
 
+// Get time and update every 10 seconds.
 function updateClock() {
   today = new Date();
 
@@ -400,6 +408,7 @@ function updateClock() {
   setTimeout(updateClock, 10000);
 }
 
+// Convert time to AmPm and back to 24Hour.
 function convertTime() {
   if(timeMode == "24H"){
     timeMode = "12H";
@@ -410,12 +419,109 @@ function convertTime() {
   }
 }
 
+// One function to change both temperature and time modes.
 function changeToMetric() {
   convertTime();
   convertTemp();
 }
 
-//get location
+// Check if user wants or has opted-in to darkmode.
+function checkDarkMode() {
+  if(localStorage.getItem('darkMode') == 'True'){ // if user has already chosen darkmode
+    changeTheme();
+  } else if(userPrefersDark) { // if user hasnt chosen darkmode, but has it as prefered in system, change it anyway.
+    changeTheme();
+  } // if neither changed to darkmode, or preferred in system, keep it light.
+}
+
+// To make website dark or lightmode.
+function changeTheme() {
+  var check = ifExists("oldText");
+
+  if(theme == "light"){ // Make it dark mode :)
+    document.getElementById("darkModeBtn").innerHTML = "Change to light mode: ";
+
+    bar = document.getElementById("accessibilityBar");
+    bar.style.backgroundColor = "#1B191F";
+    bar.style.boxShadow = "-8px 0 10px -6px darkgrey";
+    barAs = bar.getElementsByTagName("a");
+    for(i = 0; i <= barAs.length - 1; i++){
+      barAs[i].style.color = "white";
+    }
+    bar.getElementsByTagName("h2")[0].style.borderBottom = "2px solid darkgrey";
+    document.getElementById("navbarSettings").style.boxShadow = "0px -3px 3px 3px rgba(155, 155, 155, 0.5)";
+    document.getElementById("navbarSettings").style.backgroundColor = "#302d38";
+    document.getElementById("footer").style.backgroundColor = "#1B191F";
+    document.getElementById("picCol").children[0].style.filter = "drop-shadow(5px 5px 5px rgba(155, 155, 155, 0.5)";
+    document.getElementById("contactMe").style.color = "white";
+
+    if(check != true) { // Check if on contact site.
+      document.getElementsByClassName("dateContainer")[0].style.backgroundColor = "#1B191F";
+      document.getElementById("workExp").style.boxShadow = "0px -10px 10px 3px rgba(155, 155, 155, 0.2)";
+      cards = document.getElementsByClassName("card");
+      for(i = 0; i <= cards.length - 1; i++){
+        cards[i].style.backgroundColor = "#1B191F";
+        cards[i].style.boxShadow = "5px 5px 5px rgba(155, 155, 155, 0.5)";
+      }
+      document.getElementsByClassName("dateContainer")[0].style.boxShadow = "5px 5px 5px rgba(155, 155, 155, 0.5)";
+      document.getElementsByClassName("weatherContainer")[0].style.boxShadow = "5px 5px 5px rgba(155, 155, 155, 0.5)";
+    } else { // Dark mode on contact site.
+      document.getElementById("contactFormContainer").style.backgroundColor = "#1B191F";
+      formInputs = document.getElementById("contactForm").children;
+      for(i = 0; i <= formInputs.length - 1; i++){
+        formInputs[i].style.backgroundColor = "#302d38";
+      }
+    }
+    
+    document.body.style.backgroundColor = "black";
+    document.body.style.color = "white";
+
+    localStorage.setItem('darkMode', 'True');
+    theme = "dark";
+  } else {
+    document.getElementById("darkModeBtn").innerHTML = "Change to dark mode: ";
+
+    bar = document.getElementById("accessibilityBar");
+      bar.style.backgroundColor = null;
+      bar.style.boxShadow = null;
+      barAs = bar.getElementsByTagName("a");
+      for(i = 0; i <= barAs.length - 1; i++){
+        barAs[i].style.color = null;
+      }
+      bar.getElementsByTagName("h2")[0].style.borderBottom = null;
+      document.getElementById("navbarSettings").style.boxShadow = null;
+      document.getElementById("navbarSettings").style.backgroundColor = null;
+      document.getElementById("footer").style.backgroundColor = null;
+      document.getElementById("picCol").children[0].style.filter = null;
+      document.getElementById("contactMe").style.color = null;
+
+    if(check != true) {
+      document.getElementsByClassName("dateContainer")[0].style.backgroundColor = null;
+      document.getElementById("workExp").style.boxShadow = null;
+      cards = document.getElementsByClassName("card");
+      for(i = 0; i <= cards.length - 1; i++){
+        cards[i].style.backgroundColor = null;
+        cards[i].style.boxShadow = null;
+      }
+      document.getElementsByClassName("dateContainer")[0].style.boxShadow = null;
+      document.getElementsByClassName("weatherContainer")[0].style.boxShadow = null;
+    } else { // Make it back to light mode on contact site.
+      document.getElementById("contactFormContainer").style.backgroundColor = null;
+      formInputs = document.getElementById("contactForm").children;
+      for(i = 0; i <= formInputs.length - 1; i++){
+        formInputs[i].style.backgroundColor = null;
+      }
+    }
+
+    document.body.style.backgroundColor = null;
+    document.body.style.color = null;
+
+    localStorage.setItem('darkMode', 'False');
+    theme = "light";
+  }
+}
+
+// Get location of user.
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(getWeather);
@@ -424,6 +530,7 @@ function getLocation() {
   }
 }
 
+// Get current weather using getlocation() and then change weatherContainer accordingly.
 function getWeather(position) {
   lat = position.coords.latitude;
   lon = position.coords.longitude;
@@ -477,11 +584,13 @@ function getWeather(position) {
   })
 }
 
+// Start clock and date.
 function dateWidgetLiveUpdate() {
   updateClock();
   getDate();
 }
 
+// Change from C to F and back.
 function convertTemp() {
   //if celsius is shown when clicking
   if(metric == "C") {
@@ -504,6 +613,7 @@ function convertTemp() {
   }
 }
 
+// Start raining if getWeather() predicts rain.
 function makeItRain() {
 
   var increment = 0;
@@ -527,13 +637,14 @@ function makeItRain() {
   $('.weatherBackground').append(backDrops);
 }
 
+// To start Animate on scroll.
 document.addEventListener('DOMContentLoaded', function() {
   AOS.init({
     duration: 1200
   });
 });
 
-var formSent = false;
+// Submit form with api to Google docs document.
 function subForm() {
   confirmationText = document.getElementById("formSubmitionReturn")
   btn = document.getElementById("formBtn")
@@ -560,6 +671,7 @@ function subForm() {
   }
 }
 
+// For validating form.
 function formValidation() {
   form = document.getElementById("contactForm")
   for(var i=0; i < form.elements.length; i++){
@@ -567,5 +679,4 @@ function formValidation() {
       return false;
     } 
   }
-
 }

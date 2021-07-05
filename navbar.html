@@ -18,12 +18,18 @@
 
             <p style="display: inline-block;" id="metricToCelsiusBtn">24H & C to AM/PM & F: </p>
             <input type="checkbox" class="toggle" id="metricCheckbox" onclick="changeToMetric()" onkeydown="checkIfTab(event, this.id)">
-
+            <br>
             <p style="display: inline-block;">Turn on accessibility:</p>
             <input type="checkbox" class="toggle" id="accessibilityCheckbox" onclick="accessibilityButtonCheck()" onkeydown="checkIfTab(event, this.id)">
+            <br>
+            <p style="display: inline-block;" id="darkModeBtn">Change to dark mode: </p>
+            <input type="checkbox" class="toggle" id="darkModeCheckbox" onclick="changeTheme()" onkeydown="checkIfTab(event, this.id)">
 
             <script>
                 autoCloseSpeechBubble();
+                if(ifExists("oldText")){
+                    checkDarkMode();
+                }
                 //Since modules load slower than the regular dom, this needs to be done after Checkbox has loaded in.
                 if(localStorage.getItem('accessibility') == "True") {
                     document.getElementById("accessibilityCheckbox").checked = true;
