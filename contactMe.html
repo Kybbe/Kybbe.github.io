@@ -61,7 +61,7 @@
 
     <div data-include="navbar"></div>
 
-    <div id="firstRow" style="position: relative;">
+    <div id="firstRow" style="position: relative; height: auto !important; padding: 20px;">
         <div class="row">
             <div class="col-12 col-md-6" id="headline">
                 <h1>Hi, my name is <span id="pinkText">Jacob Klarén</span>.</h1>
@@ -79,43 +79,31 @@
                     <h2>Facebook <a id="Facebook" href="https://www.facebook.com/Jacob.Klaren00/" target="_blank">Jacob Klarén</a></h2>
                 </section>
 
-                <div data-include="weatherWidget" style="max-width: 1000px !important;"></div>
-                <div data-include="dateWidget"></div>
             </div>
             <div class="col-12 col-md-6" id="picCol">
                 <img src="./Pictures/JacobNoBackground.png" alt="A picture of Jacob Klarén, Me!"> 
             </div>
         </div>
     </div>
-    <div>
 
-        
-
-        <h1 id="mail header"></h1>
-
-        <form action="" method="post" style="display: none;">
-            Name: <input type="text" name="name"><br>
-            Company: <input type="text" name="company"><br>
-            Email: <input type="text" name="email"><br>
-            Message:<br><textarea rows="5" name="message" cols="30"></textarea><br>
-            <input type="submit" name="submit" value="Submit">
-        </form>
-
-        <?php include 'Main.php'; ?>
-
-        
-
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
- 
+    <br>
+    <br>    
+    
+    <div class="row justify-content-center" >
+        <div id="contactFormContainer">
+            <h3 id="formSubmitionReturn"></h3>
+            <form id="contactForm">
+                <input placeholder="Full name (Required)" name="full_name" required />
+                <input placeholder="Company" name="company" />
+                <input placeholder="Email (Required)" type="email" name="email" required/>
+                <textarea placeholder="Hi! Beutiful website! Come work at my company!" name="message"></textarea>
+            </form>
+            <button id="formBtn" onclick="subForm()">Submit</button>
+        </div>
     </div>
+    <br>
+    <br>
+
 
     <div class="row" id="footer"> <!-- Footer -->
         <div class="col-12" id="footerLists">

@@ -90,8 +90,6 @@
                 <h3>I love web design, learning new things.</h3>
                 <h4 id="pinkText2">And people of course! :) </h4>
                 <a type="button" onclick="" ontouchstart="" onkeydown="checkIfTab(event, this.id)" href="javascript:delay('contactMe.html')" class="button" id="contactMe">Contact me!</a> 
-                <div data-include="weatherWidget" style="max-width: 1000px !important;"></div>
-                <div data-include="dateWidget"></div>
             </div>
             <div class="col-12 col-md-5" id="picCol">
                 <picture>
@@ -112,6 +110,12 @@
         <h1 class="text-center">Experience</h1>
         
         <div style="justify-content: space-evenly;">
+
+            <div class="widgetContainer">
+                <div class="widgetCard" data-include="weatherWidget"></div>
+                    
+                <div class="widgetCard" data-include="dateWidget"></div>
+            </div>
 
             <fieldset data-aos="fade-up" class="card mediumCard"> <!-- Schillerska -->
                     <legend>Schillerska</legend>

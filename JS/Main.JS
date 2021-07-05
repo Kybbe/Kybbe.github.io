@@ -533,5 +533,39 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+var formSent = false;
+function subForm() {
+  confirmationText = document.getElementById("formSubmitionReturn")
+  btn = document.getElementById("formBtn")
+  if(formValidation() == undefined) {
+    if(formSent == false) {
+      $.ajax({
+          url:'https://api.apispreadsheets.com/data/15051/',
+          type:'post',
+          data:$("#contactForm").serializeArray(),
+          success: function(){
+            confirmationText.innerHTML = "Form Data Submitted :)";
+            confirmationText.style.color = "green";
 
+            formSent = true;
 
+            $(btn).addClass("disabledBtn");
+          },
+          error: function(){
+            confirmationText.innerHTML = "There was an error :(";
+            confirmationText.style.color = "red";
+          }
+      });
+    }
+  }
+}
+
+function formValidation() {
+  form = document.getElementById("contactForm")
+  for(var i=0; i < form.elements.length; i++){
+    if(form.elements[i].value === '' && form.elements[i].hasAttribute('required')){
+      return false;
+    } 
+  }
+
+}
