@@ -42,7 +42,7 @@ body {
     }
 }
 
-#accessibilityBtn {
+#navBtn {
     width: 50px; 
     height: 50px; 
     text-align: center; 
@@ -57,13 +57,13 @@ body {
     cursor: pointer;
 }
 
-#accessibilityBtn i {
+#navBtn i {
     font-size: 25px;
     color:#c66;
     margin-top: 13px;
 }
 
-#accessibilityBar {
+#navbar {
     width: 0px;
     height: 100%;
     background-color: white;
@@ -74,7 +74,7 @@ body {
     box-shadow: -8px 0 10px -6px black;
 }
 
-#accessibilityBar a {
+#navbar a {
     text-decoration: none;
     color: $text-color;
     &:hover {
@@ -88,8 +88,8 @@ body {
 
 #navbarTopButton {
     position: absolute;
-    bottom: 170px;
-    bottom: calc(170px + env(safe-area-inset-bottom));
+    bottom: 145px;
+    bottom: calc(145px + env(safe-area-inset-bottom));
     width: 90%;
     margin-left: 5%;
     padding: 6px;

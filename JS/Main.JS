@@ -140,11 +140,11 @@ function enlargeWindow() {
 
 }
 
-// To open navbar // accessibilityBar.
-function toggleAccessibilityBar() {
+// To open navbar.
+function toggleNavbar() {
   vw = document.documentElement.clientWidth;
-  var bar = document.getElementById("accessibilityBar");
-  var btn = document.getElementById("accessibilityBtn");
+  var bar = document.getElementById("navbar");
+  var btn = document.getElementById("navBtn");
   if (barOpen == false) {
     if(vw <= 400) {
       bar.style.width = "100%";
@@ -171,72 +171,6 @@ function toggleAccessibilityBar() {
 
 }
 
-// For navbar's Accessibility button / checkbox.
-// Check if accessibility has been turned on in the past and turns it on if needed.
-if(localStorage.getItem('accessibility') == "True"){
-  accessibility = false;
-  //So accessibility looks turned off, and makes accessiblity mode turn on.
-  var check = ifExists("oldText");
-
-  //check so delay is only on contact site, and immediate on normal site.
-  if(check == true){
-    setTimeout(accessibilityButtonCheck, 4200);
-  } else {
-    window.onload = function () {
-      accessibilityButtonCheck();
-    };
-  }
-}
-
-// Enables accessibilityMode.
-function accessibilityButtonCheck() {
-  if (accessibility == false) {
-    var check = ifExists("oldText");
-
-    document.body.style.color = "#000000";
-    document.getElementById("pinkText").style.color = "#000000";
-    document.getElementsByClassName("fa-angle-up")[0].style.color = "red";
-    document.getElementsByClassName("fa-angle-down")[0].style.color = "blue";
-    document.getElementsByClassName("fa-location-arrow")[0].style.color = "blue";
-
-    if(check == true) {
-        document.getElementById("email").style.color = "blue";
-        document.getElementById("github").style.color = "blue";
-        document.getElementById("linkedIn").style.color = "blue";
-        document.getElementById("Facebook").style.color = "blue";
-    } else {
-      document.getElementById("contactMe").style.color = "#000000";
-      document.getElementById("pinkText2").style.color = "#000000";
-    }
-
-    accessibility = true;
-    localStorage.setItem('accessibility', 'True');
-  } else if (accessibility == true) {
-      var check = ifExists("oldText");
-
-      document.body.style.color = null;
-      document.getElementById("pinkText").style.color = null;
-      document.getElementsByClassName("fa-angle-up")[0].style.color = null;
-      document.getElementsByClassName("fa-angle-down")[0].style.color = null;
-      document.getElementsByClassName("fa-location-arrow")[0].style.color = null;
-      
-      if (check == true) {
-        document.getElementById("email").style.color = null;
-        document.getElementById("github").style.color = null;
-        document.getElementById("linkedIn").style.color = null;
-        document.getElementById("Facebook").style.color = null;
-      } else {
-        document.getElementById("contactMe").style.color = null;
-        document.getElementById("pinkText2").style.color = null;
-      }
-
-      accessibility = false;
-      localStorage.setItem('accessibility', 'False');
-  } else {
-
-  }
-}
-
 // When user clicks x on speechbubble to close it.
 function closeSpeechBubble() {
   document.getElementById("speechBubble").style.display = "none";
@@ -245,8 +179,6 @@ function closeSpeechBubble() {
 
 // Open and auto close speech bubble after some time.
 function autoCloseSpeechBubble() {
-  //dont show textbubble if accessibility is already on AND if user hasnt already close speechbubble
-  if(localStorage.getItem('accessibility') != "True" && localStorage.getItem('closedSpeechBubble') != "True") {
     //wait 5 seconds before showing it
     setTimeout( function() {
       document.getElementById("speechBubble").style.display = "block";
@@ -263,7 +195,6 @@ function autoCloseSpeechBubble() {
       }, 3000 );
   
     }, 5000 );
-  }
 }
 
 //Go to top of site.
@@ -441,7 +372,7 @@ function changeTheme() {
   if(theme == "light"){ // Make it dark mode :)
     document.getElementById("darkModeBtn").innerHTML = "Change to light mode: ";
 
-    bar = document.getElementById("accessibilityBar");
+    bar = document.getElementById("navbar");
     bar.style.backgroundColor = "#1B191F";
     bar.style.boxShadow = "-8px 0 10px -6px darkgrey";
     barAs = bar.getElementsByTagName("a");
@@ -482,7 +413,7 @@ function changeTheme() {
   } else {
     document.getElementById("darkModeBtn").innerHTML = "Change to dark mode: ";
 
-    bar = document.getElementById("accessibilityBar");
+    bar = document.getElementById("navbar");
       bar.style.backgroundColor = null;
       bar.style.boxShadow = null;
       barAs = bar.getElementsByTagName("a");

@@ -1,26 +1,23 @@
 <div id="navbarHolder">
-    <p id="speechBubble">Accessibility mode makes colors clearer and text easier to read. Test it here! <span onclick="closeSpeechBubble()" onkeydown="checkIfTab(event, this.id)">X</span></p>
-    <div role="button" tabindex="0" id="accessibilityBtn" ontouchstart="" onclick="toggleAccessibilityBar()" onkeydown="checkIfTab(event, this.id)">
+    <p id="speechBubble">You can change between dark and light mode here! <span onclick="closeSpeechBubble()" onkeydown="checkIfTab(event, this.id)">X</span></p>
+    <div role="button" tabindex="0" id="navBtn" ontouchstart="" onclick="toggleNavbar()" onkeydown="checkIfTab(event, this.id)">
         <i class="fas fa-bars"></i>
     </div>
 
-    <div id="accessibilityBar" style="width: 0px; overflow: hidden; position: fixed;">
+    <div id="navbar" style="width: 0px; overflow: hidden; position: fixed;">
         <h2 style="height: 70px !important; padding: 15px; border-bottom: 2px solid black;">Navigation</h2>
         <div id="navbarLinks">
             <h2><a href="https://jacobklaren.com/" ontouchstart=""><i class="fas fa-home"></i> Main site</a></h2>
             <h2><a href="https://jacobklaren.com/contactMe.html" ontouchstart=""><i class="fas fa-phone"></i> Contact me</a></h2>
         </div>
 
-        <h2><a class="text-center" ontouchstart="" href="#" id="navbarTopButton" onclick="topFunction(), toggleAccessibilityBar()" onkeydown="checkIfTab(event, this.id)"><i class="far fa-arrow-alt-circle-up"></i> Go to Top</a></h2>
+        <h2><a class="text-center" ontouchstart="" href="#" id="navbarTopButton" onclick="topFunction(), toggleNavbar()" onkeydown="checkIfTab(event, this.id)"><i class="far fa-arrow-alt-circle-up"></i> Go to Top</a></h2>
 
         <div id="navbarSettings">
             <h4 style="margin-top: 10px; margin-bottom: 15px;"><i class="fas fa-cogs"></i> Settings</h4>
 
             <p style="display: inline-block;" id="metricToCelsiusBtn">24H & C to AM/PM & F: </p>
             <input type="checkbox" class="toggle" id="metricCheckbox" onclick="changeToMetric()" onkeydown="checkIfTab(event, this.id)">
-            <br>
-            <p style="display: inline-block;">Turn on accessibility:</p>
-            <input type="checkbox" class="toggle" id="accessibilityCheckbox" onclick="accessibilityButtonCheck()" onkeydown="checkIfTab(event, this.id)">
             <br>
             <p style="display: inline-block;" id="darkModeBtn">Change to dark mode: </p>
             <input type="checkbox" class="toggle" id="darkModeCheckbox" onclick="changeTheme()" onkeydown="checkIfTab(event, this.id)">
@@ -29,10 +26,6 @@
                 autoCloseSpeechBubble();
                 if(ifExists("oldText")){
                     checkDarkMode();
-                }
-                //Since modules load slower than the regular dom, this needs to be done after Checkbox has loaded in.
-                if(localStorage.getItem('accessibility') == "True") {
-                    document.getElementById("accessibilityCheckbox").checked = true;
                 }
             </script>
 
