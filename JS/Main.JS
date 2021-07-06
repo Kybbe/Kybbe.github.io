@@ -470,6 +470,7 @@ function changeTheme() {
       formInputs = document.getElementById("contactForm").children;
       for(i = 0; i <= formInputs.length - 1; i++){
         formInputs[i].style.backgroundColor = "#302d38";
+        formInputs[i].style.color = "white";
       }
     }
     
@@ -510,6 +511,7 @@ function changeTheme() {
       formInputs = document.getElementById("contactForm").children;
       for(i = 0; i <= formInputs.length - 1; i++){
         formInputs[i].style.backgroundColor = null;
+        formInputs[i].style.color = null;
       }
     }
 
@@ -655,7 +657,7 @@ function subForm() {
           type:'post',
           data:$("#contactForm").serializeArray(),
           success: function(){
-            confirmationText.innerHTML = "Form Data Submitted :)";
+            confirmationText.innerHTML = "Form submitted :)";
             confirmationText.style.color = "green";
 
             formSent = true;
@@ -674,9 +676,15 @@ function subForm() {
 // For validating form.
 function formValidation() {
   form = document.getElementById("contactForm")
+  var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   for(var i=0; i < form.elements.length; i++){
     if(form.elements[i].value === '' && form.elements[i].hasAttribute('required')){
       return false;
-    } 
+    }
+  }
+  if(!form[2].value.match(mailformat)) {
+    return false;
   }
 }
+
+
