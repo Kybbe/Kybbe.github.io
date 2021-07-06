@@ -1213,6 +1213,16 @@ iframe {
   border: 1px lightgray;
 }
 
+#formContainerContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
 #contactFormContainer {
   background: #f8f4e5;
   padding: 10px 20px;
