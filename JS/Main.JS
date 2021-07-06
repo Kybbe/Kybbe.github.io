@@ -452,7 +452,7 @@ function changeTheme() {
     document.getElementById("navbarSettings").style.boxShadow = "0px -3px 3px 3px rgba(155, 155, 155, 0.5)";
     document.getElementById("navbarSettings").style.backgroundColor = "#302d38";
     document.getElementById("footer").style.backgroundColor = "#1B191F";
-    document.getElementById("picCol").children[0].style.filter = "drop-shadow(5px 5px 5px rgba(155, 155, 155, 0.5)";
+    document.getElementById("picCol").getElementsByTagName("img")[0].style.filter = "drop-shadow(5px 5px 5px rgba(155, 155, 155, 0.5)";
     document.getElementById("contactMe").style.color = "white";
 
     if(check != true) { // Check if on contact site.

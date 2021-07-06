@@ -10,11 +10,16 @@
 
     <meta name="keywords" content="HTML, CSS, JavaScript, JQuery, Bootstrap, Fontawesome">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="apple-touch-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="viewport" content="width=device-width, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" 
+      content="#444444" 
+      media="(prefers-color-scheme: light)">
+    <meta name="theme-color" 
+      content="#000000" 
+      media="(prefers-color-scheme: dark)">
     <link rel="apple-touch-icon" href="./Pictures/Jacob.jpeg">
     
     <!-- JQuery -->
@@ -57,7 +62,7 @@
 
 </head>
 
-<body id="contactBody" onload="onloadTextChange()">
+<body>
 
     <div data-include="navbar"></div>
 
@@ -105,8 +110,8 @@
     <br>
 
 
-    <div class="row" id="footer"> <!-- Footer -->
-        <div class="col-12" id="footerLists">
+    <div id="footer"> <!-- Footer -->
+        <div id="footerLists">
                 <ul>
                     <h5>Languages used</h5>
                     <li>HTML5</li>
@@ -125,7 +130,7 @@
                 </ul>
                 <ul id="contactList">
                     <h5>Contact</h5>
-                    <li onclick="copy('Jacob.klaren@me.com')" style="cursor: pointer;">jacob.klaren@me.com</li>
+                    <li onclick="copy('Jacob.klaren@me.com')">jacob.klaren@me.com</li>
                     <li><a href="https://github.com/Kybbe" target="_blank">Github</a></li>
                     <li><a href="https://www.linkedin.com/in/jacob-klaren/" target="_blank">LinkedIn</a></li>
                     <li><a href="https://www.facebook.com/Jacob.Klaren00/" target="_blank">Facebook</a></li>
