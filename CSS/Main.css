@@ -217,7 +217,7 @@ input[type=checkbox]:focus {
 }
 
 #headline {
-  padding-left: 35px;
+  padding-left: 20px;
   padding-right: 0px;
   padding-top: 2vh;
   -webkit-transition: padding 1s;
