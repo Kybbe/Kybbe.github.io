@@ -160,13 +160,7 @@ function toggleNavbar() {
     barOpen = true;
     setTimeout( function() {
       $('#navbar').addClass("openedBlur")
-      setTimeout( function() {
-        $('#navbar').removeClass("openedBlur")
-        setTimeout( function() {
-          $('#navbar').addClass("openedBlur")
-        }, 500 );
-      }, 500 );
-    }, 1000 );
+    }, 2000 );
   } else if (barOpen == true) {
     $('body').css('overflow', 'auto');
     bar.style.width = "0px";
