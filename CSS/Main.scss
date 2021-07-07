@@ -66,7 +66,8 @@ body {
 #navbar {
     width: 0px;
     height: 100%;
-    background-color: white;
+    background-color: rgba(255, 255, 255, .15);  
+    backdrop-filter: blur(8px);
     right: 0px;
     position: absolute;
     z-index: 500;
@@ -148,6 +149,7 @@ input[type=checkbox] {
     position: absolute; 
     left: 0; 
     box-shadow: 0px -3px 3px 3px rgba(0, 0, 0, 0.5); 
+    background-color: rgba(155, 155, 155, .25);
     bottom: 15vh;
     bottom: env(safe-area-inset-bottom);
 

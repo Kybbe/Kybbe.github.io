@@ -148,6 +148,7 @@ function toggleNavbar() {
   if (barOpen == false) {
     if(vw <= 400) {
       bar.style.width = "100%";
+      $('body').css('overflow', 'hidden');
     } else {
       bar.style.width = "300px";
     }
@@ -158,6 +159,7 @@ function toggleNavbar() {
     document.getElementById("navbarSettings").style.width = "100%";
     barOpen = true;
   } else if (barOpen == true) {
+    $('body').css('overflow', 'auto');
     bar.style.width = "0px";
     btn.style.boxShadow = "black 2px 2px 2px";
     btn.style.backgroundColor = "#cfcfcf4b";
@@ -179,6 +181,7 @@ function closeSpeechBubble() {
 
 // Open and auto close speech bubble after some time.
 function autoCloseSpeechBubble() {
+  if(localStorage.getItem('closedSpeechBubble') != 'True') {
     //wait 5 seconds before showing it
     setTimeout( function() {
       document.getElementById("speechBubble").style.display = "block";
@@ -186,15 +189,17 @@ function autoCloseSpeechBubble() {
       //wait 3 seconds beofre making it slowly dissapear
       setTimeout( function() {
         document.getElementById("speechBubble").style.opacity = "0";
-
+  
         //wait for 10 second animation to finish, then display none so it dissapears
         setTimeout( function() {
           document.getElementById("speechBubble").style.display = "none";
         }, 10000 );
-
+  
       }, 3000 );
   
     }, 5000 );
+
+  }
 }
 
 //Go to top of site.
@@ -380,7 +385,6 @@ function changeTheme(page) {
     theme = "dark";
     
     bar = document.getElementById("navbar");
-    bar.style.backgroundColor = "#1B191F";
     bar.style.boxShadow = "-8px 0 10px -6px darkgrey";
     barAs = bar.getElementsByTagName("a");
     for(i = 0; i <= barAs.length - 1; i++){
@@ -388,7 +392,7 @@ function changeTheme(page) {
     }
     bar.getElementsByTagName("h2")[0].style.borderBottom = "2px solid darkgrey";
     document.getElementById("navbarSettings").style.boxShadow = "0px -3px 3px 3px rgba(90, 90, 90, 0.5)";
-    document.getElementById("navbarSettings").style.backgroundColor = "#302d38";
+    document.getElementById("navbarSettings").style.backgroundColor = "rgba(155, 155, 155, .15)";
     document.getElementById("footer").style.backgroundColor = "#1B191F";
 
 
@@ -437,7 +441,6 @@ function changeTheme(page) {
     theme = "light";
 
     bar = document.getElementById("navbar");
-    bar.style.backgroundColor = null;
     bar.style.boxShadow = null;
     barAs = bar.getElementsByTagName("a");
     for(i = 0; i <= barAs.length - 1; i++){
