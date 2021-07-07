@@ -63,15 +63,12 @@ body {
     margin-top: 13px;
 }
 
-.openedBlur {
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-}
-
 #navbar {
     width: 0px;
     height: 100%;
     background-color: rgba(255, 255, 255, .15);  
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     right: 0px;
     position: absolute;
     z-index: 500;
@@ -219,7 +216,7 @@ input[type=checkbox] {
 #headline{
     padding-left: 20px;
     padding-right: 0px;
-    padding-top: 2vh;
+    padding-top: 4vh;
     transition: padding 1s;
 }
 
