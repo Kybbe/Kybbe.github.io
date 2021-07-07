@@ -1,0 +1,36 @@
+<div id="footer">
+    <div id="footerLists">
+            <ul>
+                <h5>Languages used</h5>
+                <li>HTML5</li>
+                <li>CSS</li>
+                <li>SCSS</li>
+                <li>JS</li>
+                <li>Bootstrap</li>
+            </ul>
+            <ul id="languagesPT2">
+                <li><a href="https://jquery.com/" target="_blank">Jquery (.com)</a></li>
+                <li><a href="https://fontawesome.com/" target="_blank">Font Awesome (.com)</a></li>
+                <li>Vue</li>
+                <li>HttpLoader</li>
+                <li>AOS <a href="https://michalsnik.github.io/aos/" target="_blank">Michalsnik on Github</a></li>
+                <li><a href="https://www.skypack.dev/view/canvas-confetti">Confetti</a></li>
+            </ul>
+            <ul id="contactList">
+                <h5>Contact</h5>
+                <li onclick="copy('Jacob.klaren@me.com')">jacob.klaren@me.com</li>
+                <li><a href="https://github.com/Kybbe" target="_blank">Github</a></li>
+                <li><a href="https://www.linkedin.com/in/jacob-klaren/" target="_blank">LinkedIn</a></li>
+                <li><a href="https://www.facebook.com/Jacob.Klaren00/" target="_blank">Facebook</a></li>
+            </ul>
+    </div>
+</div>
+
+<script>
+
+    // Sends the name of the currently open file, so index, contactMe or photoPortfolio for example.
+    var path = window.location.pathname;
+    var page = path.split("/").pop().replace('.html','');
+    checkDarkMode(page);
+
+</script>

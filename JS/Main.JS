@@ -357,21 +357,28 @@ function changeToMetric() {
 }
 
 // Check if user wants or has opted-in to darkmode.
-function checkDarkMode() {
+function checkDarkMode(page) { // (page) is a string containing the name of the current page ( ie. index or contactMe for example)
   if(localStorage.getItem('darkMode') == 'True'){ // if user has already chosen darkmode
-    changeTheme();
+    changeTheme(page);
   } else if(userPrefersDark) { // if user hasnt chosen darkmode, but has it as prefered in system, change it anyway.
-    changeTheme();
+    changeTheme(page);
   } // if neither changed to darkmode, or preferred in system, keep it light.
 }
 
 // To make website dark or lightmode.
-function changeTheme() {
-  var check = ifExists("oldText");
-
+function changeTheme(page) {
+  // Page = which site calls the function
+  
   if(theme == "light"){ // Make it dark mode :)
+    //On all sites
     document.getElementById("darkModeBtn").innerHTML = "Change to light mode: ";
 
+    document.body.style.backgroundColor = "black";
+    document.body.style.color = "white";
+
+    localStorage.setItem('darkMode', 'True');
+    theme = "dark";
+    
     bar = document.getElementById("navbar");
     bar.style.backgroundColor = "#1B191F";
     bar.style.boxShadow = "-8px 0 10px -6px darkgrey";
@@ -380,54 +387,71 @@ function changeTheme() {
       barAs[i].style.color = "white";
     }
     bar.getElementsByTagName("h2")[0].style.borderBottom = "2px solid darkgrey";
-    document.getElementById("navbarSettings").style.boxShadow = "0px -3px 3px 3px rgba(155, 155, 155, 0.5)";
+    document.getElementById("navbarSettings").style.boxShadow = "0px -3px 3px 3px rgba(90, 90, 90, 0.5)";
     document.getElementById("navbarSettings").style.backgroundColor = "#302d38";
     document.getElementById("footer").style.backgroundColor = "#1B191F";
-    document.getElementById("picCol").getElementsByTagName("img")[0].style.filter = "drop-shadow(5px 5px 5px rgba(155, 155, 155, 0.5)";
-    document.getElementById("contactMe").style.color = "white";
 
-    if(check != true) { // Check if on contact site.
+
+    if(page == "" || page == "index"){ // On index site,
+
+      document.getElementById("picCol").getElementsByTagName("img")[0].style.filter = "drop-shadow(5px 5px 5px rgba(90, 90, 90, 0.5)";
+      document.getElementById("contactMe").style.color = "white";
       document.getElementsByClassName("dateContainer")[0].style.backgroundColor = "#1B191F";
-      document.getElementById("workExp").style.boxShadow = "0px -10px 10px 3px rgba(155, 155, 155, 0.2)";
+      document.getElementById("workExp").style.boxShadow = "0px -10px 10px 3px rgba(90, 90, 90, 0.2)";
       cards = document.getElementsByClassName("card");
       for(i = 0; i <= cards.length - 1; i++){
         cards[i].style.backgroundColor = "#1B191F";
         cards[i].style.boxShadow = "5px 5px 5px rgba(155, 155, 155, 0.5)";
       }
-      document.getElementsByClassName("dateContainer")[0].style.boxShadow = "5px 5px 5px rgba(155, 155, 155, 0.5)";
-      document.getElementsByClassName("weatherContainer")[0].style.boxShadow = "5px 5px 5px rgba(155, 155, 155, 0.5)";
-    } else { // Dark mode on contact site.
+      document.getElementsByClassName("dateContainer")[0].style.boxShadow = "5px 5px 5px rgba(90, 90, 90, 0.5)";
+      document.getElementsByClassName("weatherContainer")[0].style.boxShadow = "5px 5px 5px rgba(90, 90, 90, 0.5)";
+
+    } else if(page == "contactMe") { // contact,
+
+      document.getElementById("picCol").getElementsByTagName("img")[0].style.filter = "drop-shadow(5px 5px 5px rgba(90, 90, 90, 0.5)";
+      document.getElementById("contactMe").style.color = "white";
       document.getElementById("contactFormContainer").style.backgroundColor = "#1B191F";
       formInputs = document.getElementById("contactForm").children;
       for(i = 0; i <= formInputs.length - 1; i++){
         formInputs[i].style.backgroundColor = "#302d38";
         formInputs[i].style.color = "white";
       }
+    
+    } else if(page == "photoPortfolio") { // photos.
+    
+      
+    
+    } else { // Really just for testing, it should never go here.
+      console.log("SOMETHING WRONG, current page name is: " + page)
     }
     
-    document.body.style.backgroundColor = "black";
-    document.body.style.color = "white";
-
-    localStorage.setItem('darkMode', 'True');
-    theme = "dark";
+    
   } else {
+    
     document.getElementById("darkModeBtn").innerHTML = "Change to dark mode: ";
+    
+    document.body.style.backgroundColor = null;
+    document.body.style.color = null;
+
+    localStorage.setItem('darkMode', 'False');
+    theme = "light";
 
     bar = document.getElementById("navbar");
-      bar.style.backgroundColor = null;
-      bar.style.boxShadow = null;
-      barAs = bar.getElementsByTagName("a");
-      for(i = 0; i <= barAs.length - 1; i++){
-        barAs[i].style.color = null;
-      }
-      bar.getElementsByTagName("h2")[0].style.borderBottom = null;
-      document.getElementById("navbarSettings").style.boxShadow = null;
-      document.getElementById("navbarSettings").style.backgroundColor = null;
-      document.getElementById("footer").style.backgroundColor = null;
+    bar.style.backgroundColor = null;
+    bar.style.boxShadow = null;
+    barAs = bar.getElementsByTagName("a");
+    for(i = 0; i <= barAs.length - 1; i++){
+      barAs[i].style.color = null;
+    }
+    bar.getElementsByTagName("h2")[0].style.borderBottom = null;
+    document.getElementById("navbarSettings").style.boxShadow = null;
+    document.getElementById("navbarSettings").style.backgroundColor = null;
+    document.getElementById("footer").style.backgroundColor = null;
+    
+    if(page == "" || page == "index"){
+    
       document.getElementById("picCol").children[0].style.filter = null;
       document.getElementById("contactMe").style.color = null;
-
-    if(check != true) {
       document.getElementsByClassName("dateContainer")[0].style.backgroundColor = null;
       document.getElementById("workExp").style.boxShadow = null;
       cards = document.getElementsByClassName("card");
@@ -437,20 +461,25 @@ function changeTheme() {
       }
       document.getElementsByClassName("dateContainer")[0].style.boxShadow = null;
       document.getElementsByClassName("weatherContainer")[0].style.boxShadow = null;
-    } else { // Make it back to light mode on contact site.
+    
+    } else if(page == "contactMe") {
+    
+      document.getElementById("picCol").children[0].style.filter = null;
+      document.getElementById("contactMe").style.color = null;
       document.getElementById("contactFormContainer").style.backgroundColor = null;
       formInputs = document.getElementById("contactForm").children;
       for(i = 0; i <= formInputs.length - 1; i++){
         formInputs[i].style.backgroundColor = null;
         formInputs[i].style.color = null;
       }
-    }
-
-    document.body.style.backgroundColor = null;
-    document.body.style.color = null;
-
-    localStorage.setItem('darkMode', 'False');
-    theme = "light";
+    
+    } else if(page == "photoPortfolio") {
+    
+      
+    
+    } else { 
+      console.log("SOMETHING WRONG, current page name is: " + page)
+    }  
   }
 }
 
