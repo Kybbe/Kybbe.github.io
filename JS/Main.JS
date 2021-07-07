@@ -153,14 +153,14 @@ function toggleNavbar() {
       bar.style.width = "300px";
     }
     btn.style.boxShadow = "none";
-    btn.style.backgroundColor = "#fff";
+    btn.style.backgroundColor = "#fff"; 
     btn.style.right = "10px";
     btn.style.top = "10px";
     document.getElementById("navbarSettings").style.width = "100%";
     barOpen = true;
   } else if (barOpen == true) {
     $('body').css('overflow', 'auto');
-    bar.style.width = "1px";
+    bar.style.width = "0px";
     btn.style.boxShadow = "black 2px 2px 2px";
     btn.style.backgroundColor = "#cfcfcf4b";
     btn.style.right = "20px";
