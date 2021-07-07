@@ -64,9 +64,10 @@ body {
 }
 
 #navbar {
-    width: 0px;
+    width: 1px;
     height: 100%;
     background-color: rgba(255, 255, 255, .15);  
+    -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
     right: 0px;
     position: absolute;
@@ -1164,5 +1165,66 @@ iframe {
         -webkit-text-fill-color: #2A293E;
         -webkit-box-shadow: 0 0 0px 1000px #f8f4e5 inset;
         transition: background-color 5000s ease-in-out 0s;
+    }
+}
+
+
+
+// photoPortfolio
+
+.desaturate {
+    width: 300px;
+    filter: gray;
+    -webkit-filter: grayscale(1);
+    transition: filter 1s ease-in-out;
+
+    &:hover {
+        filter: none;
+    }
+}
+
+.imgBar {
+    background-image: url(../Pictures/Jacob.jpeg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+}
+  
+.diagonal-box {
+    position: relative;
+    padding: calc(100vw * 0.03492077) 0;
+
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        transform: skewy(-4deg);
+        transform-origin: 50% 0;
+        outline: 1px solid transparent;
+        backface-visibility: hidden;
+        background-image: linear-gradient(45deg, #654ea3, #eaafc8);
+    }
+
+    .content {
+        max-width: 100vw;
+        margin: 0 auto;
+        padding: 0.6em;
+        position: relative;
+        z-index: 2;
+    
+        h2 {
+            font-size: 2.5em;
+            margin: 0 0 0.5em;
+            font-weight: 900;
+            }
+    }
+}
+  
+@media (min-width: 42em) {
+    .diagonal-box .content {
+        max-width: 42rem !important;
     }
 }

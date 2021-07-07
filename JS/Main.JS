@@ -146,7 +146,7 @@ function toggleNavbar() {
   var bar = document.getElementById("navbar");
   var btn = document.getElementById("navBtn");
   if (barOpen == false) {
-    if(vw <= 400) {
+    if(vw <= 500) {
       bar.style.width = "100%";
       $('body').css('overflow', 'hidden');
     } else {
@@ -160,7 +160,7 @@ function toggleNavbar() {
     barOpen = true;
   } else if (barOpen == true) {
     $('body').css('overflow', 'auto');
-    bar.style.width = "0px";
+    bar.style.width = "1px";
     btn.style.boxShadow = "black 2px 2px 2px";
     btn.style.backgroundColor = "#cfcfcf4b";
     btn.style.right = "20px";
