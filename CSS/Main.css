@@ -54,6 +54,10 @@ body {
   margin-top: 13px;
 }
 
+.openedBlur {
+  -webkit-backdrop-filter: blur(8px);
+}
+
 #navbar {
   width: 0px;
   height: 100%;

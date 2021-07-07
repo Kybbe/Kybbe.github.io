@@ -158,6 +158,7 @@ function toggleNavbar() {
     btn.style.top = "10px";
     document.getElementById("navbarSettings").style.width = "100%";
     barOpen = true;
+    $('#navbar').addClass("openedBlur")
   } else if (barOpen == true) {
     $('body').css('overflow', 'auto');
     bar.style.width = "0px";
