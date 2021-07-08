@@ -1203,7 +1203,7 @@ iframe {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    width: 70px;
+    width: 110px;
     height: 450px;
     margin: 0 10px;
     display: inline-block;
@@ -1225,10 +1225,13 @@ iframe {
     .imgBar {
         width: 6vw;
     }
+    #largeImgBar {
+        width: 60vw !important;
+    }
 }
 
 #largeImgBar {
-    width: 60vw !important;
+    width: 80vw;
     filter: none !important;
 }
 
