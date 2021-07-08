@@ -665,6 +665,7 @@ $(".imgBar").on("click", function(event){
       // To hide the old text and then do nothing
       var oldBarId = 'barText' + $(oldClicked).attr('barId')
       document.getElementById(oldBarId).style.display = "none";
+      document.getElementById("barText").children[0].style.display = "inline";
       
       oldClicked = undefined;
       return true;
@@ -679,4 +680,5 @@ $(".imgBar").on("click", function(event){
   oldClicked = this;
 
   document.getElementById(barId).style.display = "block";
+  document.getElementById("barText").children[0].style.display = "none";
 });

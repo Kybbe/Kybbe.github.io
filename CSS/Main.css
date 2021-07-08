@@ -1323,15 +1323,12 @@ iframe {
 
 #imgBarContainer {
   padding: 20px;
-  height: 290px;
+  height: 490px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   overflow-y: hidden;
   overflow-x: scroll;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
 }
 
 #imgBarContainer::-webkit-scrollbar {
@@ -1345,9 +1342,10 @@ iframe {
   background-repeat: no-repeat;
   background-position: center;
   width: 70px;
-  height: 250px;
+  height: 450px;
   margin: 0 10px;
   display: inline-block;
+  margin: 0px auto 0px 20px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   cursor: pointer;
@@ -1377,6 +1375,7 @@ iframe {
 
 #barText {
   width: 100%;
+  min-height: 120px;
   text-align: center;
 }
 
