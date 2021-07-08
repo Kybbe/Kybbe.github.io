@@ -1223,7 +1223,7 @@ iframe {
 
 @media (min-width: 900px) {
     .imgBar {
-        width: 6vw;
+        width: 12vw;
     }
     #imgBarContainer {
         padding: 20px;
@@ -1244,6 +1244,17 @@ iframe {
     text-align: center;
     > div {
         display: none;
+    }
+}
+
+.landscape {
+    width: 90%;
+}
+
+#barText9 {
+    img {
+        width: 48%;
+        margin: 20px auto;
     }
 }
   
