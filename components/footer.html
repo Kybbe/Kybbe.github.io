@@ -31,6 +31,28 @@
     // Sends the name of the currently open file, so index, contactMe or photoPortfolio for example.
     var path = window.location.pathname;
     var page = path.split("/").pop().replace('.html','');
-    checkDarkMode(page);
+
+    if(page == "" || page == "index"){
+        waitForElementToDisplay(".dateContainer",function(){checkDarkMode(page);},200,3000);
+    } else {
+        waitForElementToDisplay("#darkModeBtn",function(){checkDarkMode(page);},200,3000);
+    }
+
+    function waitForElementToDisplay(selector, callback, checkFrequencyInMs, timeoutInMs) {
+    var startTimeInMs = Date.now();
+    (function loopSearch() {
+        if(document.querySelector(selector) != null) {
+            callback();
+            return;
+        }
+        else {
+        setTimeout(function () {
+            if (timeoutInMs && Date.now() - startTimeInMs > timeoutInMs)
+            return;
+            loopSearch();
+        }, checkFrequencyInMs);
+        }
+    })();
+    }
 
 </script>

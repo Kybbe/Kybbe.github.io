@@ -427,8 +427,6 @@ function changeTheme(page) {
     
     } else if(page == "photoPortfolio") { // photos.
     
-      
-    
     } else { // Really just for testing, it should never go here.
       console.log("SOMETHING WRONG, current page name is: " + page)
     }
