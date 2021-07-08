@@ -402,9 +402,9 @@ function changeTheme(page) {
 
     if(page == "" || page == "index"){ // On index site,
 
+      document.getElementsByClassName("dateContainer")[0].style.backgroundColor = "#1B191F";
       document.getElementById("picCol").getElementsByTagName("img")[0].style.filter = "drop-shadow(5px 5px 5px rgba(90, 90, 90, 0.5)";
       document.getElementById("contactMe").style.color = "white";
-      document.getElementsByClassName("dateContainer")[0].style.backgroundColor = "#1B191F";
       document.getElementById("workExp").style.boxShadow = "0px -10px 10px 3px rgba(90, 90, 90, 0.2)";
       cards = document.getElementsByClassName("card");
       for(i = 0; i <= cards.length - 1; i++){

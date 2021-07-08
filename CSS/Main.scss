@@ -64,7 +64,7 @@ body {
 }
 
 #navbar {
-    width: 100%;
+    width: 300px;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     transform: translateX(320px);
@@ -74,12 +74,13 @@ body {
     right: 0px;
     position: absolute;
     z-index: 500;
-    transition: width, transform 0.5s;
+    transition: transform 0.5s;
     box-shadow: -8px 0 10px -6px black;
 }
-@media (min-width: 500px) {
+@media (max-width: 500px) {
     #navbar {
-        width: 300px !important;
+        width: 100% !important;
+        transform: translateX(100vw);
     }
 }
 
