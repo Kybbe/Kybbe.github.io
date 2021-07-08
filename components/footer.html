@@ -33,9 +33,9 @@
     var page = path.split("/").pop().replace('.html','');
 
     if(page == "" || page == "index"){
-        waitForElementToDisplay(".dateContainer",function(){checkDarkMode(page);},200,3000);
+        waitForElementToDisplay(".dateContainer",function(){checkDarkMode(page);},200,5000);
     } else {
-        waitForElementToDisplay("#darkModeBtn",function(){checkDarkMode(page);},200,3000);
+        waitForElementToDisplay("#darkModeBtn",function(){checkDarkMode(page);},200,5000);
     }
 
     function waitForElementToDisplay(selector, callback, checkFrequencyInMs, timeoutInMs) {
