@@ -1321,26 +1321,67 @@ iframe {
   transition: background-color 5000s ease-in-out 0s;
 }
 
-.desaturate {
-  width: 300px;
-  filter: gray;
-  -webkit-filter: grayscale(1);
-  -webkit-transition: -webkit-filter 1s ease-in-out;
-  transition: -webkit-filter 1s ease-in-out;
-  transition: filter 1s ease-in-out;
-  transition: filter 1s ease-in-out, -webkit-filter 1s ease-in-out;
+#imgBarContainer {
+  padding: 20px;
+  height: 290px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
-.desaturate:hover {
-  -webkit-filter: none;
-          filter: none;
+#imgBarContainer::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
 }
 
 .imgBar {
   background-image: url(../Pictures/Jacob.jpeg);
+  background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-position: center;
+  width: 70px;
+  height: 250px;
+  margin: 0 10px;
+  display: inline-block;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  cursor: pointer;
+  text-align: center !important;
+  filter: gray;
+  -webkit-filter: grayscale(1);
+  -webkit-transition: all 1.5s;
+  transition: all 1.5s;
+}
+
+.imgBar:hover {
+  -webkit-filter: none;
+          filter: none;
+}
+
+@media (min-width: 900px) {
+  .imgBar {
+    width: 6vw;
+  }
+}
+
+#largeImgBar {
+  width: 60vw !important;
+  -webkit-filter: none !important;
+          filter: none !important;
+}
+
+#barText {
+  width: 100%;
+  text-align: center;
+}
+
+#barText > div {
+  display: none;
 }
 
 .diagonal-box {

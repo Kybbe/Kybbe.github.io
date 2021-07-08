@@ -654,4 +654,29 @@ function formValidation() {
   }
 }
 
+var oldClicked;
+$(".imgBar").on("click", function(event){
+  var barId = 'barText' + $(this).attr('barId')
 
+  if(oldClicked != undefined) { // if this IS NOT the first time 
+    if(this === oldClicked){ // if you clicked the already open one
+      $(this).attr('id', '');
+      
+      // To hide the old text and then do nothing
+      var oldBarId = 'barText' + $(oldClicked).attr('barId')
+      document.getElementById(oldBarId).style.display = "none";
+      
+      oldClicked = undefined;
+      return true;
+    } // if u clicked another pic while one is open, just close old one before opening new one
+    var oldBarId = 'barText' + $(oldClicked).attr('barId')
+    document.getElementById(oldBarId).style.display = "none";
+
+      $(oldClicked).attr('id', '');
+    }// Does this everytime ( so just show the clicked images things ) EXCEPT when u click the same pic twice
+  $(this).attr('id', 'largeImgBar');
+  this.scrollIntoView({behavior: "smooth", block: "center"});
+  oldClicked = this;
+
+  document.getElementById(barId).style.display = "block";
+});
