@@ -1329,6 +1329,7 @@ iframe {
   display: flex;
   overflow-y: hidden;
   overflow-x: scroll;
+  padding-top: 80px;
 }
 
 #imgBarContainer::-webkit-scrollbar {

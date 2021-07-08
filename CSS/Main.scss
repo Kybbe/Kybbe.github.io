@@ -1190,7 +1190,7 @@ iframe {
     display: flex;
     overflow-y: hidden;
     overflow-x: scroll;
-    
+    padding-top: 80px;
 
    &::-webkit-scrollbar {
        width: 0px;
