@@ -1185,7 +1185,7 @@ iframe {
 // photoPortfolio
 
 #imgBarContainer {
-    padding: 20px;
+    padding: 0px;
     height: 490px;
     display: flex;
     overflow-y: hidden;
@@ -1224,6 +1224,9 @@ iframe {
 @media (min-width: 900px) {
     .imgBar {
         width: 6vw;
+    }
+    #imgBarContainer {
+        padding: 20px;
     }
     #largeImgBar {
         width: 60vw !important;

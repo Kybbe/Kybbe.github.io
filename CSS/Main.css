@@ -1322,7 +1322,7 @@ iframe {
 }
 
 #imgBarContainer {
-  padding: 20px;
+  padding: 0px;
   height: 490px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1364,6 +1364,9 @@ iframe {
 @media (min-width: 900px) {
   .imgBar {
     width: 6vw;
+  }
+  #imgBarContainer {
+    padding: 20px;
   }
   #largeImgBar {
     width: 60vw !important;
