@@ -1246,20 +1246,21 @@ iframe {
     > div {
         display: none;
     }
-}
 
-.landscape {
-    width: 90%;
-}
+    .landscape {
+        width: 90vw;
+        margin: 10px auto;
+    }
 
-#barText9 {
-    img {
-        width: 48%;
-        margin: 20px auto;
+    .portrait {
+        width: 45vw;
+        margin: 10px auto;
     }
 }
+
   
 .diagonal-box {
+    margin-top: 20px;
     position: relative;
     padding: calc(100vw * 0.03492077) 0;
 
