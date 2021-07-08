@@ -54,22 +54,38 @@ body {
   margin-top: 13px;
 }
 
-.openedBlur {
+#navbar {
+  width: 100%;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-}
-
-#navbar {
-  width: 0px;
+  -webkit-transform: translateX(320px);
+          transform: translateX(320px);
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.15);
   right: 0px;
   position: absolute;
   z-index: 500;
-  -webkit-transition: width 0.5s;
-  transition: width 0.5s;
+  -webkit-transition: width, -webkit-transform 0.5s;
+  transition: width, -webkit-transform 0.5s;
+  transition: width, transform 0.5s;
+  transition: width, transform 0.5s, -webkit-transform 0.5s;
   -webkit-box-shadow: -8px 0 10px -6px black;
           box-shadow: -8px 0 10px -6px black;
+}
+
+@media (min-width: 500px) {
+  #navbar {
+    width: 300px !important;
+  }
+}
+
+.opened {
+  -webkit-transform: translateX(0) !important;
+          transform: translateX(0) !important;
 }
 
 #navbar a {
@@ -151,7 +167,7 @@ input[type=checkbox]:focus {
 }
 
 #navbarSettings {
-  width: 0;
+  width: 100%;
   text-align: center;
   bottom: 0px;
   position: absolute;

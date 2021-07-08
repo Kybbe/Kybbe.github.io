@@ -140,6 +140,14 @@ function enlargeWindow() {
 
 }
 
+/*
+if(vw <= 500) {
+  bar.style.width = "100%";
+  $('body').css('overflow', 'hidden');
+} else {
+  bar.style.width = "300px";
+} */
+
 // To open navbar.
 function toggleNavbar() {
   vw = document.documentElement.clientWidth;
@@ -147,28 +155,21 @@ function toggleNavbar() {
   var btn = document.getElementById("navBtn");
   if (barOpen == false) {
     if(vw <= 500) {
-      bar.style.width = "100%";
-      $('body').css('overflow', 'hidden');
-    } else {
-      bar.style.width = "300px";
+      $('body').css('overflowY', 'hidden');
     }
+    $('#navbar').addClass("opened");
     btn.style.boxShadow = "none";
     btn.style.backgroundColor = "#fff"; 
     btn.style.right = "10px";
     btn.style.top = "10px";
-    document.getElementById("navbarSettings").style.width = "100%";
     barOpen = true;
-    setTimeout( function() {
-      $('#navbar').addClass("openedBlur")
-    }, 2000 );
   } else if (barOpen == true) {
-    $('body').css('overflow', 'auto');
-    bar.style.width = "0px";
+    $('body').css('overflowY', 'auto');
+    $('#navbar').removeClass("opened");
     btn.style.boxShadow = "black 2px 2px 2px";
     btn.style.backgroundColor = "#cfcfcf4b";
     btn.style.right = "20px";
     btn.style.top = "20px";
-    document.getElementById("navbarSettings").style.width = "0";
     barOpen = false;
   } else {
 
