@@ -1191,8 +1191,10 @@ iframe {
     overflow-y: hidden;
     overflow-x: scroll;
     padding-top: 80px;
+    padding-right: 20px;
+    scroll-behavior: smooth;
 
-   &::-webkit-scrollbar {
+    &::-webkit-scrollbar {
        width: 0px;
        height: 0px
    }
@@ -1203,14 +1205,15 @@ iframe {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    position: relative;
     width: 110px;
     height: 400px;
-    margin: 0 10px;
     display: inline-block;
     margin: 0px auto 0px 20px;
     flex-shrink: 0;
     cursor: pointer;
     text-align: center !important;
+    scroll-behavior: smooth;
 
     filter: gray;
     -webkit-filter: grayscale(1);
@@ -1243,6 +1246,14 @@ iframe {
     width: 100%;
     min-height: 120px;
     text-align: center;
+    h2 {
+        padding-bottom: 8px;
+    }
+    h2, p {
+        background-color: $accent-color2;
+        width: 90vw;
+        margin: 0 auto;
+    }
     > div {
         display: none;
     }
@@ -1256,6 +1267,24 @@ iframe {
         width: 45vw;
         margin: 10px auto;
     }
+}
+
+.arrow {
+    position: absolute;
+    z-index: 100;
+    top: 250px;
+    color: $accent-color2;
+    font-size: 3em;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+#arrowLeft {
+    left: 15px;
+}
+
+#arrowRight {
+    right: 15px;
 }
 
 .diagonal-box {

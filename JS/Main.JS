@@ -663,7 +663,7 @@ $(".imgBar").on("click", function(event){
       // To hide the old text and then do nothing
       var oldBarId = 'barText' + $(oldClicked).attr('barId')
       document.getElementById(oldBarId).style.display = "none";
-      document.getElementById("barText").children[0].style.display = "inline";
+      document.getElementById("barText").children[0].style.display = "block";
       
       oldClicked = undefined;
       return true;
@@ -674,9 +674,38 @@ $(".imgBar").on("click", function(event){
       $(oldClicked).attr('id', '');
     }// Does this everytime ( so just show the clicked images things ) EXCEPT when u click the same pic twice
   $(this).attr('id', 'largeImgBar');
-  this.scrollIntoView({behavior: "smooth", block: "center"});
+  this.scrollIntoView({behavior: "smooth"});
   oldClicked = this;
 
   document.getElementById(barId).style.display = "block";
   document.getElementById("barText").children[0].style.display = "none";
 });
+
+imgContainer = document.getElementById("imgBarContainer")
+
+if(imgContainer.scrollLeft == 0){
+  document.getElementById("arrowLeft").style.display = "none";
+}
+
+function scrollimgbar(direction) {
+  var maxScrollLeft = imgContainer.scrollWidth - imgContainer.clientWidth;
+  if(direction == "left"){
+    imgContainer.scrollLeft -= 100;
+  } else if(direction == "right"){
+    imgContainer.scrollLeft += 100;
+  }
+
+  if(imgContainer.scrollLeft == 0){
+    document.getElementById("arrowLeft").style.display = "none";
+  }
+
+  if(maxScrollLeft == imgContainer.scrollLeft){
+    document.getElementById("arrowRight").style.display = "none";
+  } else {
+    document.getElementById("arrowRight").style.display = "block";
+  }
+  
+  if(imgContainer.scrollLeft != 0) {
+    document.getElementById("arrowLeft").style.display = "block";
+  }
+}

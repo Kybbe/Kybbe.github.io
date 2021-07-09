@@ -1330,6 +1330,8 @@ iframe {
   overflow-y: hidden;
   overflow-x: scroll;
   padding-top: 80px;
+  padding-right: 20px;
+  scroll-behavior: smooth;
 }
 
 #imgBarContainer::-webkit-scrollbar {
@@ -1342,15 +1344,16 @@ iframe {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  position: relative;
   width: 110px;
   height: 400px;
-  margin: 0 10px;
   display: inline-block;
   margin: 0px auto 0px 20px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   cursor: pointer;
   text-align: center !important;
+  scroll-behavior: smooth;
   filter: gray;
   -webkit-filter: grayscale(1);
   -webkit-transition: all 1.5s;
@@ -1387,6 +1390,16 @@ iframe {
   text-align: center;
 }
 
+#barText h2 {
+  padding-bottom: 8px;
+}
+
+#barText h2, #barText p {
+  background-color: #E6AF83;
+  width: 90vw;
+  margin: 0 auto;
+}
+
 #barText > div {
   display: none;
 }
@@ -1399,6 +1412,24 @@ iframe {
 #barText .portrait {
   width: 45vw;
   margin: 10px auto;
+}
+
+.arrow {
+  position: absolute;
+  z-index: 100;
+  top: 250px;
+  color: #E6AF83;
+  font-size: 3em;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+#arrowLeft {
+  left: 15px;
+}
+
+#arrowRight {
+  right: 15px;
 }
 
 .diagonal-box {
