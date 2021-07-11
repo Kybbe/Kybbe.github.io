@@ -164,15 +164,91 @@
           </p>
         </div>
     </div>
-    
-    <br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br>
+    <br><br><br><br>
 
+    <div class="row" style="padding: 100px 0;">
+      <div class="col-2"></div>
+      <div class="col-4">
+        <h1 style="margin-bottom: 30px;">Hi some text!</h1>
+        <p>
+          Lorem ipsum dolor sit amet, 
+          consectetur adipisicing elit. 
+          Velit veritatis adipisci hic 
+          distinctio voluptatibus, 
+          obcaecati atque reprehenderit 
+          officia saepe voluptate.
+        </p>
+        <br>
+        <br>
+        <a href="#">Yup</a>
+      </div>
+      <div class="col-4" style="padding-left: 110px;">
+        <img src="./Pictures/DSC_0168-Edit.png" alt="" width="100%">
+      </div>
+      <div class="col-2"></div>
+    </div>
+
+    <div class="row" style="padding: 100px 0;">
+      <div class="col-2"></div>
+      <div class="col-4" style="padding-right: 110px;">
+        <img src="./Pictures/DSC_0168-Edit.png" alt="" width="100%">
+      </div>
+      <div class="col-4">
+        <h1 style="margin-bottom: 30px;">Hi some text!</h1>
+        <p>
+          Lorem ipsum dolor sit amet, 
+          consectetur adipisicing elit. 
+          Velit veritatis adipisci hic 
+          distinctio voluptatibus, 
+          obcaecati atque reprehenderit 
+          officia saepe voluptate.
+        </p>
+        <br>
+        <br>
+        <a href="#">Yup</a>
+      </div>
+      <div class="col-2"></div>
+    </div>
+    
+    <br><br><br><br><br><br><br>
 
     <div data-include="footer"></div>
 
     <script src="JS/Main.JS"></script>
+
+    <script>
+
+    imgContainer = document.getElementById("imgBarContainer")
+
+    if(imgContainer.scrollLeft == 0){
+      document.getElementById("arrowLeft").style.display = "none";
+    }
+
+    function scrollimgbar(direction) {
+      var maxScrollLeft = imgContainer.scrollWidth - imgContainer.clientWidth;
+      if(direction == "left"){
+        imgContainer.scrollLeft -= 100;
+      } else if(direction == "right"){
+        imgContainer.scrollLeft += 100;
+      }
+
+      if(imgContainer.scrollLeft == 0){
+        document.getElementById("arrowLeft").style.display = "none";
+      }
+
+      if(maxScrollLeft == imgContainer.scrollLeft){
+        document.getElementById("arrowRight").style.display = "none";
+      } else {
+        document.getElementById("arrowRight").style.display = "block";
+      }
+      
+      if(imgContainer.scrollLeft != 0) {
+        document.getElementById("arrowLeft").style.display = "block";
+      }
+    }
+
+    </script>
 
 </body>
 </html>

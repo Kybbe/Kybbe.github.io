@@ -140,14 +140,6 @@ function enlargeWindow() {
 
 }
 
-/*
-if(vw <= 500) {
-  bar.style.width = "100%";
-  $('body').css('overflow', 'hidden');
-} else {
-  bar.style.width = "300px";
-} */
-
 // To open navbar.
 function toggleNavbar() {
   vw = document.documentElement.clientWidth;
@@ -219,7 +211,7 @@ function checkIfTab(event, id) {
   }
 }
 
-// Load in widget .html files.
+// Load in component .html files.
 $(function () {
   var includes = $('[data-include]')
   $.each(includes, function () {
@@ -680,32 +672,3 @@ $(".imgBar").on("click", function(event){
   document.getElementById(barId).style.display = "block";
   document.getElementById("barText").children[0].style.display = "none";
 });
-
-imgContainer = document.getElementById("imgBarContainer")
-
-if(imgContainer.scrollLeft == 0){
-  document.getElementById("arrowLeft").style.display = "none";
-}
-
-function scrollimgbar(direction) {
-  var maxScrollLeft = imgContainer.scrollWidth - imgContainer.clientWidth;
-  if(direction == "left"){
-    imgContainer.scrollLeft -= 100;
-  } else if(direction == "right"){
-    imgContainer.scrollLeft += 100;
-  }
-
-  if(imgContainer.scrollLeft == 0){
-    document.getElementById("arrowLeft").style.display = "none";
-  }
-
-  if(maxScrollLeft == imgContainer.scrollLeft){
-    document.getElementById("arrowRight").style.display = "none";
-  } else {
-    document.getElementById("arrowRight").style.display = "block";
-  }
-  
-  if(imgContainer.scrollLeft != 0) {
-    document.getElementById("arrowLeft").style.display = "block";
-  }
-}

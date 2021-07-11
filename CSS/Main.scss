@@ -228,7 +228,7 @@ input[type=checkbox] {
 #headline{
     padding-left: 20px;
     padding-right: 0px;
-    padding-top: 4vh;
+    padding-top: 75px;
     transition: padding 1s;
 }
 
@@ -282,22 +282,22 @@ input[type=checkbox] {
 
 #headline > h1, #oldText > h1 {
     font-size: 2.1em;
-    margin-right: 70px;
+    margin-right: 15px;
 }
 
 #headline > h2, #oldText > h2 {
     font-size: 1.6em;
-    margin-right: 30px;
+    margin-right: 15px;
 }
 
 #headline > h3, #oldText > h3 {
     font-size: 1.2em;
-    margin-right: 30px;
+    margin-right: 15px;
 }
 
 #headline > h4, #oldText > h4 {
     font-size: 1.1em;
-    margin-right: 30px;
+    margin-right: 15px;
 }
 
 #headline > h1, #headline > h2, #headline > h3, #headline > h4, #oldText > h1, #oldText > h2, #oldText > h3, #oldText > h4 {
@@ -1180,8 +1180,6 @@ iframe {
     }
 }
 
-
-
 // photoPortfolio
 
 #imgBarContainer {
@@ -1257,15 +1255,29 @@ iframe {
     > div {
         display: none;
     }
-
+    
     .landscape {
         width: 90vw;
         margin: 10px auto;
+        transition-delay: 0.2s;
+        transition: all 0.3s ease-out;
+        &:hover, &:focus {
+            box-shadow: 0px 0px 20px white;
+            transition: all 0.3s ease-out;
+            transform: scale(1.05, 1.05);
+        }
     }
-
+    
     .portrait {
         width: 45vw;
         margin: 10px auto;
+        transition-delay: 0.2s;
+        transition: all 0.3s ease-out;
+        &:hover, &:focus {
+            box-shadow: 0px 0px 20px white;
+            transition: all 0.3s ease-out;
+            transform: scale(1.05, 1.05);
+        }
     }
 }
 
@@ -1324,5 +1336,31 @@ iframe {
 @media (min-width: 42em) {
     .diagonal-box .content {
         max-width: 42rem !important;
+    }
+}
+
+.row .col-4 {
+    img{
+        box-shadow: 0px 0px 20px #bebebe79;
+        transition-delay: 0.2s;
+        transition: all 0.3s ease-out;
+        &:hover, &:focus {
+            box-shadow: 0px 0px 40px #bebebebb;
+            transition: all 0.3s ease-out;
+            transform: scale(1.05, 1.05);
+        }
+    }
+    a {
+        text-decoration: underline;
+        text-decoration-color: white;
+        text-underline-offset: 10px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .row .col-4 {
+        img{
+            // add classes and such and then remove it on smaller screens
+        }
     }
 }
