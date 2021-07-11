@@ -1339,7 +1339,26 @@ iframe {
     }
 }
 
-.row .col-4 {
+.rowPicRight {
+    flex-direction: column-reverse;
+}
+
+.rowJKL {
+   width: 100%;
+   padding: 75px 0px;
+   display: flex;
+   flex-wrap: wrap;
+
+   img {
+       width: 100%;
+   }
+
+   h1 {
+    margin-top: 30px;
+   }
+}
+
+.rowJKL .col-12 {
     img{
         box-shadow: 0px 0px 20px #bebebe79;
         transition-delay: 0.2s;
@@ -1357,10 +1376,39 @@ iframe {
     }
 }
 
-@media (min-width: 1400px) {
-    .row .col-4 {
-        img{
-            // add classes and such and then remove it on smaller screens
+@media (min-width: 1200px) {
+.rowJKL {
+    padding: 100px 20;
+
+    h1 {
+        margin-bottom: 30px;
+    }
+}
+
+    .rowPicLeft {
+        .imgCol {
+            margin-right: 20px;
+        }
+    }
+
+    .rowPicRight {
+        flex-direction: row;
+        .imgCol {
+            margin-left: 20px;
         }
     }
 }
+
+@media (min-width: 1500px) {    
+        .rowPicLeft {
+            .imgCol {
+                margin-right: 110px;
+            }
+        }
+    
+        .rowPicRight {
+            .imgCol {
+                margin-left: 110px;
+            }
+        }
+    }
