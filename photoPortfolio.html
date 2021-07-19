@@ -217,8 +217,8 @@
 
     imgContainer = document.getElementById("imgBarContainer")
 
-    // Just for when the document loads, so the left scroller isn't there without prupose.
-    if(imgContainer.scrollLeft == 0){
+    // Just for when the document loads, so the left scroller isn't there without purpose.
+    if(imgContainer.scrollLeft <= 0){
       document.getElementById("arrowLeft").style.display = "none";
     }
 
@@ -237,7 +237,7 @@
 
       // If no condition is passed, the bar isn't scrolled, but checks if "scroller arrows" should be visible.
 
-      if(imgContainer.scrollLeft == 0){
+      if(imgContainer.scrollLeft <= 0){
         document.getElementById("arrowLeft").style.display = "none";
       }
 
@@ -247,7 +247,7 @@
         document.getElementById("arrowRight").style.display = "block";
       }
       
-      if(imgContainer.scrollLeft != 0) {
+      if(imgContainer.scrollLeft >= 1) {
         document.getElementById("arrowLeft").style.display = "block";
       }
     }
