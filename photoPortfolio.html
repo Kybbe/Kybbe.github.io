@@ -90,9 +90,9 @@
       <div id="barText1">
         <h2>Me</h2>
         <p>Just... me.</p>
-        <img class="landscape" src="./Pictures/DSC_0129.JPEG" alt="">
+        <img class="landscape" loading="lazy" src="./Pictures/DSC_0129.JPEG" alt="">
         <br>
-        <img class="portrait" src="./Pictures/IMG_5784.JPEG" alt="">
+        <img class="portrait" loading="lazy" src="./Pictures/IMG_5784.JPEG" alt="">
       </div>
       <div id="barText2">
         <h2>K</h2>
@@ -101,20 +101,20 @@
       <div id="barText3">
         <h2>DOGGO</h2>
         <p>My pretty lil' doggo Lucy.</p>
-        <img class="landscape" src="./Pictures/DSC_0013.JPEG" alt="">
+        <img class="landscape" loading="lazy" src="./Pictures/DSC_0013.JPEG" alt="">
       </div>
       <div id="barText4">
         <h2>Cars!</h2>
         <p>This is a collection of car-photos I took while on a car-meet at the Norwegian / Swedish border!</p>
-        <img class="landscape" src="./Pictures/DSC_0168-Edit.png" alt="">
-        <img class="landscape" src="./Pictures/DSC_0194-Edit.png" alt="">
-        <img class="landscape" src="./Pictures/DSC_0203-Edit.png" alt="">
+        <img class="landscape" loading="lazy" src="./Pictures/DSC_0168-Edit.png" alt="">
+        <img class="landscape" loading="lazy" src="./Pictures/DSC_0194-Edit.png" alt="">
+        <img class="landscape" loading="lazy" src="./Pictures/DSC_0203-Edit.png" alt="">
         <br>
-        <img class="portrait" src="./Pictures/DSC_0191-Edit.png" alt="">
-        <img class="portrait" src="./Pictures/DSC_0156-Edit.png" alt="">
-        <img class="portrait" src="./Pictures/DSC_0185-Edit-2.png" alt="">
-        <img class="portrait" src="./Pictures/DSC_0210-Edit.png" alt="">
-        <img class="portrait" src="./Pictures/DSC_0229-Edit.png" alt="">
+        <img class="portrait" loading="lazy" src="./Pictures/DSC_0191-Edit.png" alt="">
+        <img class="portrait" loading="lazy" src="./Pictures/DSC_0156-Edit.png" alt="">
+        <img class="portrait" loading="lazy" src="./Pictures/DSC_0185-Edit-2.png" alt="">
+        <img class="portrait" loading="lazy" src="./Pictures/DSC_0210-Edit.png" alt="">
+        <img class="portrait" loading="lazy" src="./Pictures/DSC_0229-Edit.png" alt="">
       </div>
       <div id="barText5">
         <h2>S</h2>
@@ -123,22 +123,22 @@
       <div id="barText6">
         <h2>A</h2>
         <p></p>
-        <img class="portrait" src="./Pictures/DSC_0050.JPEG" alt="">
-        <img class="portrait" src="./Pictures/DSC_0083.JPEG" alt="">
-        <img class="portrait" src="./Pictures/DSC_0046.JPEG" alt="">
-        <img class="portrait" src="./Pictures/DSC_0036.JPEG" alt="">
-        <img class="portrait" src="./Pictures/DSC_0029.JPEG" alt="">
-        <img class="portrait" src="./Pictures/DSC_0027.JPEG" alt="">
-        <img class="portrait" src="./Pictures/DSC_0009.JPEG" alt="">
+        <img class="portrait" loading="lazy" src="./Pictures/DSC_0050.JPEG" alt="">
+        <img class="portrait" loading="lazy" src="./Pictures/DSC_0083.JPEG" alt="">
+        <img class="portrait" loading="lazy" src="./Pictures/DSC_0046.JPEG" alt="">
+        <img class="portrait" loading="lazy" src="./Pictures/DSC_0036.JPEG" alt="">
+        <img class="portrait" loading="lazy" src="./Pictures/DSC_0029.JPEG" alt="">
+        <img class="portrait" loading="lazy" src="./Pictures/DSC_0027.JPEG" alt="">
+        <img class="portrait" loading="lazy" src="./Pictures/DSC_0009.JPEG" alt="">
         <br>
-        <img class="portrait" src="./Pictures/DSC_0159.JPEG" alt="">
+        <img class="portrait" loading="lazy" src="./Pictures/DSC_0159.JPEG" alt="">
       </div>
       <div id="barText7">
         <h2>This is the heading for picture 6!</h2>
         <p>This is the paragraph of picture 6!</p>
-        <img class="landscape" src="./Pictures/IMG_5822.JPEG" alt="">
-        <img class="landscape" src="./Pictures/IMG_5878.JPEG" alt="">
-        <img class="portrait" src="./Pictures/IMG_5359.JPG" alt="">
+        <img class="landscape" loading="lazy" src="./Pictures/IMG_5822.JPEG" alt="">
+        <img class="landscape" loading="lazy" src="./Pictures/IMG_5878.JPEG" alt="">
+        <img class="portrait" loading="lazy" src="./Pictures/IMG_5359.JPG" alt="">
       </div>
       <div id="barText8">
         <h2>Götaälvbron</h2>
@@ -182,7 +182,7 @@
         <a href="#">Yup</a>
       </div>
       <div class="col-xl-4 col-12 imgCol">
-        <img src="./Pictures/DSC_0168-Edit.png" alt="">
+        <img loading="lazy" src="./Pictures/DSC_0168-Edit.png" alt="">
       </div>
       <div class="col-xl-2 col-0"></div>
     </div>
@@ -190,7 +190,7 @@
     <div class="rowJKL rowPicLeft">
       <div class="col-xl-2 col-0"></div>
       <div class="col-xl-4 col-12 imgCol">
-        <img src="./Pictures/DSC_0168-Edit.png" alt="">
+        <img loading="lazy" src="./Pictures/DSC_0168-Edit.png" alt="">
       </div>
       <div class="col-xl-4 col-12">
         <h1>Hi some text!</h1>
@@ -217,9 +217,15 @@
 
     imgContainer = document.getElementById("imgBarContainer")
 
+    // Just for when the document loads, so the left scroller isn't there without prupose.
     if(imgContainer.scrollLeft == 0){
       document.getElementById("arrowLeft").style.display = "none";
     }
+
+    // So when user scrolls using something other than "scroller arrows", they should appear when scrolled to the right for example.
+    $(document).ready(function () {
+      $('#imgBarContainer').on('scroll', scrollimgbar);
+    }); 
 
     function scrollimgbar(direction) {
       var maxScrollLeft = imgContainer.scrollWidth - imgContainer.clientWidth;
@@ -227,7 +233,9 @@
         imgContainer.scrollLeft -= 100;
       } else if(direction == "right"){
         imgContainer.scrollLeft += 100;
-      }
+      } 
+
+      // If no condition is passed, the bar isn't scrolled, but checks if "scroller arrows" should be visible.
 
       if(imgContainer.scrollLeft == 0){
         document.getElementById("arrowLeft").style.display = "none";

@@ -644,6 +644,8 @@ function formValidation() {
   }
 }
 
+
+// For the "opening" of a imgbar and collapsable content / album 
 var oldClicked;
 $(".imgBar").on("click", function(event){
   var barId = 'barText' + $(this).attr('barId')
