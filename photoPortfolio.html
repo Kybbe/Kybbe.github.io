@@ -241,7 +241,7 @@
         document.getElementById("arrowLeft").style.display = "none";
       }
 
-      if(maxScrollLeft == imgContainer.scrollLeft){
+      if(maxScrollLeft <= imgContainer.scrollLeft){ // If scroll is all the way to the left or more
         document.getElementById("arrowRight").style.display = "none";
       } else {
         document.getElementById("arrowRight").style.display = "block";
