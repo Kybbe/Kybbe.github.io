@@ -419,6 +419,10 @@ function changeTheme(page) {
     
     } else if(page == "photoPortfolio") { // photos.
     
+      photoCards = document.getElementsByClassName("rowJKL");
+      for(i = 0; i <= photoCards.length - 1; i++){
+        photoCards[i].style.backgroundColor = "rgb(27, 25, 31)";
+      }
     } else { // Really just for testing, it should never go here.
       console.log("SOMETHING WRONG, current page name is: " + page)
     }
@@ -472,8 +476,10 @@ function changeTheme(page) {
     
     } else if(page == "photoPortfolio") {
     
-      
-    
+      var photoCards = document.getElementsByClassName("rowJKL");
+      for(i = 0; i <= photoCards.length - 1; i++){
+        photoCards[i].style.backgroundColor = null;
+      }
     } else { 
       console.log("SOMETHING WRONG, current page name is: " + page)
     }  

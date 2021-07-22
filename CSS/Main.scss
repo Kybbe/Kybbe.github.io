@@ -1244,40 +1244,38 @@ iframe {
     width: 100%;
     min-height: 120px;
     text-align: center;
+
     h2 {
         padding-bottom: 8px;
     }
+
     h2, p {
         background-color: $accent-color2;
         width: 90vw;
         margin: 0 auto;
     }
+
     > div {
         display: none;
     }
-    
-    .landscape {
-        width: 90vw;
+
+    img {
         margin: 10px auto;
         transition-delay: 0.2s;
         transition: all 0.3s ease-out;
         &:hover, &:focus {
-            box-shadow: 0px 0px 20px white;
+            box-shadow: 0px 0px 20px darken(grey, 20);
             transition: all 0.3s ease-out;
             transform: scale(1.05, 1.05);
-        }
+        } 
+    }
+
+    .landscape {
+        width: 90vw;
     }
     
     .portrait {
         width: 45vw;
-        margin: 10px auto;
-        transition-delay: 0.2s;
-        transition: all 0.3s ease-out;
-        &:hover, &:focus {
-            box-shadow: 0px 0px 20px white;
-            transition: all 0.3s ease-out;
-            transform: scale(1.05, 1.05);
-        }
     }
 }
 
@@ -1344,13 +1342,22 @@ iframe {
 }
 
 .rowJKL {
-   width: 100%;
-   padding: 75px 0px;
+   width: 90%;
+   margin: 25px auto;
    display: flex;
    flex-wrap: wrap;
+   background-color: white;
+   padding-bottom: 10px;
+   box-shadow: 5px 5px 5px grey;
+   border-radius: 0px 0px 10px 10px;
 
    img {
        width: 100%;
+   }
+
+   .imgCol {
+       padding-left: 0px;
+       padding-right: 0px
    }
 
    h1 {
@@ -1360,59 +1367,44 @@ iframe {
    p {
        margin-bottom: 40px;
    }
-}
 
-.rowJKL .col-12 {
-    img{
-        box-shadow: 0px 0px 20px #bebebe79;
-        transition-delay: 0.2s;
-        transition: all 0.3s ease-out;
-        &:hover, &:focus {
-            box-shadow: 0px 0px 40px #bebebebb;
+   .col-12 {
+        img{
+            box-shadow: 0px 0px 20px grey;
+            transition-delay: 0.2s;
             transition: all 0.3s ease-out;
-            transform: scale(1.05, 1.05);
+            &:hover, &:focus {
+                box-shadow: 0px 0px 40px darken(grey, 16);
+                transition: all 0.3s ease-out;
+                transform: scale(1.05, 1.05);
+            }
+        }
+        a {
+            color: $accent-color3;
+            text-decoration-color: $accent-color2;
+            text-underline-offset: 10px;
         }
     }
-    a {
-        text-decoration: underline;
-        text-decoration-color: white;
-        text-underline-offset: 10px;
-    }
 }
+
+
 
 @media (min-width: 1200px) {
 .rowJKL {
-    padding: 100px 20px;
+    padding: 0px;
+    margin: 80px auto;
 
     h1 {
         margin-bottom: 30px;
     }
 }
 
-    .rowPicLeft {
-        .imgCol {
-            margin-right: 20px;
-        }
-    }
-
     .rowPicRight {
         flex-direction: row;
-        .imgCol {
-            margin-left: 20px;
-        }
+        border-radius: 10px 0px 0px 10px !important;
+    }
+    
+    .rowPicLeft {
+        border-radius: 0px 10px 10px 0px !important;
     }
 }
-
-@media (min-width: 1500px) {    
-        .rowPicLeft {
-            .imgCol {
-                margin-right: 110px;
-            }
-        }
-    
-        .rowPicRight {
-            .imgCol {
-                margin-left: 110px;
-            }
-        }
-    }
