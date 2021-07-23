@@ -301,7 +301,7 @@ input[type=checkbox]:focus {
 }
 
 #headline > h1, #oldText > h1 {
-  font-size: 2.1em;
+  font-size: 3.5em;
   margin-right: 15px;
 }
 
@@ -1028,9 +1028,6 @@ iframe {
 }
 
 @media (min-width: 400px) {
-  #headline > h1, #oldText > h1 {
-    font-size: 2.5em;
-  }
   #headline > h2, #oldText > h2 {
     font-size: 2em;
   }
