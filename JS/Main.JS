@@ -392,7 +392,7 @@ function changeTheme(page) {
     document.getElementById("footer").style.backgroundColor = "#1B191F";
 
 
-    if(page == "" || page == "index"){ // On index site,
+    if(page == "" || page == "index" || page == "Index"){ // On index site,
 
       document.getElementsByClassName("dateContainer")[0].style.backgroundColor = "#1B191F";
       document.getElementById("picCol").getElementsByTagName("img")[0].style.filter = "drop-shadow(5px 5px 5px rgba(90, 90, 90, 0.5)";

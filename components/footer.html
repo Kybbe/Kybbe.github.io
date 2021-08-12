@@ -34,7 +34,7 @@
     var path = window.location.pathname;
     var page = path.split("/").pop().replace('.html','');
 
-    if(page == "" || page == "index"){
+    if(page == "" || page == "index" || page == "Index"){
         waitForElementToDisplay(".dateContainer",function(){checkDarkMode(page);},200,5000);
     } else {
         waitForElementToDisplay("#darkModeBtn",function(){checkDarkMode(page);},200,5000);
