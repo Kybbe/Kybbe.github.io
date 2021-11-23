@@ -488,10 +488,10 @@ function changeTheme(page) {
 
 // Get location of user.
 function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(getWeather);
+  if (navigator.geolocation) { // asks for location
+    navigator.geolocation.getCurrentPosition(getWeather); // if location is allowed, send it to getWeather as a parameter.
   } else {
-    alert("Geolocation is not supported by this browser.");
+    alert("Geolocation is not supported by this browser."); // if location is not allowed, alert the user.
   }
 }
 
