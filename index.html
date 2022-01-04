@@ -310,7 +310,7 @@
             <fieldset data-aos="fade-up" class="card mediumCard"> <!-- Todo-list Website -->
                 <legend>Todo-list Project</legend>
                 <div class="card-body iframeHolder">
-                  <iframe src="https://kybbe.github.io/To-do/"></iframe>
+                  <iframe id="toDoIframe" src="https://kybbe.github.io/To-do/"></iframe>
                 </div>
             </fieldset>
 
@@ -323,6 +323,7 @@
     <script src="JS/Main.JS"></script>
 
     <script type="text/javascript">
+        
         new Vue({
             
             el: "#container",
@@ -331,8 +332,8 @@
                 'dk-simpleaddition': httpVueLoader('./eddlerGame/dk-simpleaddition.vue'),
             }
                 
-            });
+        });
 
-        </script>
+    </script>
 
 </body>

@@ -368,7 +368,7 @@ function checkDarkMode(page) { // (page) is a string containing the name of the 
 
 // To make website dark or lightmode.
 function changeTheme(page) {
-  // Page = which site calls the function
+  // Page = name of the site that calls the function
   
   if(theme == "light"){ // Make it dark mode :)
     //On all sites
@@ -391,7 +391,6 @@ function changeTheme(page) {
     document.getElementById("navbarSettings").style.backgroundColor = "rgba(155, 155, 155, .15)";
     document.getElementById("footer").style.backgroundColor = "#1B191F";
 
-
     if(page == "" || page == "index" || page == "Index"){ // On index site,
 
       document.getElementsByClassName("dateContainer")[0].style.backgroundColor = "#1B191F";
@@ -405,6 +404,8 @@ function changeTheme(page) {
       }
       document.getElementsByClassName("dateContainer")[0].style.boxShadow = "5px 5px 5px rgba(90, 90, 90, 0.5)";
       document.getElementsByClassName("weatherContainer")[0].style.boxShadow = "5px 5px 5px rgba(90, 90, 90, 0.5)";
+
+      document.getElementById("toDoIframe").src = "https://kybbe.github.io/To-do/?theme=dark";
 
     } else if(page == "contactMe") { // contact,
 
@@ -449,7 +450,7 @@ function changeTheme(page) {
     document.getElementById("navbarSettings").style.backgroundColor = null;
     document.getElementById("footer").style.backgroundColor = null;
     
-    if(page == "" || page == "index"){
+    if(page == "" || page == "index" || page == "Index"){ // On index site,
     
       document.getElementById("picCol").children[0].style.filter = null;
       document.getElementById("contactMe").style.color = null;

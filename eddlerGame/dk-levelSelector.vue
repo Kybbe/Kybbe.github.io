@@ -3,7 +3,7 @@
 
     <div id="lists" data-toggle="lists" data-options="{'valueNames': ['name'], 'page': 3, 'pagination': true}">
                 <div class="card-header">
-                    <h4 class="card-header-title" v-html=" 'Nivå: ' + selectedLevel + '. ' + '<span>' + currentDescription + '</span>' "> </h4> 
+                    <h4 class="card-header-title" v-html=" `<p style='color: rgb(100, 100, 100)'> Nivå: '${selectedLevel}.<span> ${currentDescription} </span><p>` "> </h4> 
 
                     <div class="col-auto">
                         <a class="btn btn-sm btn-white" id="nivaKnapp" v-on:click="showSelectorToggle()">
