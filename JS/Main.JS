@@ -518,30 +518,30 @@ function getWeather(position) {
       document.getElementById("Location").innerHTML = "<i class='fas fa-location-arrow'></i> " + result.name + ", " + result.sys.country;
       
       if(result.weather[0].main == "Rain"){
-          makeItRain();
-          document.getElementById("Circle1").style.display = "none";
-          document.getElementById("Circle2").style.display = "none";
-          document.getElementById("Circle3").style.display = "none";
-          document.getElementsByClassName("weatherContainer")[0].style.backgroundColor = "black";
-          document.getElementsByClassName("weatherContainer")[0].style.background = "black";
-          document.getElementById("Condition").innerHTML = "<i class='fas fa-cloud-showers-heavy'></i> " + result.weather[0].main;
-          
-          weatherText = document.getElementsByClassName("weatherContent")[0].children;
-          for( i= 0; i < weatherText.length - 1; i ++) {
-            weatherText[i].style.color = "grey";
-          }
-      
-        } else if (result.weather[0].main == "Clouds") {
-          document.getElementById("Circle1").style.display = "none";
-          document.getElementById("Circle2").style.display = "none";
-          document.getElementById("Circle3").style.display = "none";
-          document.getElementsByClassName("weatherContainer")[0].style.background = "lightgrey";
-          document.getElementById("Cloud1").style.display = "block";
-          document.getElementById("Cloud2").style.display = "block";
-          document.getElementById("Cloud3").style.display = "block";
-          document.getElementById("Cloud4").style.display = "block";
-          document.getElementById("Cloud5").style.display = "block";
-          document.getElementById("Condition").innerHTML = "<i class='fas fa-cloud'></i> " + result.weather[0].main;
+        makeItRain();
+        document.getElementById("Circle1").style.display = "none";
+        document.getElementById("Circle2").style.display = "none";
+        document.getElementById("Circle3").style.display = "none";
+        document.getElementsByClassName("weatherContainer")[0].style.backgroundColor = "black";
+        document.getElementsByClassName("weatherContainer")[0].style.background = "black";
+        document.getElementById("Condition").innerHTML = "<i class='fas fa-cloud-showers-heavy'></i> " + result.weather[0].main;
+        
+        weatherText = document.getElementsByClassName("weatherContent")[0].children;
+        for( i= 0; i < weatherText.length - 1; i ++) {
+          weatherText[i].style.color = "grey";
+        }
+    
+      } else if (result.weather[0].main == "Clouds") {
+        document.getElementById("Circle1").style.display = "none";
+        document.getElementById("Circle2").style.display = "none";
+        document.getElementById("Circle3").style.display = "none";
+        document.getElementsByClassName("weatherContainer")[0].style.background = "lightgrey";
+        document.getElementById("Cloud1").style.display = "block";
+        document.getElementById("Cloud2").style.display = "block";
+        document.getElementById("Cloud3").style.display = "block";
+        document.getElementById("Cloud4").style.display = "block";
+        document.getElementById("Cloud5").style.display = "block";
+        document.getElementById("Condition").innerHTML = "<i class='fas fa-cloud'></i> " + result.weather[0].main;
       }
     },
     error: function (error) {
